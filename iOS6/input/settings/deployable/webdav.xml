@@ -1,0 +1,33 @@
+<Group id="webdav">
+<title>Calendars and Address Books</title>
+
+<Group id="caldav">
+<title>CalDav</title>
+
+<Rule id="enable_ssl_for_caldav_connections">
+<title>Enable SSL for CalDav Connections</title>
+<description> Ensure <b>Use SSL</b> is enabled if using a CalDav service.
+</description>
+</Rule>
+</Group>
+
+<Group id="subscribed_calendars">
+<title>Subscribed Calendars</title>
+
+<Rule id="enable_ssl_for_subscribed_calendar_connections">
+<title>Enable SSL for Subscribed Calendar Connections</title>
+<description> Ensure <b>Use SSL</b> is enabled if connecting to calendar
+subscriptions. </description>
+</Rule>
+</Group>
+
+<Group id="carddav">
+<title>CardDav</title>
+
+<Rule id="enable_ssl_for_carddav_connections">
+<title>Enable SSL for CardDav Connections</title>
+<description> Enable <b>Use SSL</b> if using a CardDav service. </description>
+</Rule>
+</Group>
+
+</Group>

@@ -1,0 +1,159 @@
+<Group id="passcode"> 
+<title>Passcode</title> 
+<description> The remarkable attention paid to passcode quality requirements
+represents misplaced priorities in the current network environment, as
+passcodes do not protect against many contemporary threats. However, setting a
+passcode enables cryptographic features that can protect data on the device if
+it is lost, stolen or temporarily out of possession. Hardware and software
+cryptographic features of iOS devices – not present on typical desktop or
+server systems – provide significant protections against the password-guessing
+threat when the passcode feature is enabled. Furthermore, iOS devices are
+likely to store only a single user’s credentials, while complex passcode
+policies are designed to protect against the compromise of large numbers of
+credentials when they are stored on a single system that becomes compromised
+(such as a directory server). Onerous passcode policies may also drive users to
+attempt to subvert the settings. For these reasons, IT decision makers should
+understand that onerous passcode policies on iOS devices provide little value
+(in the best case), and may end up being counterproductive.
+
+The following publicly-available research provides rationale for these recommendations:
+<ul>
+<li><i>Apple iOS 4 Security Evaluation</i> by Dino Dai Zovi at: 
+<b>http://www.trailofbits.com/resources/ios4_security_evaluation_slides.pdf</b>. The slides’ section “Attacking Passcode” provides highly relevant platform-specific discussion for iOS devices.
+</li>
+<li>NIST Special Publication 800-118 <i>DRAFT Guide to Enterprise Password
+Management</i> at
+<b>http://csrc.nist.gov/publications/PubsDrafts.html#SP-800-118</b> provides
+discussion about factors that should be considered in order to create effective
+password strength recommendations.
+</li>
+</ul>
+</description>
+ 
+<Group id="enable_passcode"> 
+<title>Enable Passcode</title>
+<description> The following passcode settings are recommended, and can be
+deployed via a configuration profile. </description>
+
+<Rule id="disable_simple_value_for_passcode"> 
+<title>Disable Simple Value for Passcode</title>
+<description> Set <b>Allow simple value</b> to <b>Unchecked</b>. </description>
+<rationale> This will enable display of the entire keyboard for passcode entry,
+instead of only a numeric keypad (and setting other requirements will also
+enable this). </rationale> 
+</Rule> 
+
+<Rule id="require_alphanumeric_value_for_passcode"> 
+<title>Require Alphanumeric Value for Passcode</title> 
+<description> Set <b>Require alphanumeric value</b> to <b>Checked</b>. </description> 
+<rationale> Requiring alphanumeric values should increase the search space in a
+password-guessing attack. </rationale> 
+</Rule> 
+
+<Rule id="set_minimum_passcode_length"> 
+<title>Set Minimum Passcode Length</title> 
+<description> Set <b>Minimum passcode length</b> to <b>6</b>. </description>
+<rationale> Setting a minimum length should increase the search space in a
+password-guessing attack. A passcode length of 6 may be a reasonable balance
+between user experience and security for many deployment scenarios.
+</rationale> 
+</Rule> 
+
+<Rule id="set_minimum_number_of_complex_characters"> 
+<title>Set Minimum Number of Complex Characters</title> 
+<description> Set <b>Minimum number of complex characters</b> to <b>1</b>.
+</description>
+<rationale> Requiring complex characters should increase the search space in a
+password-guessing attack. </rationale> 
+</Rule> 
+
+<Rule id="set_maximum_passcode_age"> 
+<title>Set Maximum Passcode Age</title>
+<description> Set <b>Maximum passcode age</b> to <b>120 days</b>, if there is a need
+for such rotation. </description>
+<rationale> Changing passcodes regularly prevents an attacker who has
+compromised the password from re-using it to regain access. This is an unlikely
+scenario, but is addressed by setting a password expiration. </rationale> 
+</Rule> 
+
+<Rule id="set_auto_lock_time"> 
+<title>Set Auto-Lock Time</title> 
+<description> Set <b>Auto-Lock (in minutes)</b> to 5 minutes, or less.
+</description> 
+<rationale> This ensures that the device will require passcode entry if lost or
+left unattended. </rationale> 
+</Rule> 
+
+<Rule id="set_passcode_history"> 
+<title>Set Passcode History</title>
+<description> Set <b>Passcode History</b> to <b>3</b>. </description>
+<rationale> This ensures that users cannot trivially alternate between
+passcodes. </rationale> 
+</Rule> 
+
+<Rule id="set_grace_period_for_device_lock"> 
+<title>Set Grace Period for Device Lock</title>
+<description> Set <b>Grace period for device lock</b> to 5 minutes, or less.
+</description>
+<rationale> This permits unlock of the device after a certain period of time
+has passed since the last device lock. Allowing a Grace Period enhances
+usability and makes users more likely to tolerate passcode requirements.
+</rationale> 
+</Rule> 
+
+<Rule id="set_maximum_number_of_failed_attempts"> 
+<title>Set Maximum Number of Failed Attempts</title>
+<description> Set <b>Maximum number of failed attempts</b> to 10 attempts, or
+fewer. </description>
+<rationale> Setting the device to automatically erase after a number of failed
+attempts can protect against witless password guessing attacks conducted
+through the unlock screen. (However, it does not protect against those
+conducted by processes running on the device, see Section  for more
+discussion). </rationale> 
+</Rule>
+
+</Group>
+
+<Group id="understand_which_files_are_protected_by_encryption">
+<title>Understand Which Files are Protected by Encryption</title>
+<description> Enabling a passcode activates the Data Protection feature of iOS.
+The Data Protection feature encrypts items with a key whose availability
+depends on entry of the passcode. Currently, the following items are protected:
+<ul>
+<li> <b>Email messages</b> stored by the built-in Mail app </li> 
+<li> <b>Inactive Apps’ Screenshots</b> displayed at app re-launch to create
+impression of “instant resume” </li> 
+<li> <b>Some Keychain Items</b> such as email passwords and iTunes backup password </li>
+<li> <b>Data stored by third-party apps</b> which use the Data Protection API </li>
+</ul>
+</description>
+<rationale> In fact, the rest of the files on the device are encrypted, but
+they are still available to an attacker who can get privileged code to execute
+on the device. This is because the encryption key for these files is available
+even without the passcode (unlike the files above).
+
+This remains possible using publicly-available tools which provide the ability
+to execute privileged code on any device in physical possession. Examples of
+these tools include jailbreak software such as <i>evasi0n</i> from the evad3rs
+and <i>redsn0w</i> from The iPhone Dev Team. These applications leverage a
+collection of exploits and other jailbreak utilities including <i>limera1n</i>
+by George Hotz (geohot).
+
+Note also that even if privileged code can be run by an attacker on a lost or
+stolen iPhone, a password-guessing attack against the protected files must be
+executed on the device itself. This is because the key which encrypts the items
+listed above is derived from the passcode as well as a key that is bound to the
+hardware of the device (and not considered extricable from it).
+
+The following references provide detailed explanation:
+<ul>
+<li><i>iPhone data protection in depth</i> by Jean-Baptiste Bédrune and Jean Sigwald
+(Sogeti ESEC) available at <b>http://esec-lab.sogeti.com/dotclear/public/publications/11-hitbamsterdam-iphonedataprotection.pdf</b> linked from <b>http://esec-lab.sogeti.com/post/iOS-5-data-protection-updates</b>.
+</li>
+<li><i>Apple iOS 4 Security Evaluation</i> by Dino Dai Zovi (Trail of Bits)
+available at <b>http://trailofbits.files.wordpress.com/2011/08/apple-ios-4-security-evaluation-whitepaper.pdf</b> linked from <b>http://trailofbits.wordpress.com/2011/08/10/ios-4-security-evaluation/</b>.
+</li>
+</ul>
+</rationale>           
+</Group>
+</Group>

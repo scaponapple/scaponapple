@@ -1,0 +1,10 @@
+<Group id="ldap"> 
+<title>LDAP</title> 
+
+<Rule id="enable_ssl_for_ldap_connections"> 
+<title>Enable SSL for LDAP Connections</title>          
+<description> Ensure <b>Use SSL</b> is enabled if using an LDAP service.
+</description> 
+</Rule>
+</Group>
+

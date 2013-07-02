@@ -1,0 +1,344 @@
+<Group id="device_usage_and_handling"> 
+<title>Device Usage and Handling</title>  
+<description> This chapter provides recommendations on device usage and
+handling, for both administrators and users. Section  provides handling and
+usage guidance for administrators. These topics include issuing devices,
+managing and accounting for devices once in users’ hands, and effectively
+educating users on secure device usage.  Further, there are important
+recommendations such as maintaining physical control of the device, not
+jailbreaking the device, and preventing connections to untrusted networks. This
+section closes with suggested usage statements that could be provided to users.
+</description>
+
+
+<Group id="handling_guidance_for_administrators"> 
+<title>Handling Guidance for Administrators</title>  
+<description> If the enterprise is planning to procure and distribute devices
+to users, administrators should establish procedures for this activity. Some
+items from this section may not apply to BYOD scenarios, however, such as
+inventory management and prompt retirement of unsupported devices.
+</description>
+            
+<Group id="establish_a_user_training_program"> 
+<title>Establish a User Training Program</title>           
+<description> Create or make available training resources to educate users
+about device security issues and organization policies. Ensure that all device
+users are aware of risks and properly trained to mitigate them. </description>
+<rationale> Security and policy awareness training reduces the risk of
+user-originated security compromise. This relates closely to any agreements
+between the user and enterprise regarding device handling, which should be
+verified for each user prior to their being issued a device, as described in
+Section . </rationale>  
+</Group>
+
+<Group id="issuing_devices"> 
+<title>Issuing Devices</title>  
+<description> This section provides recommendations for enterprises issuing iOS
+devices. </description>
+ 
+<Group id="issue_only_supported_devices"> 
+<title>Issue Only Supported Devices</title>           
+<description> Ensure that only supported hardware versions are issued.
+Supported hardware versions are defined as those that can run the latest
+version of iOS and receive all updates. To determine this, administrators will
+need to manually note which systems can be updated whenever security updates
+are provided. </description> 
+<rationale> Sometimes only the current version and the previous version of the
+iPhone or iPad hardware can run all updates. This suggests that IT planners
+should anticipate a 2 year (or 3 year, at most) refresh cycle for
+enterprise-purchased devices. </rationale> 
+</Group>
+
+<Group id="erase_and_reset_devices_if_re_issuing"> 
+<title>Erase and Reset Devices, if Re-issuing</title>           
+<description> If re-issuing devices, erase them before distributing them to
+users. </description> 
+<rationale> Use the command <b>Settings &gt; General &gt; Reset &gt; Erase All
+Content and Settings</b> to erase a device. Clearing content and settings
+returns the device to a stable state and prevents accidental exposure of the
+prior user’s data. </rationale> 
+</Group>
+
+<Group id="update_device_to_user_registration"> 
+<title>Update Device-to-User Registration</title>           
+<description> Establish a system for attributing individual devices to users
+prior to issuance. This information must be updated every time a device is
+issued or transferred. Existing inventory tracking systems or MDM software can
+enable automation of this process. The following pieces of information from
+each device can be useful: <ul> <li>UDID (Unique Device Identifier) </li>
+<li>Serial Number </li> <li>IMEI (if equipped with a cellular connectivity)
+</li> <li>Model Number </li> <li>Wi-Fi MAC Address </li> <li>Bluetooth MAC
+Address </li></ul>MDM products may also report this information. This
+information should be protected accordingly. </description>
+</Group>
+
+<Group id="verify_user_training_history"> 
+<title>Verify User Training History</title>           
+<description> Ensure that users are familiar with the training before receiving
+a new device, and at regular intervals afterward. </description>
+</Group>
+
+<Group id="provide_recharging_hardware_with_device"> 
+<title>Provide Recharging Hardware with Device</title>           
+<description> Distribute AC power adapters to users when issuing devices and
+warn users not to connect their devices to unauthorized systems. It may be
+prudent to distribute additional AC power adapters to remove the temptation to
+connect the devices to unknown PCs. </description> 
+<rationale> Connecting iOS devices to unauthorized systems, even if only
+intending to recharge the device, presents a security risk. Providing a power
+adapter, and easy access to replacements and additional adapters, will help
+combat temptation to connect to other systems. Users should never be left with
+connecting to a computer as their only option to recharge their device.
+</rationale>  
+</Group>
+</Group>
+
+<Group id="dealing_with_a_lost_or_stolen_ios_device"> 
+<title>Dealing with a Lost or Stolen iOS Device</title>  
+<description> If an iOS device is reported as lost or stolen, the device should
+be immediately disabled to prevent unauthorized use or access. The system
+administrator can issue a remote “Wipe” command to erase all media, data and
+settings from the device, restoring it to factory settings. Be aware of the
+circumstances under which issuing a wipe may not be possible, such as keeping a
+device in Airplane Mode or simply lacking network connectivity. </description>
+ 
+<Group id="establish_procedure_for_lost_or_stolen_ios_devices">
+<title>Establish Procedure for Lost or Stolen iOS devices</title>           
+<description> Establish and test a procedure to issue a wipe command to erase
+data from a lost or stolen iOS device. Ensure that users are also aware of
+their responsibilities to report lost or stolen devices. Wipe commands can 
+be issued by an MDM server or by Exchange ActiveSync. Users can also initiate 
+remote wipe using iCloud, if the device is enrolled. </description>
+</Group>
+
+</Group>
+
+<Group id="retire_devices_which_cannot_run_latest_os_version"> 
+<title>Retire Devices Which Cannot Run Latest OS Version</title>           
+<description> Immediately retire any devices which cannot run the latest iOS
+version. This requires vigilance on the part of administrators, to monitor when
+an update is issued but is not supported on older devices. </description>
+<rationale> iOS updates include both security patches as well as new
+functionality. Ensure that all iOS device hardware provided and managed by the
+enterprise can always run the latest iOS. For example, all iPhone 3G devices
+should be immediately retired, because they cannot run iOS 6. </rationale>
+</Group>
+
+<Group id="monitor_devices_using_mdm_especially_for_updates"> 
+<title>Monitor Devices Using MDM, Especially for Updates</title>           
+<description> MDM products enable enterprise integration and reporting for 
+iOS devices. Regularly monitor the status of devices using MDM software and 
+respond accordingly. Particularly important is
+ensuring that the version of iOS is kept up to date, which implies that all
+available security updates are installed. Some MDM products include the ability
+to disable access to enterprise resources if devices are not kept up to date or
+are otherwise not compliant. </description>
+</Group>
+
+</Group>
+
+<Group id="handling_guidance_for_users"> 
+<title>Handling Guidance for Users</title>  
+<description> User education is one of the strongest tools an organization can
+use to minimize the risk of security issues. Educating users helps raise
+awareness of their actions and helps them understand the reasoning behind
+policy decisions. This section details physical handling guidance and security
+policy topics to be reinforced to users through an organization-developed user
+education program. </description>
+ 
+<Group id="physical_control"> 
+<title>Physical Control</title>  
+<description> Maintain physical control of your iOS device at all times.
+</description> 
+<rationale> All guidance contained in this document depends upon uninterrupted
+physical control of your iOS device. It is your responsibility to maintain
+possession of the device. Never leave your iOS device unattended in an insecure
+location. An unattended device is at high risk for loss, theft, and other forms
+of compromise that could violate the confidentiality, integrity, or
+availability of the device and the information contained therein. </rationale>
+
+<Group id="surrendering_physical_control"> 
+<title>Surrendering Physical Control</title>  
+<description> Learn the proper procedure for relinquishing control of the iOS
+device to another entity. </description> 
+<rationale> There are times when physical control of the iOS device must be
+surrendered, such as when passing through security or customs inspections. The
+following are possible methods of mitigating potential loss of personal,
+financial or company information. <ul> <li>Before entering security or customs
+checkpoints, power down the iOS device, remove its SIM card using the SIM eject
+tool or an unwound paper clip, and place the SIM card in a physically separate
+location such as a bag or your coat pocket. </li> <li>Place the device in a
+clear, tamper evident bag. </li> <li>Ensure passcode is enabled.
+</li></ul>Organizations may elect to require all of these steps based on their
+security policy. </rationale> 
+</Group>
+
+<Group id="notify_security_or_administrative_personnel_upon_loss_of_physical_control">
+<title>Notify Security or Administrative Personnel Upon Loss of Physical
+Control</title>  
+<description> Obtain the contact information of your System Security Officer
+(SSO) for use in reporting the loss of physical control of your iOS device and
+learn which scenarios require SSO notification. If there is any suspicion that
+a device has been accessed by an unauthorized user, report the incident
+immediately to the appropriate SSO or administrative personnel. </description>
+<rationale> If a device is lost or stolen, the administrator or SSO should be
+contacted immediately in order to execute the remote wipe procedure through
+Microsoft Exchange, and to create a detailed incident
+report describing the event. Even if you lose control of your iOS device for a
+period of time but regain it later, it should be inspected for signs of
+physical compromise by system administration or security personnel. If a
+compromise is suspected, actions should be taken to sanitize or destroy the
+device, depending on the sensitivity of the data and severity of the situation
+in which it was compromised. </rationale> 
+</Group>
+
+<Group id="be_aware_of_your_surroundings"> 
+<title>Be Aware of Your Surroundings</title>  
+<description> Be aware of the danger of “shoulder surfing,” which refers to the
+ability of others to see your entry or viewing of sensitive information on the
+phone. </description> 
+<rationale> Because anyone nearby can potentially view any information
+displayed on the device, be wary of your environment when viewing any sensitive
+information, and particularly wary when entering passwords. Due to obvious
+physical and user interface constraints, password entry is susceptible to
+shoulder surfing, whether by observation of finger position or brief display of
+each character on-screen. Some third-party products may be available to
+mitigate this risk. </rationale> 
+</Group>
+
+<Group id="follow_procedures_for_secure_areas"> 
+<title>Follow Procedures for Secure Areas</title>  
+<description> Learn the proper procedure for handling your iOS device in a
+secure area. </description> 
+<rationale> If your organization has a secure area for talking about
+confidential information, you should be educated about the risks of bringing
+your iOS device into those areas. The following policies may be implemented for
+device security in secure areas: <ul> <li>Leave iOS devices outside conference
+rooms. </li> <li>Applications that record audio or video must be removed or
+their use restricted. </li> <li>Ensure the camera on the back of the iOS device
+is blocked (e.g. opaque tape) to prevent photo or video recording. </li>
+<li>Ensure that all iOS devices, if present, are in airplane mode with Wi-Fi
+turned off. </li></ul> </rationale>
+</Group>
+
+</Group>
+
+<Group id="do_not_jailbreak_or_unlock_your_ios_device"> 
+<title>Do Not Jailbreak or Unlock Your iOS Device</title>  
+<description> Jailbreaking is a term that describes the process of modifying
+the iOS device’s operating system, often with the goal of running unsigned code
+or performing unsupported customizations to the operating system. Unlocking
+allows users to operate an iOS device on a cellular network it is not
+authorized to connect to. Unlocking an iOS device requires a jailbroken iOS
+device first. </description>
+<warning> <b>Do not jailbreak or unlock your iOS device.</b> Doing so makes it
+much easier for attackers to introduce malicious code onto the device.
+</warning> 
+<rationale>Jailbreaking significantly increases the iOS device’s
+susceptibility to compromise. It disables the enforcement of code signatures, a
+critical security feature. This enables access to a wide range of software with
+little accountability and minimal vetting. Jailbreaking tools also typically
+install and activates services that make the device easier to remotely access,
+such as SSH. </rationale>  
+</Group>
+
+<Group id="install_software_updates_when_available"> 
+<title>Install Software Updates When Available</title>  
+<description> Install software updates as quickly as possible. Updates can be
+applied over-the-air, and are indicated by a red circle on the "Settings" app.
+Apply by following <b>Settings &gt; General &gt; Software Update</b>.
+</description> 
+<rationale> Software updates for iOS devices can contain fixes for security
+vulnerabilities. As these vulnerabilities often become public knowledge when
+the updates are released, installing updates as soon as they are available is
+strongly recommended. Supported 3rd party software should not be broken by
+updates. Prior to iOS 5, applying iOS updates always required the use of
+iTunes. Migrating from iOS 5 to iOS 6 also requires the use of iTunes.
+</rationale>  
+</Group>
+
+<Group id="connect_only_to_trusted_networks"> 
+<title>Connect Only to Trusted Networks</title>  
+<description> Do not connect your iOS device to untrusted wireless networks.
+</description> 
+<rationale> Connections to untrusted WiFi networks introduce some risks.
+Attacks on the iOS device, or eavesdropping on the data it transmits, can occur
+due to use of such networks. Because the user controls the WiFi settings, he or
+she must understand the risks associated with untrusted wireless networks and
+behave responsibly. Some organizations have policies that forbid connection to
+non-enterprise controlled networks. Other organizations forbid or prevent the
+use of personal devices on enterprise networks. </rationale>  
+</Group>
+
+<Group id="email_accounts"> 
+<title>Email Accounts</title>
+  
+<Group id="consider_risks_of_using_personal_email_accounts"> 
+<title>Consider Risks of Using Personal Email Accounts</title>  
+<description> Do not add personal email accounts to your iOS device, unless you
+are comfortable with (or approved for) the additional risk. </description> 
+<rationale> Adding personal email accounts implies that personal, non-company
+data will be transferred to and stored on the device. This likely violates
+organizational policy with regard to use of company resources for personal use,
+but it also increases risk. It increases the risk of your personal information
+being compromised as a result of an attack against the device, and also
+increases the risks of company information being compromised as a result of an
+attack carried out against your personal email account. See the next section
+for more information about phishing attacks and the motivation for segregating
+email accounts between different systems. </rationale> 
+</Group>
+
+<Group id="be_aware_of_phishing"> 
+<title>Be Aware of Phishing</title>  
+<description> Be aware of phishing attempts, including receiving mobile
+profiles from attackers. </description>
+<rationale> Phishing is a term referring to a fraudulent communication (usually
+email) pretending to be from a reputable source asking for personal, financial
+or company information. Adding personal email accounts to your iOS device
+greatly increases your availability to receive phishing emails, which may
+accidentally release important information about yourself or your organization.
+By removing personal email accounts from the device, you are protecting your
+organization from divulging information through your device to these malicious
+actors. </rationale>  
+</Group>
+
+</Group>
+
+<Group id="disable_bluetooth_if_practical"> 
+<title>Disable Bluetooth if Practical</title>  
+<description> Disable Bluetooth communication if not necessary. </description> 
+<rationale> Disabling Bluetooth reduces the possible attack surface for
+exploitation, although such vulnerabilities are rare and the iOS over-the-air
+update process enables rapid patching upon any public disclosure. Bluetooth
+also permits wireless device discovery and can be used to reveal a limited
+amount of information from the device. If practical, it is safest to keep
+Bluetooth disabled. The Bluetooth profiles available on iOS devices are
+documented at <b>http://support.apple.com/kb/HT3647</b>.
+</rationale>  
+</Group>
+
+<Group id="recharge_device_only_through_approved_methods"> 
+<title>Recharge Device Only Through Approved Methods</title>  
+<description> Recharge your device by either connecting to an
+organization-approved system or by using the AC power adapter you received when
+you were issued your device. </description> 
+<rationale> Connecting your iOS device to unknown systems exposes the device to
+unnecessary risks, including the loss of personal or company information.
+Syncing only with trusted systems also helps maintain the integrity of your iOS
+device. </rationale>  
+</Group>
+
+<Group id="do_not_use_unapproved_peripherals_on_your_ios_device"> 
+<title>Do Not Use Unapproved Peripherals on Your iOS Device</title>  
+<description> There exists many different types of iOS device accessories for
+use by consumers. Some of these devices allow access to a keyboard, magnetic
+card reader, or USB flash drive reader. </description> 
+<description> Users should only use accessories approved by your organization.
+</description> 
+<rationale> Due to the physical access nature of these accessories, security
+risks maybe present when attached to an iOS device. Approved accessories should
+be tested to ensure that nothing malicious is occurring from the accessory.
+</rationale>        
+</Group>
+</Group>
+</Group>

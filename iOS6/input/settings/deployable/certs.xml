@@ -1,0 +1,27 @@
+<Group id="certs">
+<title>Certificates</title>
+
+<Group id="credentials">
+<title>Credentials</title>
+<description> If your organization employs any self-signed certificates, embed
+them in the configuration profile or use SCEP to distribute.
+Note that embeddeding any credentials into the configuration profile introduces
+the need for encryption during profile deployment.
+</description>
+
+<Group id="scep">
+<title>SCEP</title>
+<description> If your organization will use the Simple Certificate Enrollment
+Protocol to distribute certificates and configuration profiles, include its
+settings with the configuration profile. These settings may be handled by MDM
+products in a manner that is automated, and not tied to individual users.
+</description>
+
+<Rule id="set_a_challenge_password">
+<title>Set a Challenge Password</title>
+<description> In the <b>Challenge</b> field, enter a strong passphrase to be
+used as a pre-shared secret for automatic enrollment. </description>
+</Rule>
+</Group>
+</Group>
+</Group>

@@ -1,0 +1,269 @@
+<Group id="introduction"> 
+<title>Introduction</title>  
+<description> 
+<b>Purpose</b> 
+<br /><br />
+This document provides security-related usage and configuration recommendations
+for Apple iOS devices such as the iPhone, iPad, and iPod touch. This document
+does not constitute government policy, nor is it an endorsement of any particular platform; its purpose
+is solely to provide security guidance. This guide may outline
+procedures required to implement or secure certain features, but it is also not
+a general-purpose configuration manual.
+<br />
+<br />
+<b>Audience</b> 
+<br />
+<br />
+This guide is primarily intended for network/system administrators deploying
+Apple’s iOS devices or supporting their integration into enterprise networks.
+Some information relevant to IT decision makers and users of the devices is
+also included. Readers are assumed to possess basic network and system
+administration skills for Mac OS X or Microsoft Windows systems, and they
+should have some familiarity with Apple’s documentation and user interface
+conventions.
+<br />
+<br />
+
+<b>Scope</b> 
+<br />
+<br />
+Apple's mobile devices, including the iPhone and iPad, are prominent examples
+of a new generation of mobile devices that combine into a single device the
+capabilities of a cellular phone, laptop computer, portable music player,
+camera, audio recorder, GPS receiver and other electronics. The capabilities of
+such devices are considerable but, as with any information system, also pose
+some security risks. Design features can seriously mitigate some risks, but
+others must be considered as part of a careful, holistic risk decision that
+also respects the capabilities enabled by such devices.
+<br />
+<br />
+Security guidance for mobile devices must cut across many previously discrete
+boundaries between technologies. For example, scrupulous deployment of an
+iPhone includes consideration not just the settings on the device itself, but
+those of the Wi-Fi networks to which it will connect, the VPNs through which it
+will tunnel, and the servers from which it will receive its configuration. This
+guide provides recommendations for the settings on an iOS device itself, as
+well as closely-related information for the network and configuration resources
+upon which deployment of iOS devices depends.
+</description>
+ 
+<Group id="how_to_use_this_guide"> 
+<title>How to Use This Guide</title>
+
+<Group id="read_sections_completely_and_in_order"> 
+<title>Read Sections Completely and in Order</title>
+<description> Each section tends to build on information discussed in prior
+sections. Each section should be read and understood completely. Instructions
+should never be blindly applied. Relevant discussion may occur immediately
+<i>after</i> instructions for an action, so be sure to read the whole section
+before beginning implementation. Careful consideration is essential for
+deploying iOS devices in an enterprise environment where multiple supporting
+devices and software components may need to be configured properly in order to
+function. </description>
+</Group>
+
+<Group id="understand_the_purpose_of_this_guidance"> 
+<title>Understand the Purpose of this Guidance</title>
+<description> The purpose of the guidance is to provide seurity-relevant
+configuration recommendations. It does not imply the suitability or
+unsuitability of any product for any particular situation, which entails a risk
+decision. </description>
+</Group>
+
+<Group id="limitations"> 
+<title>Limitations</title>
+<description> This guide is limited in its scope to security-related issues.
+This guide does not claim to offer comprehensive configuration guidance. For
+general configuration and implementation guidance refer to other sources such
+as Apple. </description>
+</Group>
+
+<Group id="test_in_non_production_environment"> 
+<title>Test in Non-Production Environment</title>
+<description> To the extent possible, guidance should be tested in a
+non-production environment before deployment. Ensure that any test environment
+simulates the configuration in which the devices will be deployed as closely as
+possible. </description>
+</Group>
+
+<Group id="formatting_conventions"> 
+<title>Formatting Conventions</title>
+<description> Commands intended for shell execution, file paths, and
+configuration file text, are featured in a <tt>monospace font</tt>. Menu
+options and GUI elements will be set in a <b>Bold, sans-serif font</b>.
+Settings appropriate to the device itself will be typeset in-line (i.e.
+<b>Settings &gt; Airplane Mode</b>). Actionable instructions are typically
+embedded in a box. </description>
+</Group>
+
+</Group>
+
+<Group id="general_principles"> 
+<title>General Principles</title>
+<description> The following general principles motivate much of the advice in
+this guide and should also influence any configuration decisions that are not
+explicitly addressed. </description>
+ 
+<Group id="encrypt_transmitted_data_whenever_possible"> 
+<title>Encrypt Transmitted Data Whenever Possible</title>
+<description> Data transmitted over a network, whether via wire or wirelessly,
+is susceptible to passive monitoring. Whenever practical mechanisms exist for
+encrypting this data-in-transit, they should be applied. Even if data is
+expected to be transmitted only over a local network, it should still be
+encrypted if possible. Encrypting authentication data, such as passwords, is
+particularly important. iOS’s support for SSL, WPA2, and IPsec protocols
+demonstrates its capabilities, when such features are activated, to adhere to
+this principle. </description>
+</Group>
+
+<Group id="encrypt_stored_data_whenever_possible"> 
+<title>Encrypt Stored Data Whenever Possible</title>
+<description> Data on mobile devices is particularly susceptible to compromise
+due to loss of physical control. Whenever practical solutions exist, they
+should be employed to protect this data. The Data Protection API on iOS devices
+is used by some applications, and demonstrates the devices’ capability to
+provide such protection. Drawing on applications which use this capability (and
+ensuring that internally-developed enterprise applications also use it), and
+setting an appropriately complex passcode, follow this principle.
+</description>
+</Group>
+
+<Group id="minimize_software_to_minimize_vulnerability"> 
+<title>Minimize Software to Minimize Vulnerability</title>
+<description> The easiest and simplest way to avoid the vulnerabilities in a
+particular piece of software is to avoid installing the software altogether.
+Hundreds of thousands of 3rd-party applications, or “apps,” written by
+thousands of different developers are available for iOS devices. These
+developers may have willfully or accidentally introduced vulnerabilities. For
+some environments, a particular app may fulfill a mission-critical need. In
+other cases an app might needlessly introduce additional risk to the system.
+Certain risk scenarios may call for minimizing apps. BYOD scenarios, on the
+other hand, generally imply the consideration and acceptance of such risks.
+</description>
+</Group>
+
+<Group id="leverage_security_features_never_disable_them"> 
+<title>Leverage Security Features, Never Disable Them</title>
+<description> Security features should be effectively used to improve a
+system’s resistance to attacks. These features can improve a system’s
+robustness against attack for only the cost of a little effort spent doing
+configuration. For example, iOS’s enforcement of code signing of apps provides
+assurance of integrity both during installation and at runtime. Disabling this
+feature through the use of “jailbreaking” tools provided by the hacker
+community significantly decreases an iOS device’s resistance to attack.
+</description>
+</Group>
+
+<Group id="grant_least_privilege"> 
+<title>Grant Least Privilege</title>
+<description> Grant the least privilege necessary for users to perform tasks.
+The more privileges (or capabilities) that a user has, the more opportunities
+he or she will have to enable the compromise of the system (and be a victim of
+such a compromise). For example, a configuration profile can disallow use of
+the Safari web browser and the camera. Disabling the camera prevents a
+malicious or careless user from photographing sensitive areas, while disabling
+Safari helps ensure the user is protected from any web-based attacks (albeit at
+significant loss of capability). Similarly, it is possible to restrict the
+installation of third party apps, and this may be the right balance between
+security and functionality for some environments. </description>
+</Group>
+
+</Group>
+
+<Group id="risks_mitigations_and_consequences"> 
+<title>Risks, Mitigations, and Consequences</title>
+<rationale> Understanding the risks – and available mitigations – involved in
+the deployment of smartphone platforms such as iOS provides a background for
+certain risk decisions. An attacker who has compromised any mobile device, and
+can remotely maintain control of that device, can use this access to gather a
+great deal of information about the user of the device and his or her
+environment. As described by NIST Special Publication 800-124, the
+consequences of such attacks include: 
+<ul> 
+<li>collecting audio (“hot-microphone” eavesdropping)</li>
+<li>using the cameras</li>
+<li>geolocation of the device (and presumably the user)</li>
+<li>collecting all data, including credentials stored on the device or accessed by it</li>
+<li>acting as the user on any network to which the device later connects.</li>
+</ul>
+<br />
+<br />
+The following table describes risks (with attack vector) along with applicable
+mitigations that are either built into the iOS platform or can be employed by
+administrators or users. The following table is provided as a summary for risk
+decision makers - and to motivate administrators to apply mitigations whenever
+practical. <i>It should not be used to draw comparisons between iOS and other
+platforms.</i>
+<br />
+<br />
+<hr />
+<body>
+<table border = "0">
+<tr>
+<th style="width:6cm"> Risk </th>
+<th style="width:9cm"> Mitigation </th>
+</tr>
+
+<tr>
+<td>Data Compromise due to Lost Device (still reachable over any network interface --- cellular or WiFi) </td>
+<td>Enabling a Passcode provides protection for Apps that leverage the Data Protection API, such as Apple's Mail app and 3rd party apps, as well as for credential storage in Keychains. Using the latest hardware currently prevents usage of public Jailbreak tools to access other data on a lost device.  Activating a remote wipe can be performed via ActiveSync, MDM, or iCloud.  Find My iPhone or other geolocation could permit the lost device to be located. </td>
+</tr>
+
+<tr>
+<td>Data Compromise due to Lost Device (not reachable over any network interface)</td>
+<td>Enabling a Passcode encrypts some data on the device.  Using the latest hardware currently prevents usage of public Jailbreak tools to access other data on a lost device.</td>
+</tr>
+
+<tr>
+<td>Data Compromise due to Casual Access Attempt</td>
+<td>Enabling a Passcode prevents a casual snoop from accessing the device. Provide user training to stress importance of physical control at all times.</td>
+</tr>
+
+<tr>
+<td>Data Compromise via Host Computer Backup/Sync </td>
+<td>Ensure proper hygiene and configuration of systems used for backup/sync.
+This may entail enterprise rollout of iTunes, to ensure protection of backup
+data. Train users not to connect their device to any untrusted
+computers/devices and provide additional AC outlet chargers. Encrypting iOS
+device backups in iTunes can mitigate data loss if the host computer is later
+compromised or lost. </td>
+</tr>
+
+<tr>
+<td>Exploitation of Device via Malicious app </td>
+<td>The Sandboxing feature prevents apps from carrying out certain malicious
+activities. The App Store's app vetting process provides accountability for
+developers, which discourages creation of malicious apps. Disabling the App
+Store, or permitting only installation of Enterprise-created Apps, further
+mitigates any threat from 3rd party app developers (at significant cost to
+capability).</td>
+</tr>
+
+<tr>
+<td>Exploitation of Device via Malicious WiFi Network </td>
+<td>Apply software updates. Provide user training on connecting only to trusted
+networks. Provide user training to encourage use of the VPN.  </td> 
+</tr>
+
+<tr>
+<td>Exploitation of Device via Bluetooth Communications</td>
+<td>Apply software
+updates.  Monitor compliance with MDM software. iOS only implements a small
+subset of the available BlueTooth profiles, which decreases its likelihood to
+contain vulnerabilities that would give rise to exploitation.</td>
+</tr>
+
+<tr>
+<td>Exploitation of Device via Cellular Network (e.g. SMS/MMS, baseband communications)</td>
+<td>Apply software updates.  Monitor compliance with MDM software.  Provide user training to ensure awareness during travel.</td>
+</tr>
+
+<tr>
+<td>Exploitation of Device via Malicious Email or Web Page</td>
+<td>Apply software updates, with particular vigilance after public release of jailbreak tools. Monitor compliance with MDM software.</td>
+</tr>
+</table>
+</body>
+</rationale>   
+</Group>
+</Group>

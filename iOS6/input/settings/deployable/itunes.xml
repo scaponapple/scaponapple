@@ -1,0 +1,70 @@
+<Group id="itunes"> 
+<title>iTunes</title>          
+<description> With iOS 5, use of iTunes is no longer a prerequisite for
+deployment of iOS devices. However, iTunes supports the ability to back up data
+from iOS devices. If a backup capability is necessary, iTunes deployment in the
+enterprise may be necessary. Alternatively, data could be backed up in cloud
+services or users could be expected to back up iOS devices on personally-owned
+systems (as in a BYOD scenario). However, legal concerns may arise regarding
+the presense of enterprise data on personally-owned systems. If enterprise
+deployment of iTunes is planned in order to support the ability to back up iOS
+devices, it can be configured to improve its security posture. A small number
+of items are also presented which are of negligible security concern, but may
+be of interest to administrators who have network bandwidth or deployment
+concerns. Apple provides guidance for iTunes deployment in support of iOS at:
+<!-- <a href="http://help.apple.com/iosdeployment-itunes/">http://help.apple.com/iosdeployment-itunes/</a>.
+<ul> <li>Settings for Mac OS X systems, and mechanisms for deploying them, are
+described at:
+<a href="http://support.apple.com/kb/HT2653">http://support.apple.com/kb/HT2653</a>
+and:
+<a href="http://support.apple.com/kb/HT3490">http://support.apple.com/kb/HT3490</a>.
+</li> <li>Settings for Windows systems are described at:
+<a href="http://support.apple.com/kb/HT2102">http://support.apple.com/kb/HT2102</a>.
+</li></ul> -->
+The following sections reference specific settings but do not provide
+implementation instructions, which vary by host platform and systems management
+mechanism. Most settings here also correspond to settings in the GUI, which
+become “grayed-out” if administratively disabled. </description>
+ 
+<Group id="disable_music_sharing"> 
+<title>Disable Music Sharing</title>          
+<description> To prevent the system from sharing music (and potentially other
+files) over the local network when iTunes is running, set the
+<tt>disableSharedMusic</tt> key to <tt>true</tt>. </description>
+ 
+</Group>
+
+<Group id="disable_ping"> 
+<title>Disable Ping</title>          
+<description> To prevent users from using Ping to potentially share sensitive
+information, set the <tt>disablePing</tt> key to <tt>true</tt>. </description>
+ 
+</Group>
+
+<Group id="disable_itunes_store_if_bandwidth_constrained_"> 
+<title>Disable iTunes Store (if Bandwidth Constrained)</title>          
+<description> If using the iTunes store is not appropriate due to limited
+bandwidth, set the <tt>disableMusicStore</tt> key to <tt>YES</tt>.
+</description>
+ 
+</Group>
+
+<Group id="disable_radio_if_bandwidth_constrained_"> 
+<title>Disable Radio (if Bandwidth Constrained)</title>          
+<description> If using streaming audio is not appropriate due to limited
+bandwidth, set the <tt>disableRadio</tt> key to <tt>YES</tt>. </description>
+ 
+</Group>
+
+<Group id="use_activation_only_mode_if_direct_connectivity_unavailable_">
+<title>Use Activation-Only Mode (if Direct Connectivity Unavailable)</title>          
+<description> iOS 5 permits device activation if network connectivity is
+available. However, if cellular or trusted WiFi network connectivity is not
+available to support device activation, iTunes can be put into a special mode
+to support rapid activation of multiple devices. This is described in: 
+<!-- <a href="http://support.apple.com/kb/HT4335">http://support.apple.com/kb/HT4335</a>. -->
+</description>
+    
+</Group>
+
+</Group>

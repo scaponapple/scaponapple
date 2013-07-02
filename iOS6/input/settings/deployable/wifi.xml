@@ -1,0 +1,29 @@
+<Group id="wi_fi"> 
+<title>Wi-Fi</title> 
+<description> iOS devices support 802.1X authentication for WPA2 Enterprise
+networks, and this is strongly recommended. A RADIUS server is required for
+802.1X authentication and typically involves the use of public key
+infrastructure. User education and training is also important, since the user
+has control over the device’s network settings. Section  contains information
+for users. DoD Instruction 8420.01, available at <b>http://www.dtic.mil/whs/directives/corres/pdf/842001p.pdf</b>, provides information for DoD entities regarding the configuration and deployment of WiFi networks. </description>
+
+<Rule id="disable_auto_join_for_wi_fi">
+<title>Disable Auto-Join for Wi-Fi</title>
+<description>Ensure that <b>Auto Join</b> is disabled for WiFi networks.
+</description>
+<rationale> Disabling auto join ensures that users are aware of when
+connections to WiFi networks are being made. </rationale>
+</Rule>
+
+<Rule id="use_wpa__wpa2_enterprise_for_wi_fi_encryption"> 
+<title>Use WPA / WPA2 Enterprise for Wi-Fi Encryption</title>           
+<description> Using <b>WPA / WPA2 Enterprise</b> with <b>TLS</b> for
+authentication is recommended. If TLS support is not available, <b>PEAP</b> is
+the next best choice for authentication. All other authentication protocols are
+not recommended. </description> 
+<rationale> Use <b>WPA / WPA2</b> if authentication support is not available.
+Proxy servers can be configured with WiFi as another layer for providing
+control of the connection. </rationale> 
+</Rule> 
+
+</Group>

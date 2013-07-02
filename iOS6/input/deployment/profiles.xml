@@ -1,0 +1,77 @@
+<Group id="deploying_configuration_profiles">
+<title>Deploying Configuration Profiles</title>
+<description> After a configuration profile is created — typically in an MDM console — it must be deployed to devices. This section discusses methods available for installing a configuration profile onto an iOS device, along with their security implications.
+<br />
+<br />
+<i>Customizing profiles to individual users implies embedding sensitive authentication information within transmitted profiles. This introduces a need for confidentiality during transmission of such files.</i></description>
+<br />
+<br />
+
+<Group id="deploy_over_the_air_with_encryption_and_authentication"> 
+<title>Deploy Over-the-Air with Encryption and Authentication</title>
+<description> If configuration profiles will be deployed over-the-air, ensure
+use of authentication and encryption.
+<br />
+<br />
+If the iPhone can authenticate a configuration profile during its installation, the <b>Settings &gt; General &gt; Profile</b> screen will display <b>Verified</b>.
+<br />
+<br />
+Over-the-air deployment that is authenticated and encrypted requires the
+support of enterprise infrastructure, such as directory services, an enterprise
+certificate trusted by iPhone, an SCEP server, and a web server. The server
+component of MDM products may provide some of this infrastructure.</description> 
+<rationale> Deploying configuration profiles to a device over-the-air consists
+of three major steps:
+<ul>
+<li><i>Authentication</i> of the user, typically leveraging
+existing directory services.
+</li>
+<li><i>Enrollment</i>, which involves the device transmitting device-specific information to the enterprise, and receiving a device certificate in return.
+</li>
+<li><i>Installation</i> of an encrypted, authenticated configuration profile onto the device.
+</li>
+</ul>
+Some MDM products include a server component that provides a web-based service for users to initiate this process, while others initiate the process by requiring users to download a particular MDM client app from the App Store which can facilitate the process.
+<br />
+<br />
+Transmission and data formats used by the MDM protocol are thoroughly standards-based. Detailed, authoritative description of the transactions between the device and the enterprise are available to Apple-registered developers at <b>https://developer.apple.com</b>.
+<br />
+<br />
+Additional description and security analysis is available in <b>https://github.com/intrepidusgroup/imdmtools/blob/master/Presentations/InsideAppleMDM_ShmooCon_2012.pdf</b>, linked from <b>intrepidusgroup.com/insight/2012/01/changes-to-apple-mdm-for-ios-5-x/</b>.
+</rationale> 
+</Group>
+
+<Group id="manual_deployment_with_iphone_configuration_utility"> 
+<title>Manual Deployment with iPhone Configuration Utility</title>      
+<description> Manually using the iPhone Configuration Utility (iPCU) is the
+safest means of deploying configuration profiles to devices, but does not scale
+well as it depends on administrators’ manual intervention. It also implies that
+an MDM server will not be used to remotely monitor device status. Nevertheless,
+transferring the profile to a device which is directly connected via USB cable
+avoids threats to confidentiality and integrity inherent in network transfers.
+</description> 
+<rationale> iPCU is available at <b>http://www.apple.com/support/iphone/enterprise/</b> (cryptographic checksum unavailable). Documentation is available at <b>http://help.apple.com/iosdeployment-ipcu/</b>.
+</rationale> 
+</Group>
+
+<Group id="avoid_unauthenticated_unencrypted_deployment_methods"> 
+<title>Avoid Unauthenticated, Unencrypted Deployment Methods</title>           
+<description> Avoid deployment of configuration profiles through methods that
+do not provide encryption and authentication. Email is especially discouraged.
+</description> 
+<rationale> It is possible to distribute configuration profiles to individual
+devices by emailing the profile to the user of the device or providing a link
+via SMS. Once the profile is accepted by the end user, the iOS device
+facilitates its installation. These methods are not recommended because they do
+not generally provide authentication of the sender of the configuration
+profile, or encryption of the profile itself during transmission. Users should
+generally be taught not to have confidence about the origin of email
+attachments or SMS messages.
+<br />
+<br />
+Emailing configuration profiles also presupposes that the user has configured an email account on the iPhone.
+<br />
+<br />
+Furthermore, once the configuration profile is in the receiver’s mailbox, it will remain there until it is manually deleted. If the mobile profile contains sensitive information, its prolonged existence in an unmanaged mailbox poses additional risk.</rationale>
+</Group>
+</Group>

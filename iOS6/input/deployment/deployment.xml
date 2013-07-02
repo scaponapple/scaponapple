@@ -1,0 +1,35 @@
+<Group id="deployment">
+<title>Configuration Deployment</title>
+<description>This chapter presents information about creating and deploying
+settings to iOS devices, which are generally contained in configuration
+profiles. Configuration profiles are simply XML files that conform to Apple's
+XML DTD and the plist format. Additional information is available at
+<b>http://www.apple.com/iphone/business/it-center/</b>.</description>
+
+<Group id="nature_of_configuration_profiles">
+<title>Nature of Configuration Profiles</title>
+<description>Understand that a user who controls an iOS device can opt to erase
+the device, which erases all data from the device including any configuration
+profiles. Understand also that users can typically append further restrictive
+settings, as well as services, onto the device, even in the presence of a
+configuration profile.  Configuration Profile settings enforcement on the iOS
+devices are cumulative indicating that they can further restrict existing
+settings when applied.
+<br />
+<br />
+iOS configuration profiles specify a collection of settings that can control
+some security-relevant behavior of an iOS device, but are not designed to
+provide an enterprise with total, arbitrary control over the user's device.
+<br />
+<br />
+A "carrot and stick" approach can be employed to avoid tempting users to remove
+a configuration profile (either directly or via device reset). Bind "carrots"
+(such as credentials needed for enterprise access) to "sticks" (such as a
+passcode policy) in a single configuration profile. Removing a configuration
+profile implies that credentials necessary for accessing enterprise services
+(such as VPN certificates or e-mail accounts) would also be lost, and thus deny
+the user such services. Also in this case, MDM software would become unable to
+query the device and the enterprise would be alerted as to the device's
+unmanaged status.</description>
+</Group> 
+</Group>

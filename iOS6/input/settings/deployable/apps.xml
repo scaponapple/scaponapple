@@ -1,0 +1,66 @@
+<Group id="restrictions"> 
+<title>Restrictions</title>
+<description> Some security-relevant restrictions can be placed upon the user
+of the iOS device. </description> 
+
+<Rule id="disable_installation_of_third_party_apps"> 
+<title>Disable Installation of Third-Party Apps</title>
+<description> Unless necessary, disable <b>Allow Installing Apps</b>. This is
+unusual for a general-purpose device. </description>
+<rationale> While iOS includes features such as sandboxing that are designed to
+prevent third-party apps from influencing the integrity of the operating
+system, they do have the ability to access data stored on the device such as
+Address Book, Location Data, or the Photo Library, and have the
+ability to transmit this information. </rationale> 
+</Rule> 
+
+<Rule id="disable_camera"> 
+<title>Disable Camera</title>       
+<description> Disable <b>Allow Use of Camera</b>, if concerns exist about
+capturing sensitive images. </description> 
+</Rule> 
+
+<Rule id="disable_screen_capture"> 
+<title>Disable Screen Capture</title>        
+<description> Disable <b>Allow Screen Capture</b>, if concerns exist about
+storing screen contents in the Photo Library. </description>
+<rationale> While unlikely, this feature could accidentally (or intentionally)
+be triggered (by simultaneously pressing the Home and Sleep buttons) and lead
+to storage of sensitive information outside the intended storage area.
+</rationale> 
+</Rule>
+
+<Group id="disable_or_configure_safari"> 
+<title>Disable or Configure Safari</title>        
+<description> If Safari can be disabled, uncheck <b>Allow Use of Safari</b>.
+This is very unusual for a general-purpose device. </description> 
+<rationale> If Safari is needed, security-relevant Safari settings can be
+configured as follows. </rationale> 
+
+<Rule id="disable_safari_autofill">
+<title>Disable Safari Autofill</title>        
+<description> Deselect <b>Enable Autofill</b>, to prevent storage of
+some potentially sensitive information by Safari. </description>
+<rationale> </rationale> 
+</Rule>
+ 
+<Rule id="enable_safari_fraud_warning"> 
+<title>Enable Safari Fraud Warning</title>          
+<description> Deselect <b>Force Fraud Warning</b>, to ensure users are
+warned when visiting known-fraudulent web sites. </description> 
+<rationale> </rationale> 
+</Rule> 
+
+<Rule id="enable_safari_pop_up_blocking"> 
+<title>Enable Safari Pop-up Blocking</title>          
+<description> Set <b>Block pop-ups</b> to Checked. </description>
+<rationale> </rationale> 
+</Rule> 
+
+<Rule id="accept_cookies_from_visited_sites_only"> 
+<title>Accept Cookies from Visited Sites Only</title>        
+<description> Set <b>Accept cookies</b> to <b>From visited sites</b>. </description>
+<rationale> </rationale> 
+</Rule>
+</Group>
+</Group>

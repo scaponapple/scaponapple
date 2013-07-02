@@ -1,0 +1,131 @@
+<Group id="restrictions"> 
+<title>Restrictions</title>
+<description> Some security-relevant restrictions can be placed upon the user
+of the iOS device. </description> 
+
+<Group id="device_functionality">
+<title>Device Functionality</title>
+
+<Rule id="disable_installation_of_third_party_apps"> 
+<title>Disable Installation of Third-Party Apps</title>
+<description> Unless necessary, disable <b>Allow installing apps</b>. This is
+unusual for a general-purpose device. </description>
+<rationale> While iOS includes features such as sandboxing that are designed to
+prevent third-party apps from influencing the integrity of the operating
+system, they do have the ability to access data stored on the device such as
+Address Book, Location Data, or the Photo Library, and have the
+ability to transmit this information. </rationale> 
+</Rule>
+
+<Rule id="disable_camera"> 
+<title>Disable Camera</title>       
+<description> Disable <b>Allow use of camera</b>, if concerns exist about
+capturing sensitive images. </description> 
+</Rule>
+
+<Rule id="disable_facetime">
+<title>Disable FaceTime</title> 
+</Rule>
+
+<Rule id="disable_screen_capture">
+<title>Disable Screen Capture</title>
+<description> Disable <b>Allow screen capture</b>, if concerns exist about
+storing screen contents in the Photo Library. </description>
+<rationale> While unlikely, this feature could accidentally (or intentionall\
+y) be triggered (by simultaneously pressing the Home and Sleep buttons) and lead to storage of sensitive information outside the intended storage area.
+</rationale>
+</Rule>
+</Group>
+
+<Group id="applications">
+<title>Applications</title>
+
+<Rule id="disable_itunes_store">
+<title>Disable use of iTunes Store</title> 
+<description> Deselect <b>Allow use of iTunes Store</b>, to prevent access to media content and applications.</description>
+<rationale>iTunes is Apple’s social network for media content and applications.</rationale>
+</Rule>
+
+<Group id="disable_or_configure_safari">
+<title>Disable or Configure Safari</title>
+<description> If Safari can be disabled, uncheck <b>Allow use of Safari</b>. This is very unusual for a general-purpose device. </description>
+<rationale> If Safari is needed, security-relevant Safari settings can be
+configured as follows. </rationale>
+
+<Rule id="disable_safari_autofill">
+<title>Disable Safari Autofill</title>
+<description> Deselect <b>Enable autofill</b>, to prevent storage of
+some potentially sensitive information by Safari. </description>
+</Rule>
+
+<Rule id="enable_safari_fraud_warning">
+<title>Enable Safari Fraud Warning</title>
+<description> Select <b>Force fraud warning</b>, to ensure users are
+warned when visiting known-fraudulent web sites. </description>
+</Rule>
+
+<Rule id="disable_javascript">
+<title>Disable JavaScript</title>
+<description> Deselect <b>Enable javascript</b>, to prevent JavaScript from running on the device. </description>
+<rationale> </rationale>
+</Rule>
+
+<Rule id="enable_safari_pop_up_blocking">
+<title>Enable Safari Pop-up Blocking</title>
+<description> Set <b>Block pop-ups</b> to <b>Checked</b>. </description>
+<rationale> </rationale>
+</Rule>
+
+<Rule id="accept_cookies_from_visited_sites_only">
+<title>Accept Cookies from Visited Sites Only</title>
+<description> Set <b>Accept cookies</b> to <b>From visited sites</b>.</description>
+</Rule>
+</Group>
+</Group>
+
+<Group id="icloud_configuration">
+<title>iCloud configuration</title>
+<description> Policies regarding the usage of “cloud” storage services continue to evolve, as do the assurances of safety by cloud providers. In general, if there is a need to store potentially sensitive information on the iOS device, then the following restrictions are recommended. </description>
+
+<Rule id="disable_icloud_backups">
+<title>Disable iCloud Backups</title>
+<description> Set <b>Allow backup</b> to <b>Unchecked</b>. </description>
+</Rule>
+
+<Rule id="disable_icloud_document_sync">
+<title>Disable iCloud Document Sync</title>
+<description> Set <b>Allow document sync</b> to <b>Unchecked</b>. </description>
+</Rule>
+
+<Rule id="disable_icloud_photo_stream">
+<title>Disable iCloud Photo Stream</title>
+<description> Set <b>Allow Photo Stream</b> to <b>Unchecked</b>. </description>
+</Rule>
+</Group>
+
+<Group id="security_and_privacy">
+<title>Security and Privacy</title>
+
+<Rule id="disable_sending_diagnostic_data_to_apple">
+<title>Disable Sending Diagnostic Data to Apple</title>
+<description> Disable <b>Allow diagnositic data to be sent to Apple</b> to
+Unchecked, if this presents concerns about inadvertent transmission of
+sensitive data. </description>
+</Rule>
+
+<Rule id="disable_user_acceptance_of_untrusted_tls_certificates">
+<title>Disable User Acceptance of Untrusted TLS Certificates</title>
+<description> Set <b>Allow user to accept untrusted TLS certificates</b> to
+Unchecked. </description>
+<rationale> Root CAs trusted by iOS are available at 
+<b>http://support.apple.com/kb/HT5012</b>.
+</rationale>
+</Rule>
+
+<Rule id="force_encrypted_backups">
+<title>Force Encrypted Backups</title>
+<description> Set <b>Force encrypted backups</b> to Checked, to protect device
+backups if the host later becomes compromised. </description>
+</Rule>
+</Group>
+</Group>

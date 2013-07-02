@@ -1,0 +1,39 @@
+<Group id="vpn"> 
+<title>VPN</title> 
+<description> VPN connectivity obviously depends on an enterprise’s available
+infrastructure, but VPNs which use IPsec are preferred. Several SSL VPNs are
+also supported by iOS. Actual VPNs are preferred over SSL VPNs as they are
+designed to protect systemwide network communications. Note, however, that at
+this time iOS VPNs cannot be configured to route all traffic through a VPN, and
+operate in split tunnel mode. This behavior occurs even if <b>Send All
+Traffic</b> is selected as part of any VPN’s configuration. </description>
+ 
+<Rule id="select_ipsec_cisco_or_l2tp_for_use_as_vpn"> 
+<title>Select IPsec (Cisco) or L2TP for Use as VPN</title>          
+<description> Select <b>IPsec (Cisco)</b> or <b>L2TP</b> (which also uses
+IPsec) for use as the Connection Type if possible. Use of hardware tokens is
+generally preferred over passwords for user authentication. </description> 
+<rationale> Apple provides documentation regarding iOS VPN capabilities in the
+following documents:
+<ul>
+<li><i>VPN Server Configuration for iOS Devices</i>, available at:
+<b>http://help.apple.com/iosdeployment-vpn/</b>
+</li>
+<li><i>iOS: Supported protocols for VPN</i>, available at:
+<b>http://support.apple.com/kb/HT1288</b>
+</li>
+</ul>
+The following documents provide recommendations for configuring VPNs
+in an enterprise infrastructure:
+<ul>
+<li><i>Guide to IPSec VPNs</i> (NIST SP 800-77), available at: 
+<b>http://csrc.nist.gov/publications/nistpubs/800-77/sp800-77.pdf</b>.
+</li>
+<li><i>Guide to SSL VPNs</i> (NIST SP 800-113), available at:
+<b>http://csrc.nist.gov/publications/nistpubs/800-113/SP800-113.pdf</b>.
+</li>
+</ul>
+</rationale>
+</Rule>
+</Group>
+

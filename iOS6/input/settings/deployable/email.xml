@@ -1,0 +1,30 @@
+<Group id="email">
+<title>Email</title>
+<description> Permitting users to access only enterprise-supported email
+accounts decreases the risk posed by email-based attacks. It ensures that
+enterprise-provided countermeasures against email attacks (such as content
+filters or anti-virus software) can scan email transmitted to the device.
+</description>
+
+<Rule id="prevent_moving_messages_between_mail_accounts">
+<title>Prevent Moving Messages between Mail Accounts</title>
+<description> Disable <b>Allow Move</b> for all email accounts. </description>
+</Rule>
+
+<Rule id="enable_s_mime_support_for_mail_if_needed">
+<title>Enable S/MIME Support for Mail if Needed</title>
+<description> Set <b>Enable S/MIME</b> to <b>Checked</b>, if encrypted and
+authenticated email support is needed. Ensure that transmission of
+configuration profiles to devices is encrypted and authenticated if S/MIME
+certificates containing private keys are embedded. The iOS device can also be
+configured to use an SCEP server to retrieve S/MIME certificates for use with
+Mail. </description>
+</Rule>
+
+<Rule id="enable_ssl_for_mail_connections">
+<title>Enable SSL for Mail Connections</title>
+<description> Ensure <b>Use SSL</b> is enabled for all incoming and outgoing
+email accounts. </description>
+</Rule>
+
+</Group>
