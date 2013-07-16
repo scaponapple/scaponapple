@@ -1,0 +1,30 @@
+<Profile id="byod" xmlns="http://checklists.nist.gov/xccdf/1.1" >
+<title>Profile for iOS Devices in BYOD Scenarios</title>
+<description>This profile contains rules appropriate for iOS devices in BYOD scenarios.</description>
+<select idref="disable_simple_value_for_passcode" selected="true"/>
+<select idref="require_alphanumeric_value_for_passcode" selected="true"/>
+<select idref="set_minimum_passcode_length" selected="true"/>
+<select idref="set_minimum_number_of_complex_characters" selected="true"/>
+<select idref="set_maximum_passcode_age" selected="true"/>
+<select idref="set_auto_lock_time" selected="true"/>
+<select idref="set_grace_period_for_device_lock" selected="true"/>
+<select idref="disable_screen_capture" selected="true"/>
+<select idref="disable_safari_autofill" selected="true"/>
+<select idref="enable_safari_fraud_warning" selected="true"/>
+<select idref="enable_safari_pop_up_blocking" selected="true"/>
+<select idref="accept_cookies_from_visited_sites_only" selected="true"/>
+<select idref="disable_user_acceptance_of_untrusted_tls_certificates" selected="true"/>
+<select idref="force_encrypted_backups" selected="true"/>
+<select idref="prevent_moving_messages_between_mail_accounts" selected="true"/>
+<select idref="enable_ssl_for_mail_connections" selected="true"/>
+<select idref="enable_s_mime_support_for_mail_if_needed" selected="true"/>
+<select idref="prevent_moving_messages_between_activesync_accounts" selected="true"/>
+<select idref="enable_ssl_for_activesync_communications" selected="true"/>
+<select idref="enable_s_mime_support_for_activesync_if_needed" selected="true"/>
+<select idref="enable_ssl_for_ldap_connections" selected="true"/>
+<select idref="enable_ssl_for_caldav_connections" selected="true"/>
+<select idref="enable_ssl_for_subscribed_calendar_connections" selected="true"/>
+<select idref="enable_ssl_for_carddav_connections" selected="true"/>
+<select idref="sign_messages" selected="true"/>
+<select idref="check_out_when_removed" selected="true"/>
+</Profile>

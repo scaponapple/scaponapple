@@ -1,0 +1,50 @@
+<Profile id="enterprise" xmlns="http://checklists.nist.gov/xccdf/1.1" >
+<title>Profile for Enterprise-Controlled iOS Devices</title>
+<description>This profile contains rules appropriate for enterprise-controlled iOS devices.</description>
+<select idref="disable_simple_value_for_passcode" selected="true"/>
+<select idref="require_alphanumeric_value_for_passcode" selected="true"/>
+<select idref="set_minimum_passcode_length" selected="true"/>
+<select idref="set_minimum_number_of_complex_characters" selected="true"/>
+<select idref="set_maximum_passcode_age" selected="true"/>
+<select idref="set_auto_lock_time" selected="true"/>
+<select idref="set_passcode_history" selected="true"/>
+<select idref="set_grace_period_for_device_lock" selected="true"/>
+<select idref="set_maximum_number_of_failed_attempts" selected="true"/>
+<select idref="disable_installation_of_third_party_apps" selected="true"/>
+<select idref="disable_camera" selected="true"/>
+<select idref="disable_screen_capture" selected="true"/>
+<select idref="disable_safari_autofill" selected="true"/>
+<select idref="enable_safari_fraud_warning" selected="true"/>
+<select idref="enable_safari_pop_up_blocking" selected="true"/>
+<select idref="accept_cookies_from_visited_sites_only" selected="true"/>
+<select idref="disable_icloud_backups" selected="true"/>
+<select idref="disable_icloud_document_sync" selected="true"/>
+<select idref="disable_icloud_photo_stream" selected="true"/>
+<select idref="disable_sending_diagnostic_data_to_apple" selected="true"/>
+<select idref="disable_user_acceptance_of_untrusted_tls_certificates" selected="true"/>
+<select idref="force_encrypted_backups" selected="true"/>
+<select idref="disable_auto_join_for_wi_fi" selected="true"/>
+<select idref="prevent_moving_messages_between_mail_accounts" selected="true"/>
+<select idref="enable_ssl_for_mail_connections" selected="true"/>
+<select idref="enable_s_mime_support_for_mail_if_needed" selected="true"/>
+<select idref="prevent_moving_messages_between_activesync_accounts" selected="true"/>
+<select idref="enable_ssl_for_activesync_communications" selected="true"/>
+<select idref="enable_s_mime_support_for_activesync_if_needed" selected="true"/>
+<select idref="enable_ssl_for_ldap_connections" selected="true"/>
+<select idref="enable_ssl_for_caldav_connections" selected="true"/>
+<select idref="enable_ssl_for_subscribed_calendar_connections" selected="true"/>
+<select idref="enable_ssl_for_carddav_connections" selected="true"/>
+<select idref="sign_messages" selected="true"/>
+<select idref="check_out_when_removed" selected="true"/>
+<select idref="allow_remote_query_of_general_settings" selected="true"/>
+<select idref="allow_remote_query_of_network_settings" selected="true"/>
+<select idref="allow_remote_query_of_security_settings" selected="true"/>
+<select idref="allow_remote_query_of_restrictions" selected="true"/>
+<select idref="allow_remote_query_of_configuration_profiles" selected="true"/>
+<select idref="allow_remote_query_of_provisioning_profiles" selected="true"/>
+<select idref="allow_remote_query_of_applications" selected="true"/>
+<select idref="allow_remote_addition_removal_of_configuration_profiles" selected="true"/>
+<select idref="allow_remote_addition_removal_of_provisioning_profiles" selected="true"/>
+<select idref="allow_or_disallow_remote_change_of_device_password" selected="true"/>
+<select idref="allow_remote_wipe" selected="true"/>
+</Profile>
