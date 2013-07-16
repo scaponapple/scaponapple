@@ -4,8 +4,6 @@
 <br />
 <br />
 <i>Customizing profiles to individual users implies embedding sensitive authentication information within transmitted profiles. This introduces a need for confidentiality during transmission of such files.</i></description>
-<br />
-<br />
 
 <Group id="deploy_over_the_air_with_encryption_and_authentication"> 
 <title>Deploy Over-the-Air with Encryption and Authentication</title>

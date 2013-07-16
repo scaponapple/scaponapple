@@ -111,8 +111,6 @@ Profiles</b> to Checked. </description>
 <description> In the <b>Security</b> section, set <b>Change device password</b>
 to Unchecked or Checked. This entails a risk decision, though Checked is likely
 to be appropriate for most scenarios. </description>
-<br />
-<br /> 
 <rationale> Most enterprises are likely well-served by permitting the MDM
 administrator to remotely send a change password command, in order to allow
 users with forgotten passcodes to maintain access to their devices. This would
