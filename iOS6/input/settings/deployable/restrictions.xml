@@ -23,10 +23,6 @@ ability to transmit this information. </rationale>
 capturing sensitive images. </description> 
 </Rule>
 
-<Rule id="disable_facetime">
-<title>Disable FaceTime</title> 
-</Rule>
-
 <Rule id="disable_screen_capture">
 <title>Disable Screen Capture</title>
 <description> Disable <b>Allow screen capture</b>, if concerns exist about
@@ -43,12 +39,12 @@ y) be triggered (by simultaneously pressing the Home and Sleep buttons) and lead
 <Rule id="disable_itunes_store">
 <title>Disable use of iTunes Store</title> 
 <description> Deselect <b>Allow use of iTunes Store</b>, to prevent access to media content and applications.</description>
-<rationale>iTunes is Apple’s social network for media content and applications.</rationale>
+<rationale>iTunes provides access to media content and applications.</rationale>
 </Rule>
 
 <Group id="disable_or_configure_safari">
 <title>Disable or Configure Safari</title>
-<description> If Safari can be disabled, uncheck <b>Allow use of Safari</b>. This is very unusual for a general-purpose device. </description>
+<description>If Safari can be disabled, uncheck <b>Allow use of Safari</b>. <i>This is very unusual for a general-purpose device.</i></description>
 <rationale> If Safari is needed, security-relevant Safari settings can be
 configured as follows. </rationale>
 
@@ -85,21 +81,24 @@ warned when visiting known-fraudulent web sites. </description>
 
 <Group id="icloud_configuration">
 <title>iCloud configuration</title>
-<description> Policies regarding the usage of “cloud” storage services continue to evolve, as do the assurances of safety by cloud providers. In general, if there is a need to store potentially sensitive information on the iOS device, then the following restrictions are recommended. </description>
+<description>Policies regarding the usage of cloud-based storage services
+continue to evolve, as do the assurances of safety by cloud providers. In
+general, if there is a need to store potentially sensitive information on the
+iOS device, then the following restrictions should be considered.</description>
 
 <Rule id="disable_icloud_backups">
 <title>Disable iCloud Backups</title>
-<description> Set <b>Allow backup</b> to <b>Unchecked</b>. </description>
+<description>Set <b>Allow backup</b> to <b>Unchecked</b>. </description>
 </Rule>
 
 <Rule id="disable_icloud_document_sync">
 <title>Disable iCloud Document Sync</title>
-<description> Set <b>Allow document sync</b> to <b>Unchecked</b>. </description>
+<description>Set <b>Allow document sync</b> to <b>Unchecked</b>.</description>
 </Rule>
 
 <Rule id="disable_icloud_photo_stream">
 <title>Disable iCloud Photo Stream</title>
-<description> Set <b>Allow Photo Stream</b> to <b>Unchecked</b>. </description>
+<description>Set <b>Allow Photo Stream</b> to <b>Unchecked</b>.</description>
 </Rule>
 </Group>
 
@@ -117,7 +116,7 @@ sensitive data. </description>
 <title>Disable User Acceptance of Untrusted TLS Certificates</title>
 <description> Set <b>Allow user to accept untrusted TLS certificates</b> to
 Unchecked. </description>
-<rationale> Root CAs trusted by iOS are available at 
+<rationale>Root CAs trusted by iOS are available at 
 <b>http://support.apple.com/kb/HT5012</b>.
 </rationale>
 </Rule>

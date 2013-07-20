@@ -52,16 +52,16 @@ password-guessing attack. </rationale>
 
 <Rule id="set_minimum_passcode_length"> 
 <title>Set Minimum Passcode Length</title> 
-<description> Set <b>Minimum passcode length</b> to <b>6</b>. </description>
+<description> Set <b>Minimum passcode length</b> to a value. </description>
 <rationale> Setting a minimum length should increase the search space in a
-password-guessing attack. A passcode length of 6 may be a reasonable balance
+password-guessing attack. A passcode length between 4 and 6 may be a reasonable balance
 between user experience and security for many deployment scenarios.
 </rationale> 
 </Rule> 
 
 <Rule id="set_minimum_number_of_complex_characters"> 
 <title>Set Minimum Number of Complex Characters</title> 
-<description> Set <b>Minimum number of complex characters</b> to <b>1</b>.
+<description> Set <b>Minimum number of complex characters</b> to a value.
 </description>
 <rationale> Requiring complex characters should increase the search space in a
 password-guessing attack. </rationale> 
@@ -69,26 +69,30 @@ password-guessing attack. </rationale>
 
 <Rule id="set_maximum_passcode_age"> 
 <title>Set Maximum Passcode Age</title>
-<description> Set <b>Maximum passcode age</b> to <b>120 days</b>, if there is a need
+<description> Set <b>Maximum passcode age</b> to a number of a days, if there is a need
 for such rotation. </description>
-<rationale> Changing passcodes regularly prevents an attacker who has
+<rationale> Changing passcodes prevents an attacker who has
 compromised the password from re-using it to regain access. This is an unlikely
-scenario, but is addressed by setting a password expiration. </rationale> 
+scenario, but is addressed by setting a password expiration. A value of 120 days is
+likely to be adequate for many deployment scenarios.</rationale> 
 </Rule> 
 
 <Rule id="set_auto_lock_time"> 
 <title>Set Auto-Lock Time</title> 
-<description> Set <b>Auto-Lock (in minutes)</b> to 5 minutes, or less.
+<description> Set <b>Auto-Lock (in minutes)</b> to a number of minutes.
+A value of 5 minutes may be a reasonable balance
+between user experience and security for many deployment scenarios.
 </description> 
 <rationale> This ensures that the device will require passcode entry if lost or
-left unattended. </rationale> 
+left unattended. 
+</rationale> 
 </Rule> 
 
 <Rule id="set_passcode_history"> 
 <title>Set Passcode History</title>
 <description> Set <b>Passcode History</b> to <b>3</b>. </description>
 <rationale> This ensures that users cannot trivially alternate between
-passcodes. </rationale> 
+passcodes.</rationale> 
 </Rule> 
 
 <Rule id="set_grace_period_for_device_lock"> 
@@ -107,9 +111,8 @@ usability and makes users more likely to tolerate passcode requirements.
 fewer. </description>
 <rationale> Setting the device to automatically erase after a number of failed
 attempts can protect against witless password guessing attacks conducted
-through the unlock screen. (However, it does not protect against those
-conducted by processes running on the device, see Section  for more
-discussion). </rationale> 
+through the unlock screen. 
+</rationale> 
 </Rule>
 
 </Group>
@@ -132,7 +135,7 @@ they are still available to an attacker who can get privileged code to execute
 on the device. This is because the encryption key for these files is available
 even without the passcode (unlike the files above).
 
-This remains possible using publicly-available tools which provide the ability
+This was possible for a time using publicly-available tools which provide the ability
 to execute privileged code on any device in physical possession. Examples of
 these tools include jailbreak software such as <i>evasi0n</i> from the evad3rs
 and <i>redsn0w</i> from The iPhone Dev Team. These applications leverage a
