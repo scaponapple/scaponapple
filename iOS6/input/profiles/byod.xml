@@ -1,6 +1,6 @@
 <Profile id="byod" xmlns="http://checklists.nist.gov/xccdf/1.1" >
 <title>Profile for iOS Devices in BYOD Scenarios</title>
-<description>This profile contains rules appropriate for iOS devices in BYOD scenarios.</description>
+<description>This profile is designed for iOS devices in BYOD scenarios.</description>
 <select idref="disable_simple_value_for_passcode" selected="true"/>
 <select idref="require_alphanumeric_value_for_passcode" selected="true"/>
 <select idref="set_minimum_passcode_length" selected="true"/>

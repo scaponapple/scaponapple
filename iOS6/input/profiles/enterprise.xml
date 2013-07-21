@@ -1,6 +1,6 @@
 <Profile id="enterprise" xmlns="http://checklists.nist.gov/xccdf/1.1" >
 <title>Profile for Enterprise-Controlled iOS Devices</title>
-<description>This profile contains rules appropriate for enterprise-controlled iOS devices.</description>
+<description>This profile is designed for enterprise-controlled iOS devices.</description>
 <select idref="disable_simple_value_for_passcode" selected="true"/>
 <select idref="require_alphanumeric_value_for_passcode" selected="true"/>
 <select idref="set_minimum_passcode_length" selected="true"/>
@@ -11,7 +11,6 @@
 <select idref="set_grace_period_for_device_lock" selected="true"/>
 <select idref="set_maximum_number_of_failed_attempts" selected="true"/>
 <select idref="disable_installation_of_third_party_apps" selected="true"/>
-<select idref="disable_camera" selected="true"/>
 <select idref="disable_screen_capture" selected="true"/>
 <select idref="disable_safari_autofill" selected="true"/>
 <select idref="enable_safari_fraud_warning" selected="true"/>
