@@ -7,8 +7,10 @@ profiles remotely, whether an MDM server can remotely wipe a device, and
 whether an MDM server can reset a device’s password. These settings allow for
 more fine-grained adjustment between enterprise control versus user control of
 a device. Some MDM products may not permit administrators to disable some of
-their capability for querying devices. </description> 
-
+their capability for querying devices.  Information about enterprise deployment
+using MDM is available from Apple at
+<b>http://www.apple.com/ipad/business/it-center/deployment-mdm.html</b>.
+</description> 
 <Group id="sign_messages"> 
 <title>Sign Messages</title>          
 <description> Set <b>Sign messages</b> to Checked. </description> 
@@ -31,7 +33,8 @@ query from an iOS device. For an enterprise-owned, enterprise-controlled
 device, permitting the enterprise administrator to query as much information as
 possible is appropriate. Some MDM products may simply include these access
 rights by default and offer options to retrieve less information from the
-device.
+device.  
+
 <br />
 <br />
 At the same time, querying all of these types of information may not be
@@ -43,67 +46,109 @@ their users is beyond the scope of this document. </description>
 <title>Allow Remote Query of General Settings</title>          
 <description> In the <b>Query device for</b> section, set <b>General
 settings</b> to Checked. </description>
+<rationale>ALlowing an enterprise to be able to query general device settings
+such as profile names and identifiers permits the enterprise to have insight
+into the ownership of profiles installed onto the device.
+</rationale>
 </Rule>
 
 <Rule id="allow_remote_query_of_security_settings">
 <title>Allow Remote Query of Security Settings</title>
 <description> In the <b>Query device for</b> section, set <b>Security
 settings</b> to Checked. </description>
+<rationale>Allowing an enterprise to be able to query security settings
+permits the enterprise to have insight into the device's security posture.
+</rationale>
 </Rule>
 
 <Rule id="allow_remote_query_of_network_settings"> 
 <title>Allow Remote Query of Network Settings</title>          
 <description> In the <b>Query device for</b> section, set <b>Network
 settings</b> to Checked. </description>
+<rationale>Allowing an enterprise to be able to query network settings
+permits the enterprise to have insight into the device's network
+connection capabilities.
+</rationale>
 </Rule>
 
 <Rule id="allow_remote_query_of_restrictions"> 
 <title>Allow Remote Query of Restrictions</title>          
 <description> In the <b>Query device for</b> section, set <b>Restriction</b> to
 Checked. </description>
+<rationale>Allowing an enterprise to be able to query restrictions
+enforced on the device permits the enterprise to have insight into
+whether certain device behavior is configured, such as encrypted
+backups.
+</rationale>
 </Rule>
 
 <Rule id="allow_remote_query_of_configuration_profiles"> 
 <title>Allow Remote Query of Configuration Profiles</title>          
 <description> In the <b>Query device for</b> section, set <b>Configuration
 Profiles</b> to Checked. </description>
+<rationale>Allowing an enterprise to be able to query installed configuration
+profiles permits the enterprise to understand the overall composed configuration
+applied to the device.
+</rationale>
 </Rule>
 
 <Rule id="allow_remote_query_of_applications">
 <title>Allow Remote Query of Applications</title>
 <description> In the <b>Query device for</b> section, set <b>Applications</b>
 to Checked. </description>
+<rationale>Allowing an enterprise to query installed applications 
+provides insight into the device's software inventory, which is valuable
+in incident response.
+</rationale> 
 </Rule>
 
 <Rule id="allow_remote_query_of_provisioning_profiles"> 
 <title>Allow Remote Query of Provisioning Profiles</title>          
 <description> In the <b>Query device for</b> section, set <b>Provisioning
 Profiles</b> to Checked. </description>
+<rationale>Allowing an enterprise to be able to query installed provisioning
+profiles permits the enterprise to be aware of expiry dates
+for these.
+</rationale>
 </Rule>
 
 <Rule id="allow_remote_addition_removal_of_configuration_profiles">
 <title>Allow Remote Addition/Removal of Configuration Profiles</title>          
 <description> In the <b>Add / Remove</b> section, set <b>Configuration
 Profiles</b> to Checked. </description>
+<rationale> Allowing an enterprise to add or remove configuration profiles
+permits an enterprise MDM server to be able to update these profiles remotely.
+</rationale> 
 </Rule>
 
 <Rule id="allow_remote_addition_removal_of_provisioning_profiles">
 <title>Allow Remote Addition/Removal of Provisioning Profiles</title>          
 <description> In the <b>Add / Remove</b> section, set <b>Provisioning
 Profiles</b> to Checked. </description> 
-<rationale> This allows an MDM to be able to update profiles remotely.
+<rationale> Allowing an enterprise to add or remove provisioning profiles
+permits an enterprise MDM server to be able to update these profiles remotely.
 </rationale> 
 </Rule>
 
 <Rule id="allow_remote_addition_removal_of_apps">
 <title>Allow Remote Addition/Removal of Apps</title>
-<description> In the <b>Add / Remove</b> section, set <b>Apps
-Profiles</b> to Checked. </description>
+<description> In the <b>Add / Remove</b> section, set <b>Apps</b>
+to Checked.  This applies to managed apps, which are purchased by
+the enterprise via the Volume Purchasing Program.
+</description>
+<rationale> Allowing an enterprise to add or remove managed apps provides the
+enterprise with the ability to easily deploy enterprise applications to
+devices. The MDM server can also specify that the data in managed apps be
+removed when the MDM profile is removed, to protect enterprise data.</rationale> 
 </Rule>
 
 <Rule id="allow_remote_addition_removal_of_settings">
 <title>Allow Remote Addition/Removal of Settings</title>
-<description> In the <b>Add / Remove</b> section, set <b>Settings</b> to Checked. </description>
+<description> In the <b>Add / Remove</b> section, set <b>Settings</b> to Checked.
+</description>
+<rationale>Allowing an enterprise to add or remove settings
+provides agility with regard to individual settings management.
+</rationale> 
 </Rule>
 
 <Rule id="allow_or_disallow_remote_change_of_device_password"> 
@@ -130,8 +175,8 @@ as compromise of TLS communications (or the MDM server itself).
 <Rule id="allow_remote_wipe"> 
 <title>Allow Remote Wipe</title>          
 <description> Set <b>Remote wipe</b> to Checked. </description> 
-<rationale> This permits an MDM server administrator to remotely wipe an iOS
-device in the event that it is lost.
+<rationale>Permitting remote wipe allows the enterprise to remotely wipe an iOS
+device in the event that it is lost or stolen.
 <br />
 <br />
 Note also that a layered configuration profile approach which involves specific

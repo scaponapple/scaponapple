@@ -9,22 +9,37 @@ filters or anti-virus software) can scan email transmitted to the device.
 <Rule id="prevent_moving_messages_between_mail_accounts">
 <title>Prevent Moving Messages between Mail Accounts</title>
 <description> Disable <b>Allow Move</b> for all email accounts. </description>
+<rationale>Moving mail directly between accounts could permit the movement of
+enterprise information to personal email accounts.  While this is possible
+simply through email forwarding, in that case the enterprise email server (when
+used as the MTA) has at least the possibility of logging such transfers.
+</rationale>
 </Rule>
 
 <Rule id="enable_s_mime_support_for_mail_if_needed">
 <title>Enable S/MIME Support for Mail if Needed</title>
-<description> Set <b>Enable S/MIME</b> to <b>Checked</b>, if encrypted and
-authenticated email support is needed. Ensure that transmission of
+<description> Set <b>Enable S/MIME</b> to <b>Checked</b>, to provide encrypted and
+authenticated email support. Ensure that transmission of
 configuration profiles to devices is encrypted and authenticated if S/MIME
 certificates containing private keys are embedded. The iOS device can also be
 configured to use an SCEP server to retrieve S/MIME certificates for use with
-Mail. </description>
+Mail.</description>
+<rationale>S/MIME provides the capability for users to send and receive S/MIME
+email messages from wireless email devices. S/MIME and digital signatures
+provide assurance the message is authentic. Without S/MIME users will not be
+able to read encrypted email and will not be able to encrypt email with
+sensitive information.
+</rationale> 
 </Rule>
 
 <Rule id="enable_ssl_for_mail_connections">
 <title>Enable SSL for Mail Connections</title>
 <description> Ensure <b>Use SSL</b> is enabled for all incoming and outgoing
-email accounts. </description>
+email accounts.</description>
+<rationale>SSL provides authentication of the mail server to
+which the mail client connects, and also encrypts traffic between the mail
+server and the email client.
+</rationale>
 </Rule>
 
 </Group>

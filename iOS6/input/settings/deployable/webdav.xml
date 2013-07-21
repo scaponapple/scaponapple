@@ -8,6 +8,10 @@
 <title>Enable SSL for CalDav Connections</title>
 <description> Ensure <b>Use SSL</b> is enabled if using a CalDav service.
 </description>
+<rationale>SSL provides authentication of the CalDav server to
+which the iOS device connects, and also encrypts traffic between the CalDav
+server and the iOS device.
+</rationale>
 </Rule>
 </Group>
 
@@ -17,7 +21,10 @@
 <Rule id="enable_ssl_for_subscribed_calendar_connections">
 <title>Enable SSL for Subscribed Calendar Connections</title>
 <description> Ensure <b>Use SSL</b> is enabled if connecting to calendar
-subscriptions. </description>
+subscriptions.</description>
+<rationale>SSL provides authentication of servers that provide calender
+subscriptions, and also encrypts traffic between the calendar subscription
+server and the iOS device.</rationale>
 </Rule>
 </Group>
 
@@ -27,6 +34,10 @@ subscriptions. </description>
 <Rule id="enable_ssl_for_carddav_connections">
 <title>Enable SSL for CardDav Connections</title>
 <description> Enable <b>Use SSL</b> if using a CardDav service. </description>
+<rationale>SSL provides authentication of the CardDav server to
+which the iOS device connects, and also encrypts traffic between the CardDav
+server and the email client.
+</rationale>
 </Rule>
 </Group>
 

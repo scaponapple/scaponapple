@@ -1,6 +1,14 @@
 <Group id="mobile_device_management_software"> 
 <title>Mobile Device Management Software</title>  
-<description> Third-party MDM products, as well as Apple’s own OS X Server, can automate the deployment of configuration profiles and carry out the operational management of devices. Configuration profiles can also be provided via secure web-based services. Configuration profiles can also be created using Apple’s iPhone Configuration Utility (“iPCU”), but it does not provide mechanisms for automated deployment or reporting. iPCU provides a convenient means of surveying the settings which can be deployed to devices, although there is no guarantee that a particular MDM product will support all settings. </description>
+<description> Third-party MDM products, as well as Apple’s own OS X Server, can
+automate the deployment of configuration profiles and carry out the operational
+management of devices. Configuration profiles can also be provided via secure
+web-based services. Configuration profiles can also be created using Apple’s
+iPhone Configuration Utility ("iPCU"), but it does not provide mechanisms for
+automated deployment or reporting. iPCU provides a convenient means of
+surveying the settings which can be deployed to devices, although there is no
+guarantee that a particular MDM product will support all settings.
+</description>
  
 <Group id="select_mobile_device_management_mdm_software"> 
 <title>Select Mobile Device Management (MDM) Software</title>          
@@ -17,7 +25,7 @@ For more information, see <b>http://www.apple.com/iphone/business/it-center/depl
 <description> Mobile device management software may also include features that
 are not part of the supported Apple MDM API: 
 <ul>
-<li>“Jailbreak detection” can
+<li>"Jailbreak detection” can
 determine if a user has chosen to jailbreak his or her device, which is a
 useful feature for enterprises who monitor compliance. However, it does not
 provide high assurance that a device has not been maliciously jailbroken by a
@@ -29,10 +37,12 @@ operates at the most privileged levels, there are limits to the extent to which
 any add-on software can "ask a liar if he is lying."
 <br />
 <br />
-The system’s cryptographically-verified boot process, runtime enforcement of code signatures, app sandboxing mechanism, controlled software distribution model
-via “app stores”, and rapid software update capability very strongly address
-the problem of jailbreak-based attacks by themselves. Using add-on software to
-query for signs of jailbreak may provide an additional layer of defense. </li>
+The system’s cryptographically-verified boot process, runtime enforcement of
+code signatures, app sandboxing mechanism, controlled software distribution
+model via "app stores", and rapid software update capability very strongly
+address the problem of jailbreak-based attacks by themselves. Using add-on
+software to query for signs of jailbreak may provide an additional layer of
+defense. </li>
 <br />
 <br />
 <li>"Secure containers" can provide data-at-rest protection and data-in-transit

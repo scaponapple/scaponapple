@@ -38,9 +38,9 @@ deployed via a configuration profile. </description>
 <Rule id="disable_simple_value_for_passcode"> 
 <title>Disable Simple Value for Passcode</title>
 <description> Set <b>Allow simple value</b> to <b>Unchecked</b>. </description>
-<rationale> This will enable display of the entire keyboard for passcode entry,
-instead of only a numeric keypad (and setting other requirements will also
-enable this). </rationale> 
+<rationale>Disabling the use of simple values for a passcode enables display
+of the entire keyboard for passcode entry, instead of only a numeric keypad.
+</rationale> 
 </Rule> 
 
 <Rule id="require_alphanumeric_value_for_passcode"> 
@@ -83,16 +83,16 @@ likely to be adequate for many deployment scenarios.</rationale>
 A value of 5 minutes may be a reasonable balance
 between user experience and security for many deployment scenarios.
 </description> 
-<rationale> This ensures that the device will require passcode entry if lost or
-left unattended. 
+<rationale>Automatically locking the device after a period of inactivity
+ensures that the device will require passcode entry if lost or left unattended. 
 </rationale> 
 </Rule> 
 
 <Rule id="set_passcode_history"> 
 <title>Set Passcode History</title>
 <description> Set <b>Passcode History</b> to <b>3</b>. </description>
-<rationale> This ensures that users cannot trivially alternate between
-passcodes.</rationale> 
+<rationale>Setting a passcode history ensures that users cannot trivially
+alternate between passcodes.</rationale> 
 </Rule> 
 
 <Rule id="set_grace_period_for_device_lock"> 

@@ -27,9 +27,9 @@ capturing sensitive images. </description>
 <title>Disable Screen Capture</title>
 <description> Disable <b>Allow screen capture</b>, if concerns exist about
 storing screen contents in the Photo Library. </description>
-<rationale> While unlikely, this feature could accidentally (or intentionall\
-y) be triggered (by simultaneously pressing the Home and Sleep buttons) and lead to storage of sensitive information outside the intended storage area.
-</rationale>
+<rationale> While unlikely, this feature could accidentally be triggered (by
+simultaneously pressing the Home and Sleep buttons) and lead to storage of
+sensitive information outside the intended storage area.</rationale>
 </Rule>
 </Group>
 
@@ -46,35 +46,53 @@ y) be triggered (by simultaneously pressing the Home and Sleep buttons) and lead
 <title>Disable or Configure Safari</title>
 <description>If Safari can be disabled, uncheck <b>Allow use of Safari</b>. <i>This is very unusual for a general-purpose device.</i></description>
 <rationale> If Safari is needed, security-relevant Safari settings can be
-configured as follows. </rationale>
+configured as follows. Additional information about Safari security settings on
+iOS is available at <b>http://support.apple.com/kb/HT1677</b>.
+</rationale>
 
 <Rule id="disable_safari_autofill">
 <title>Disable Safari Autofill</title>
 <description> Deselect <b>Enable autofill</b>, to prevent storage of
 some potentially sensitive information by Safari. </description>
+<rationale>Storage of autofill information permits an attacker to harvest
+previously-used credentials in the event that the device becomes
+compromised.
+</rationale>
 </Rule>
 
 <Rule id="enable_safari_fraud_warning">
 <title>Enable Safari Fraud Warning</title>
 <description> Select <b>Force fraud warning</b>, to ensure users are
 warned when visiting known-fraudulent web sites. </description>
+<rationale>Fraudulent web sites may try to collect sensitive information
+from users.
+</rationale>
 </Rule>
 
 <Rule id="disable_javascript">
 <title>Disable JavaScript</title>
-<description> Deselect <b>Enable javascript</b>, to prevent JavaScript from running on the device. </description>
-<rationale> </rationale>
+<description> Deselect <b>Enable javascript</b>, to prevent JavaScript from
+running in Safari. <i>This makes the Internet virtually useless and is only
+appropriate for unusual, high-security scenarios.</i>
+</description>
+<rationale>JavaScript permits client-side scripts to run within the browser.
+Nearly all modern web sites use JavaScript, though its functionality
+constitutes an attack surface.</rationale>
 </Rule>
 
 <Rule id="enable_safari_pop_up_blocking">
 <title>Enable Safari Pop-up Blocking</title>
 <description> Set <b>Block pop-ups</b> to <b>Checked</b>. </description>
-<rationale> </rationale>
+<rationale>Blocking pop-ups prevents malicious or obnoxious web sites from
+interfering with the user in an unexpected and possibly security-relevant
+manner.</rationale>
 </Rule>
 
 <Rule id="accept_cookies_from_visited_sites_only">
 <title>Accept Cookies from Visited Sites Only</title>
 <description> Set <b>Accept cookies</b> to <b>From visited sites</b>.</description>
+<rationale>Accepting cookies from only visited sites decreases the extent
+to which third-party web sites can track user activity.</rationale>
 </Rule>
 </Group>
 </Group>
@@ -89,16 +107,24 @@ iOS device, then the following restrictions should be considered.</description>
 <Rule id="disable_icloud_backups">
 <title>Disable iCloud Backups</title>
 <description>Set <b>Allow backup</b> to <b>Unchecked</b>. </description>
+<rationale>Backing up iOS devices to iCloud may involve placing enterprise data
+on systems that are not controlled by the enterprise.</rationale>
 </Rule>
 
 <Rule id="disable_icloud_document_sync">
 <title>Disable iCloud Document Sync</title>
 <description>Set <b>Allow document sync</b> to <b>Unchecked</b>.</description>
+<rationale>Synchronizing documents to iCloud involves placing data on systems
+that are not controlled by the enterprise.
+</rationale>
 </Rule>
 
 <Rule id="disable_icloud_photo_stream">
 <title>Disable iCloud Photo Stream</title>
 <description>Set <b>Allow Photo Stream</b> to <b>Unchecked</b>.</description>
+<rationale>If photographs may constitute sensitive enterprise data, then
+transferring photos to iCloud could involve placing such data on systems that
+are not controlled by the enterprise.</rationale>
 </Rule>
 </Group>
 
@@ -109,22 +135,31 @@ iOS device, then the following restrictions should be considered.</description>
 <title>Disable Sending Diagnostic Data to Apple</title>
 <description> Disable <b>Allow diagnositic data to be sent to Apple</b> to
 Unchecked, if this presents concerns about inadvertent transmission of
-sensitive data. </description>
+sensitive data.</description>
+<rationale>Diagnostic data could be considered sensitive in some environments
+and not transmitted outside enterprise control.
+</rationale>
 </Rule>
 
 <Rule id="disable_user_acceptance_of_untrusted_tls_certificates">
 <title>Disable User Acceptance of Untrusted TLS Certificates</title>
 <description> Set <b>Allow user to accept untrusted TLS certificates</b> to
-Unchecked. </description>
-<rationale>Root CAs trusted by iOS are available at 
+Unchecked.  Root CAs trusted by iOS are available at
 <b>http://support.apple.com/kb/HT5012</b>.
+</description>
+<rationale>Presentation of an untrusted TLS certificate to client software
+could indicate a man-in-the-middle attack.  
 </rationale>
 </Rule>
 
 <Rule id="force_encrypted_backups">
 <title>Force Encrypted Backups</title>
-<description> Set <b>Force encrypted backups</b> to Checked, to protect device
-backups if the host later becomes compromised. </description>
+<description> Set <b>Force encrypted backups</b> to Checked, in order
+to ensure that the contents of iOS devices are encrypted when backed up
+onto host computers.
+</description>
+<rationale>Encrypting device backups protects hosts backups even if the host
+later becomes compromised.  </rationale>
 </Rule>
 </Group>
 </Group>
