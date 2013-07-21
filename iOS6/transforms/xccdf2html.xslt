@@ -40,7 +40,6 @@
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:cdf="http://checklists.nist.gov/xccdf/1.1" >
 
-
 <!-- Set output style: XHTML using xml output method. -->
 <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 
@@ -90,11 +89,13 @@
   <meta name="identifier" content="{@id}"/>
 
   <style type="text/css">
-      *	   { background-color: #FFFFFF; }
+      /*	   { background-color: #FFFFFF; } */
       body { margin-left: 8%; margin-right: 8%; foreground: black; }
-      h1   { text-align: center; margin-left: -6%; font-size: 200%;  margin-bottom: 2em;
-             font-family: verdana, arial, helvetica, sans-serif; }
-      h2   { margin-left: -2%; font-size: 150%; 
+      h1   { text-align: center; font-size: 200%;  margin-top: 2em; margin-bottom: 2em;
+             font-family: verdana, arial, helvetica, sans-serif; 
+             border-bottom: solid 2px gray; margin-bottom: 1.0em; 
+             border-top: solid 2px gray; margin-bottom: 1.0em; }
+      h2   { margin-left: -2%; font-size: 125%; 
              border-bottom: solid 1px gray; margin-bottom: 1.0em; 
              margin-top: 2em; margin-bottom: 0.75em;
              font-family: verdana, arial, helvetica, sans-serif; }
@@ -112,8 +113,8 @@
 
       *.simpleText   { margin-left: 10%; }
       *.propertyText { margin-left: 10%; margin-top: 0.2em; margin-bottom: 0.2em }
-      *.toc	     { background: #CCCCCC; }
-      *.toc2	     { background: #CCCCCC; }
+      *.toc	     { background: #FFFFFF; }
+      *.toc2	     { background: #FFFFFF; }
       div	     { margin-top: 1em; margin-bottom: 1em; }
       div.rule	     { margin-left: 10%; border: 1px solid; padding: 10px 10px 10px 10px; margin-top: 1em; margin-bottom: 1em; }
       div.legal      { margin-left: 10%; }
@@ -126,14 +127,15 @@
       p.toc          { margin-left: 2em; margin-bottom: 0.2em; margin-top: 0.5em; }
       p.toc2         { margin-left: 5em; margin-bottom: 0.1em; margin-top: 0.1em; }
       ul.smallList   { margin-bottom: 0.1em; margin-top: 0.1em; font-size: 85%; }
-      table.propertyTable { margin-left: 14%; width: 90%; margin-top: 0.5em; margin-bottom: 0.25em; }
-      th.propertyTableHead { font-size: 80%; background-color: #CCCCCC; }
-      table          { border-collapse:collapse; border: 1px solid black; }
-      table,th,td   { text-align: left; padding: 20px}
-      th            { border-bottom: 3px solid black; border-top: 3px solid black}
+      /* table.propertyTable { margin-left: 14%; width: 90%; margin-top: 0.5em; margin-bottom: 0.25em; }
+      th.propertyTableHead { font-size: 80%; background-color: #CCCCCC; } */
+      table          { border-collapse:collapse; /*border: 1px solid black;*/ }
+      table,th,td   { text-align: left; padding: 8px 8px; }
+      table tr:nth-child(2n+2) { background-color: #F4F4F4; }
+      th            { border-bottom: 3px solid gray; }
   </style>
 </head>
-<body bgcolor="#FFFFCC">
+<body>
   <xsl:comment>Benchmark id = <xsl:value-of select="./@id"/></xsl:comment>
   <xsl:comment>
      This XHTML output file
@@ -144,6 +146,7 @@
 
   <!-- BEGINNING OF BODY -->
   <h1><xsl:value-of select="./cdf:title"/></h1>
+
   <xsl:if test="./cdf:status | ./cdf:version | ./cdf:platform">
     <div class="simpleText">
       <p>Status: <b><xsl:value-of select="./cdf:status/text()"/></b>
@@ -187,8 +190,9 @@
   </xsl:if>
 
   <!-- Build the Table of Contents -->
+  <br/>
+  <h3 class="toc">Contents</h3>
   <div class="toc">
-     <h2 class="toc">Contents</h2>
      <!-- rules and groups TOC -->
      <xsl:if test="./cdf:Group[not(number(@hidden)+number(@abstract))] | ./cdf:Rule[not(number(@hidden)+number(@abstract))]">
 	<xsl:apply-templates mode="toc"
@@ -546,7 +550,8 @@
   <!-- <xsl:message>In body template for Rule, id=<xsl:value-of select="@id"/>.</xsl:message> -->
   <xsl:comment>Rule id = <xsl:value-of select="./@id"/></xsl:comment>
   <div xmlns="http://www.w3.org/1999/xhtml">
-  <h3><a name="{@id}"></a>
+  <h3>
+     <a name="{@id}"></a>
      <xsl:value-of select="$section-prefix"/>
      <xsl:value-of select="$section-num"/>
      <i><xsl:value-of select="concat(' ', ./cdf:title/text())"/></i>
@@ -614,8 +619,7 @@
 </xsl:template>
 
 <!-- templates in mode "text", for processing text with 
-     markup and substitutions.
- -->
+     markup and substitutions.  -->
 
   <!-- getting rid of XHTML namespace -->
     <xsl:template match="xhtml:*">
@@ -623,7 +627,6 @@
             <xsl:apply-templates select="node()|@*"/>
         </xsl:element>
     </xsl:template>
-
 
   <xsl:template match="@*|node()">
     <xsl:copy>
