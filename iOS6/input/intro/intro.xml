@@ -1,40 +1,31 @@
 <Group id="introduction"> 
 <title>Introduction</title>  
 <description> 
-<b>Purpose</b> 
-<br /><br />
-This document provides security-related usage and configuration recommendations
-for Apple iOS devices such as the iPhone, iPad, and iPod touch. This document
-does not constitute government policy, nor is it an endorsement of any particular platform; its purpose
-is solely to provide security guidance. This guide may outline
-procedures required to implement or secure certain features, but it is also not
-a general-purpose configuration manual.
+<b>Purpose.</b> This document provides security-related usage and configuration
+recommendations for Apple iOS devices such as the iPhone, iPad, and iPod touch.
+This document does not constitute government policy, nor is it an endorsement
+of any particular platform; its purpose is solely to provide security guidance.
+This guide may outline procedures required to implement or secure certain
+features, but it is also not a general-purpose configuration manual.
 <br />
 <br />
-<b>Audience</b> 
+<b>Audience.</b>  This guide is primarily intended for network/system
+administrators deploying Apple’s iOS devices or supporting their integration
+into enterprise networks.  Some information relevant to IT decision makers and
+users of the devices is also included. Readers are assumed to possess basic
+network and system administration skills for Mac OS X or Microsoft Windows
+systems, and they should have some familiarity with Apple’s documentation and
+user interface conventions.
 <br />
 <br />
-This guide is primarily intended for network/system administrators deploying
-Apple’s iOS devices or supporting their integration into enterprise networks.
-Some information relevant to IT decision makers and users of the devices is
-also included. Readers are assumed to possess basic network and system
-administration skills for Mac OS X or Microsoft Windows systems, and they
-should have some familiarity with Apple’s documentation and user interface
-conventions.
-<br />
-<br />
-
-<b>Scope</b> 
-<br />
-<br />
-Apple's mobile devices, including the iPhone and iPad, are prominent examples
-of a new generation of mobile devices that combine into a single device the
-capabilities of a cellular phone, laptop computer, portable music player,
-camera, audio recorder, GPS receiver and other electronics. The capabilities of
-such devices are considerable but, as with any information system, also pose
-some security risks. Design features can seriously mitigate some risks, but
-others must be considered as part of a careful, holistic risk decision that
-also respects the capabilities enabled by such devices.
+<b>Scope.</b> Apple's mobile devices, including the iPhone and iPad, are
+prominent examples of a new generation of mobile devices that combine into a
+single device the capabilities of a cellular phone, laptop computer, portable
+music player, camera, audio recorder, GPS receiver and other electronics. The
+capabilities of such devices are considerable but, as with any information
+system, also pose some security risks. Design features can seriously mitigate
+some risks, but others must be considered as part of a careful, holistic risk
+decision that also respects the capabilities enabled by such devices.
 <br />
 <br />
 Security guidance for mobile devices must cut across many previously discrete
