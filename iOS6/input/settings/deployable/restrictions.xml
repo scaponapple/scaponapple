@@ -42,13 +42,22 @@ sensitive information outside the intended storage area.</rationale>
 <rationale>iTunes provides access to media content and applications.</rationale>
 </Rule>
 
-<Group id="disable_or_configure_safari">
-<title>Disable or Configure Safari</title>
-<description>If Safari can be disabled, uncheck <b>Allow use of Safari</b>. <i>This is very unusual for a general-purpose device.</i></description>
-<rationale> If Safari is needed, security-relevant Safari settings can be
-configured as follows. Additional information about Safari security settings on
+<Group id="safari">
+<title>Safari</title>
+<description>The Safari web browser is included with iOS, and the following
+section provides discussion of security-relevant settings.
+Additional information about Safari security settings on
 iOS is available at <b>http://support.apple.com/kb/HT1677</b>.
-</rationale>
+</description>
+
+<Rule id="disable_safari">
+<title>Disable Safari</title>
+<description>If Safari can be disabled, uncheck <b>Allow use of Safari</b>.
+<b><i>This is very unusual for a general-purpose device.</i></b></description>
+<rationale>Devices in specialized use cases may not require the use of a web
+browser such as Safari.
+</rationale> 
+</Rule>
 
 <Rule id="disable_safari_autofill">
 <title>Disable Safari Autofill</title>

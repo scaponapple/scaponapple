@@ -187,13 +187,10 @@ practical. <i>It should not be used to draw comparisons between iOS and other
 platforms.</i>
 <br />
 <br />
-<hr />
 <table>
 <tr>
-<th>Risk </th>
-<th>Mitigation </th>
-<!--<th style="width:7cm">Risk </th>
-<th style="width:15cm">Mitigation </th> -->
+<th>Risk</th>
+<th>Mitigation</th>
 </tr>
 
 <tr>

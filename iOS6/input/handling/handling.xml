@@ -330,14 +330,13 @@ device. </rationale>
 
 <Group id="do_not_use_unapproved_peripherals_on_your_ios_device"> 
 <title>Do Not Use Unapproved Peripherals on Your iOS Device</title>  
-<description> There exists many different types of iOS device accessories for
+<description> Many different types of iOS device accessories are available for
 use by consumers. Some of these devices allow access to a keyboard, magnetic
-card reader, or USB flash drive reader. </description> 
-<description> Users should only use accessories approved by your organization.
+card reader, or USB flash drive reader.
+Users should only use accessories approved for use by the enterprise.
 </description> 
 <rationale> Due to the physical access nature of these accessories, security
-risks maybe present when attached to an iOS device. Approved accessories should
-be tested to ensure that nothing malicious is occurring from the accessory.
+risks may be present when attached to an iOS device. 
 </rationale>        
 </Group>
 </Group>
