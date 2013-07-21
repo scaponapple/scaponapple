@@ -116,7 +116,7 @@
       *.toc2	     { background: #CCCCCC; }
       div	     { margin-top: 1em; margin-bottom: 1em; }
       div.rule	     { margin-left: 10%; border: 1px solid; padding: 10px 10px 10px 10px; margin-top: 1em; margin-bottom: 1em; }
-      div.legal      { margin-left: 10%; font-family: monospace; font-size: 90%; text-transform: uppercase; }
+      div.legal      { margin-left: 10%; }
       
       div.toc	     { margin-left: 6%; margin-bottom: 4em;
                        padding-bottom: 0.75em; padding-top: 1em; 
@@ -294,7 +294,7 @@
   <xsl:param name="section-prefix"/>
   <xsl:param name="section-num" select="position()"/>
 
-  <xsl:message>In toc template for Value, id=<xsl:value-of select="@id"/>.</xsl:message>
+  <!-- <xsl:message>In toc template for Value, id=<xsl:value-of select="@id"/>.</xsl:message> -->
   <p xmlns="http://www.w3.org/1999/xhtml" class="toc2">
      <xsl:value-of select="$section-prefix"/>
      <xsl:value-of select="$section-num"/>
@@ -312,7 +312,7 @@
   <xsl:param name="section-prefix"/>
   <xsl:param name="section-num" select="position()"/>
 
-  <xsl:message>In toc template for Group|Rule, id=<xsl:value-of select="@id"/>.</xsl:message>
+  <!-- <xsl:message>In toc template for Group|Rule, id=<xsl:value-of select="@id"/>.</xsl:message> -->
   <p xmlns="http://www.w3.org/1999/xhtml" class="toc2">
      <xsl:value-of select="$section-prefix"/>
      <xsl:value-of select="$section-num"/>
@@ -334,7 +334,7 @@
   <xsl:param name="section-prefix"/>
   <xsl:param name="section-num" select="position()"/>
 
-  <xsl:message>In toc template for Profile, id=<xsl:value-of select="@id"/>.</xsl:message>
+  <!-- <xsl:message>In toc template for Profile, id=<xsl:value-of select="@id"/>.</xsl:message> -->
   <p xmlns="http://www.w3.org/1999/xhtml" class="toc2">
      <xsl:value-of select="$section-prefix"/>
      <xsl:value-of select="$section-num"/>
@@ -349,7 +349,7 @@
   <xsl:param name="section-prefix"/>
   <xsl:param name="section-num" select="position()"/>
 
-  <xsl:message>In body template for Profile, id=<xsl:value-of select="@id"/>.</xsl:message>
+  <!-- <xsl:message>In body template for Profile, id=<xsl:value-of select="@id"/>.</xsl:message> -->
   <xsl:comment>Profile id = <xsl:value-of select="./@id"/></xsl:comment>
   <div xmlns="http://www.w3.org/1999/xhtml">
   <h3><a name="profile-{@id}"></a>
@@ -478,7 +478,7 @@
   <xsl:param name="section-prefix"/>
   <xsl:param name="section-num" select="position()"/>
 
-  <xsl:message>In body template for Group, id=<xsl:value-of select="@id"/>.</xsl:message>
+  <!--<xsl:message>In body template for Group, id=<xsl:value-of select="@id"/>.</xsl:message>-->
   <xsl:comment>Group id = <xsl:value-of select="./@id"/></xsl:comment>
   <div  xmlns="http://www.w3.org/1999/xhtml">
   <h2><a name="{@id}"></a>
@@ -543,7 +543,7 @@
   <xsl:param name="section-prefix"/>
   <xsl:param name="section-num" select="position()"/>
 
-  <xsl:message>In body template for Rule, id=<xsl:value-of select="@id"/>.</xsl:message>
+  <!-- <xsl:message>In body template for Rule, id=<xsl:value-of select="@id"/>.</xsl:message> -->
   <xsl:comment>Rule id = <xsl:value-of select="./@id"/></xsl:comment>
   <div xmlns="http://www.w3.org/1999/xhtml">
   <h3><a name="{@id}"></a>
