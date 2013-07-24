@@ -33,7 +33,7 @@
       <xsl:apply-templates select="document('settings/deployable/wifi.xml')" />
       <xsl:apply-templates select="document('settings/deployable/vpn.xml')" />
       <xsl:apply-templates select="document('settings/deployable/email.xml')" />
-      <xsl:apply-templates select="document('settings/deployable/exchangeactivesync.xml')" />
+      <xsl:apply-templates select="document('settings/deployable/activesync.xml')" />
       <xsl:apply-templates select="document('settings/deployable/ldap.xml')" />
       <xsl:apply-templates select="document('settings/deployable/webdav.xml')" />
       <xsl:apply-templates select="document('settings/deployable/certs.xml')" />
