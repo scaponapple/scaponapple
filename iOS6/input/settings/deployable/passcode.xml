@@ -41,6 +41,7 @@ deployed via a configuration profile. </description>
 <rationale>Disabling the use of simple values for a passcode enables display
 of the entire keyboard for passcode entry, instead of only a numeric keypad.
 </rationale> 
+<ref nist="IA-5(1)"/>
 </Rule> 
 
 <Rule id="require_alphanumeric_value_for_passcode"> 
@@ -48,6 +49,7 @@ of the entire keyboard for passcode entry, instead of only a numeric keypad.
 <description> Set <b>Require alphanumeric value</b> to <b>Checked</b>. </description> 
 <rationale> Requiring alphanumeric values should increase the search space in a
 password-guessing attack. </rationale> 
+<ref nist="IA-5(1)"/>
 </Rule> 
 
 <Rule id="set_minimum_passcode_length"> 
@@ -57,6 +59,7 @@ password-guessing attack. </rationale>
 password-guessing attack. A passcode length between 4 and 6 may be a reasonable balance
 between user experience and security for many deployment scenarios.
 </rationale> 
+<ref nist="IA-5(1)"/>
 </Rule> 
 
 <Rule id="set_minimum_number_of_complex_characters"> 
@@ -65,6 +68,7 @@ between user experience and security for many deployment scenarios.
 </description>
 <rationale> Requiring complex characters should increase the search space in a
 password-guessing attack. </rationale> 
+<ref nist="IA-5(1)"/>
 </Rule> 
 
 <Rule id="set_maximum_passcode_age"> 
@@ -75,6 +79,7 @@ for such rotation. </description>
 compromised the password from re-using it to regain access. This is an unlikely
 scenario, but is addressed by setting a password expiration. A value of 120 days is
 likely to be adequate for many deployment scenarios.</rationale> 
+<ref nist="IA-5(1)"/>
 </Rule> 
 
 <Rule id="set_auto_lock_time"> 
@@ -93,6 +98,7 @@ ensures that the device will require passcode entry if lost or left unattended.
 <description> Set <b>Passcode History</b> to <b>3</b>. </description>
 <rationale>Setting a passcode history ensures that users cannot trivially
 alternate between passcodes.</rationale> 
+<ref nist="IA-5(1)"/>
 </Rule> 
 
 <Rule id="set_grace_period_for_device_lock"> 
@@ -103,6 +109,7 @@ alternate between passcodes.</rationale>
 has passed since the last device lock. Allowing a Grace Period enhances
 usability and makes users more likely to tolerate passcode requirements.
 </rationale> 
+<ref nist="IA-11"/>
 </Rule> 
 
 <Rule id="set_maximum_number_of_failed_attempts"> 
@@ -113,6 +120,7 @@ fewer. </description>
 attempts can protect against witless password guessing attacks conducted
 through the unlock screen. 
 </rationale> 
+<ref nist="IA-5(1)"/>
 </Rule>
 
 </Group>

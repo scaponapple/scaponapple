@@ -50,6 +50,7 @@ settings</b> to Checked. </description>
 such as profile names and identifiers permits the enterprise to have insight
 into the ownership of profiles installed onto the device.
 </rationale>
+<ref nist="CA-9"/>
 </Rule>
 
 <Rule id="allow_remote_query_of_security_settings">
@@ -59,6 +60,7 @@ settings</b> to Checked. </description>
 <rationale>Allowing an enterprise to be able to query security settings
 permits the enterprise to have insight into the device's security posture.
 </rationale>
+<ref nist="CA-9"/>
 </Rule>
 
 <Rule id="allow_remote_query_of_network_settings"> 
@@ -90,6 +92,7 @@ Profiles</b> to Checked. </description>
 profiles permits the enterprise to understand the overall composed configuration
 applied to the device.
 </rationale>
+<ref nist="CA-9"/>
 </Rule>
 
 <Rule id="allow_remote_query_of_applications">

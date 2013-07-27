@@ -15,12 +15,14 @@ prevent third-party apps from influencing the integrity of the operating
 system, they do have the ability to access data stored on the device such as
 Address Book, Location Data, or the Photo Library, and have the
 ability to transmit this information. </rationale> 
+<ref nist="CM-11(2)"/>
 </Rule>
 
 <Rule id="disable_camera"> 
 <title>Disable Camera</title>       
 <description> Disable <b>Allow use of camera</b>, if concerns exist about
 capturing sensitive images. </description> 
+<ref nist="SC-42"/>
 </Rule>
 
 <Rule id="disable_screen_capture">

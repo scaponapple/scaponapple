@@ -30,6 +30,7 @@ provide assurance the message is authentic. Without S/MIME users will not be
 able to read encrypted email and will not be able to encrypt email with
 sensitive information.
 </rationale> 
+<ref nist="SI-7(6),SC-8"/>
 </Rule>
 
 <Rule id="enable_ssl_for_mail_connections">
@@ -40,6 +41,7 @@ email accounts.</description>
 which the mail client connects, and also encrypts traffic between the mail
 server and the email client.
 </rationale>
+<ref nist="SI-7(6),SC-8"/>
 </Rule>
 
 </Group>
