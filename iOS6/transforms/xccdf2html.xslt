@@ -413,16 +413,13 @@
   </xsl:if>
 
   <xsl:if test="./cdf:reference">
-      <h4>References</h4>
-      <ol>
+    <h4>References: 
 	<xsl:for-each select="./cdf:reference">
-	  <li><xsl:value-of select="text()"/>
 	    <xsl:if test="@href">
-	      [<a href="{@href}">link</a>]
-           </xsl:if>
-	  </li>
+	      <a href="{@href}"><xsl:value-of select="text()"/></a>
+        </xsl:if>
 	</xsl:for-each>
-     </ol>
+    </h4>
   </xsl:if>
   </div>
 </xsl:template>
@@ -518,16 +515,13 @@
 
 
   <xsl:if test="./cdf:reference">
-     <h4>References</h4>
-     <ol>
+     <h4>References:
        <xsl:for-each select="./cdf:reference">
-	   <li><xsl:value-of select="text()"/>
 	     <xsl:if test="@href">
-	       [<a href="{@href}">link</a>]
-             </xsl:if>
-	   </li>
+	      <a href="{@href}"><xsl:value-of select="text()"/></a>
+         </xsl:if>
         </xsl:for-each>
-      </ol>
+      </h4>
   </xsl:if>
 
   <xsl:if test="./cdf:Group | ./cdf:Rule">
@@ -602,18 +596,14 @@
       </xsl:if>
   </xsl:if>
 
-
   <xsl:if test="./cdf:reference">
-     <h4>References</h4>
-     <ol>
+     <h4>References: 
 	 <xsl:for-each select="./cdf:reference">
-	   <li><xsl:value-of select="text()"/>
 	     <xsl:if test="@href">
-	       [<a href="{@href}">link</a>]
-             </xsl:if>
-	   </li>
+	        <a href="{@href}"><xsl:value-of select="text()"/></a>
+         </xsl:if>
 	 </xsl:for-each>
-    </ol>
+     </h4>
   </xsl:if>
   </div>
 </xsl:template>
