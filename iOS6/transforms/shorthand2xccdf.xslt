@@ -1,27 +1,15 @@
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-xmlns:xccdf="http://checklists.nist.gov/xccdf/1.1"
-xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-xmlns:dc="http://purl.org/dc/elements/1.1/" 
-xmlns:date="http://exslt.org/dates-and-times" extension-element-prefixes="date"
-exclude-result-prefixes="xccdf xhtml dc">
+  xmlns:xccdf="http://checklists.nist.gov/xccdf/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:date="http://exslt.org/dates-and-times" extension-element-prefixes="date"
+  exclude-result-prefixes="xccdf xhtml dc">
 
-<xsl:include href="constants.xslt"/>
+  <xsl:include href="constants.xslt"/>
 
-<xsl:variable name="ovalfile">unlinked-ios6-oval.xml</xsl:variable>
-
-<xsl:variable name="defaultseverity" select="'low'" />
-
-
-  <!-- Content:template -->
-  <xsl:template match="Benchmark">
-    <xsl:copy>
-      <xsl:attribute name="xmlns">
-        <xsl:text>http://checklists.nist.gov/xccdf/1.1</xsl:text>
-      </xsl:attribute>
-      <xsl:apply-templates select="@*|node()" />
-    </xsl:copy>
-  </xsl:template>
+  <xsl:variable name="ovalfile">unlinked-ios6-oval.xml</xsl:variable>
+  <xsl:variable name="defaultseverity" select="'low'" />
 
   <!-- insert current date -->
   <xsl:template match="Benchmark/status/@date">
@@ -223,110 +211,4 @@ exclude-result-prefixes="xccdf xhtml dc">
   </xsl:template>
 
 
-
-  <!-- CORRECTING TERRIBLE ABUSE OF NAMESPACES BELOW -->
-  <!-- (expanding xhtml tags back into the xhtml namespace) -->
-  <xsl:template match="br">
-    <xhtml:br />
-  </xsl:template>
-
-  <xsl:template match="hr">
-    <xhtml:hr />
-  </xsl:template>
-
- <xsl:template match="body">
-    <xhtml:body>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:body>
-  </xsl:template>
-
-  <xsl:template match="table">
-    <xhtml:table>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:table>
-  </xsl:template>
-
-  <xsl:template match="tr">
-    <xhtml:tr>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:tr>
-  </xsl:template>
-
-  <xsl:template match="th">
-    <xhtml:th>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:th>
-  </xsl:template>
-
-  <xsl:template match="td">
-    <xhtml:td>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:td>
-  </xsl:template>
-
-  <xsl:template match="ul">
-    <xhtml:ul>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:ul>
-  </xsl:template>
-
-  <xsl:template match="li">
-    <xhtml:li>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:li>
-  </xsl:template>
-
-  <xsl:template match="tt">
-    <xhtml:code>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:code>
-  </xsl:template>
-
-
-  <!-- remove use of tt in titles; xhtml in titles is not allowed -->
-  <xsl:template match="title/tt">
-        <xsl:apply-templates select="@*|node()" />
-  </xsl:template>
-
-  <xsl:template match="code">
-    <xhtml:code>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:code>
-  </xsl:template>
-
-  <xsl:template match="strong">
-    <xhtml:strong>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:strong>
-  </xsl:template>
-
-  <xsl:template match="b">
-    <xhtml:b>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:b>
-  </xsl:template>
-
-  <xsl:template match="em">
-    <xhtml:em>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:em>
-  </xsl:template>
-
-  <xsl:template match="i">
-    <xhtml:i>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:i>
-  </xsl:template>
-
-  <xsl:template match="ol">
-    <xhtml:ol>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:ol>
-  </xsl:template>
-
-  <xsl:template match="pre">
-    <xhtml:pre>
-        <xsl:apply-templates select="@*|node()" />
-    </xhtml:pre>
-  </xsl:template>
 </xsl:stylesheet>

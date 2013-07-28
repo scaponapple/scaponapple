@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xccdf="http://checklists.nist.gov/xccdf/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <xsl:template match="xccdf:Benchmark/xccdf:version">
+  <!-- this operates on a pre-XCCDF document that is free of namespaces -->
+
+  <xsl:template match="Benchmark/version">
     <xsl:copy>
       <xsl:copy-of select="@*" />
       <xsl:copy-of select="node()" />
@@ -14,7 +16,7 @@
 
   <!-- add attribute selected=false so that Profiles
        can activate Rules as needed -->
-  <xsl:template match="xccdf:Rule">
+  <xsl:template match="Rule">
     <xsl:copy>
       <xsl:apply-templates select="@*" />
       <xsl:attribute name="selected">false</xsl:attribute>
