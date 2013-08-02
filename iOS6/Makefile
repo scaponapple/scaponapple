@@ -10,10 +10,8 @@ shorthand:
 	xmllint --format --output $(OUT)/ios6-shorthand.xml $(OUT)/ios6-shorthand.xml
 
 xccdf: shorthand
-	xsltproc -o $(OUT)/nons-ios6-xccdf.xml $(TRANS)/shorthand2xccdf.xslt $(OUT)/ios6-shorthand.xml
-	xsltproc -stringparam profile "allprofiles" -o $(OUT)/nons-ios6-xccdf.xml \
-		$(TRANS)/xccdf-addprofiles.xslt $(OUT)/nons-ios6-xccdf.xml
-	xsltproc -o $(OUT)/ios6-xccdf.xml $(TRANS)/xccdf-addnamespaces.xslt $(OUT)/nons-ios6-xccdf.xml
+	xsltproc -o $(OUT)/ios6-xccdf.xml $(TRANS)/shorthand2xccdf.xslt $(OUT)/ios6-shorthand.xml
+	xmllint --format --output $(OUT)/ios6-xccdf.xml $(OUT)/ios6-xccdf.xml
 
 tables: xccdf
 	xsltproc -stringparam profile "enterprise" -o $(OUT)/table-ios6-enterprise.html \
