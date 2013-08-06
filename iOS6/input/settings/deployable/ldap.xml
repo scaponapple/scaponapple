@@ -9,6 +9,7 @@
 which the system connects, and also encrypts traffic between the iOS device
 and the LDAP server.
 </rationale>
+<ident cce="28836" />
 </Rule>
 </Group>
 

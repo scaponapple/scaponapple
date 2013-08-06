@@ -9,18 +9,21 @@ calendars and contacts with the device. </description>
 <title>Prevent moving messages between ActiveSync accounts</title>
 <description> Disable <b>Allow Move</b> for all Exchange ActiveSync accounts.
 </description>
+<ident cce="28832" />
 </Rule>
 
 <Rule id="allow_mail_from_this_account_only_from_the_mail_app">
 <title>Allow Mail from this Account Only from the Mail App</title>
 <description> Enable <b>Use Only in Mail</b> for all Exchange ActiveSync
 accounts. </description>
+<ident cce="28833" />
 </Rule>
 
 <Rule id="enable_ssl_for_activesync_communications">
 <title>Enable SSL for ActiveSync Communications</title>
 <description> Ensure <b>Use SSL</b> is <b>Checked</b> for all Exchange ActiveSync
 accounts. </description>
+<ident cce="28834" />
 </Rule>
 
 <Rule id="enable_s_mime_support_for_activesync_if_needed">
@@ -31,5 +34,6 @@ configuration profiles to devices is encrypted and authenticated if S/MIME
 certificates containing private keys are embedded. The iOS device can also be
 configured to use an SCEP server to retrieve S/MIME certificates for use with
 Mail. </description>
+<ident cce="28835" />
 </Rule>
 </Group>

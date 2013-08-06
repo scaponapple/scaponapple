@@ -14,6 +14,7 @@ enterprise information to personal email accounts.  While this is possible
 simply through email forwarding, in that case the enterprise email server (when
 used as the MTA) has at least the possibility of logging such transfers.
 </rationale>
+<ident cce="28829" />
 </Rule>
 
 <Rule id="enable_s_mime_support_for_mail_if_needed">
@@ -30,6 +31,7 @@ provide assurance the message is authentic. Without S/MIME users will not be
 able to read encrypted email and will not be able to encrypt email with
 sensitive information.
 </rationale> 
+<ident cce="28830" />
 <ref nist="SI-7(6),SC-8"/>
 </Rule>
 
@@ -41,6 +43,7 @@ email accounts.</description>
 which the mail client connects, and also encrypts traffic between the mail
 server and the email client.
 </rationale>
+<ident cce="28831" />
 <ref nist="SI-7(6),SC-8"/>
 </Rule>
 
