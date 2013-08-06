@@ -15,6 +15,7 @@ prevent third-party apps from influencing the integrity of the operating
 system, they do have the ability to access data stored on the device such as
 Address Book, Location Data, or the Photo Library, and have the
 ability to transmit this information. </rationale> 
+<ident cce="28809" />
 <ref nist="CM-11(2)"/>
 </Rule>
 
@@ -22,6 +23,7 @@ ability to transmit this information. </rationale>
 <title>Disable Camera</title>       
 <description> Disable <b>Allow use of camera</b>, if concerns exist about
 capturing sensitive images. </description> 
+<ident cce="28810" />
 <ref nist="SC-42"/>
 </Rule>
 
@@ -32,6 +34,7 @@ storing screen contents in the Photo Library. </description>
 <rationale> While unlikely, this feature could accidentally be triggered (by
 simultaneously pressing the Home and Sleep buttons) and lead to storage of
 sensitive information outside the intended storage area.</rationale>
+<ident cce="28811" />
 </Rule>
 </Group>
 
@@ -42,6 +45,7 @@ sensitive information outside the intended storage area.</rationale>
 <title>Disable use of iTunes Store</title> 
 <description> Deselect <b>Allow use of iTunes Store</b>, to prevent access to media content and applications.</description>
 <rationale>iTunes provides access to media content and applications.</rationale>
+<ident cce="28812" />
 </Rule>
 
 <Group id="safari">
@@ -59,6 +63,7 @@ iOS is available at <b>http://support.apple.com/kb/HT1677</b>.
 <rationale>Devices in specialized use cases may not require the use of a web
 browser such as Safari.
 </rationale> 
+<ident cce="28813" />
 </Rule>
 
 <Rule id="disable_safari_autofill">
@@ -69,6 +74,7 @@ some potentially sensitive information by Safari. </description>
 previously-used credentials in the event that the device becomes
 compromised.
 </rationale>
+<ident cce="28814" />
 </Rule>
 
 <Rule id="enable_safari_fraud_warning">
@@ -78,6 +84,7 @@ warned when visiting known-fraudulent web sites. </description>
 <rationale>Fraudulent web sites may try to collect sensitive information
 from users.
 </rationale>
+<ident cce="28815" />
 </Rule>
 
 <Rule id="disable_javascript">
@@ -89,6 +96,7 @@ appropriate for unusual, high-security scenarios.</i>
 <rationale>JavaScript permits client-side scripts to run within the browser.
 Nearly all modern web sites use JavaScript, though its functionality
 constitutes an attack surface.</rationale>
+<ident cce="28816" />
 </Rule>
 
 <Rule id="enable_safari_pop_up_blocking">
@@ -97,6 +105,7 @@ constitutes an attack surface.</rationale>
 <rationale>Blocking pop-ups prevents malicious or obnoxious web sites from
 interfering with the user in an unexpected and possibly security-relevant
 manner.</rationale>
+<ident cce="28817" />
 </Rule>
 
 <Rule id="accept_cookies_from_visited_sites_only">
@@ -104,6 +113,7 @@ manner.</rationale>
 <description> Set <b>Accept cookies</b> to <b>From visited sites</b>.</description>
 <rationale>Accepting cookies from only visited sites decreases the extent
 to which third-party web sites can track user activity.</rationale>
+<ident cce="28818" />
 </Rule>
 </Group>
 </Group>
@@ -120,6 +130,7 @@ iOS device, then the following restrictions should be considered.</description>
 <description>Set <b>Allow backup</b> to <b>Unchecked</b>. </description>
 <rationale>Backing up iOS devices to iCloud may involve placing enterprise data
 on systems that are not controlled by the enterprise.</rationale>
+<ident cce="28819" />
 </Rule>
 
 <Rule id="disable_icloud_document_sync">
@@ -128,6 +139,7 @@ on systems that are not controlled by the enterprise.</rationale>
 <rationale>Synchronizing documents to iCloud involves placing data on systems
 that are not controlled by the enterprise.
 </rationale>
+<ident cce="28820" />
 </Rule>
 
 <Rule id="disable_icloud_photo_stream">
@@ -136,6 +148,7 @@ that are not controlled by the enterprise.
 <rationale>If photographs may constitute sensitive enterprise data, then
 transferring photos to iCloud could involve placing such data on systems that
 are not controlled by the enterprise.</rationale>
+<ident cce="28821" />
 </Rule>
 </Group>
 
@@ -150,6 +163,7 @@ sensitive data.</description>
 <rationale>Diagnostic data could be considered sensitive in some environments
 and not transmitted outside enterprise control.
 </rationale>
+<ident cce="28822" />
 </Rule>
 
 <Rule id="disable_user_acceptance_of_untrusted_tls_certificates">
@@ -161,6 +175,7 @@ Unchecked.  Root CAs trusted by iOS are available at
 <rationale>Presentation of an untrusted TLS certificate to client software
 could indicate a man-in-the-middle attack.  
 </rationale>
+<ident cce="28823" />
 </Rule>
 
 <Rule id="force_encrypted_backups">
@@ -170,7 +185,9 @@ to ensure that the contents of iOS devices are encrypted when backed up
 onto host computers.
 </description>
 <rationale>Encrypting device backups protects hosts backups even if the host
-later becomes compromised.  </rationale>
+later becomes compromised.
+</rationale>
+<ident cce="28824" />
 </Rule>
 </Group>
 </Group>
