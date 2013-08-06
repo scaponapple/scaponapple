@@ -13,6 +13,7 @@ automatically associating with previously known (but potentially-spoofed)
 access points without user interaction, and should be disabled whenever
 possible. Users should be instructed to use only trusted WiFi networks.
 </rationale>
+<ident cce="28856" />
 <ref nist="AC-18(3)"/>
 </Rule>
 
@@ -24,6 +25,7 @@ although the device provides visual cues when it is in the Bluetooth
 “discoverable” mode which allows it to pair with other devices. The Bluetooth
 profiles supported by iOS are described at <b>http://support.apple.com/kb/HT3647</b>.
 </rationale>
+<ident cce="28857" />
 <ref nist="AC-18(3)"/>
 </Rule>
 
@@ -37,7 +39,9 @@ discretion. Given the utility of location information for some apps (such as
 Maps), user-determined settings may be most practical. </description>
 <rationale> If an application (such as Maps) wishes to use Location Services
 while being disabled, the user will be prompted to return to <b>Settings</b> to
-enable it. </rationale>
+enable it.
+</rationale>
+<ident cce="28858" />
 </Rule>
 
 <Rule id="disable_loading_of_remote_images_if_practical">
@@ -49,7 +53,9 @@ enable it. </rationale>
 information to authors of fraudulent e-mail. It can also provide an opportunity
 for malicious images to exploit any implementation flaws in complex graphics
 libraries. At the same time, this may also inhibit viewing of images that are
-useful. </rationale>
+useful.
+</rationale>
+<ident cce="28859" />
 </Rule>
 </Group>
 
