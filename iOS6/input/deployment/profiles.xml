@@ -39,6 +39,21 @@ Additional description and security analysis is available in <b>https://github.c
 </rationale> 
 </Group>
 
+<Group id="manual_deployment_with_apple_configurator">
+<title>Manual Deployment with Apple Configurator</title>
+<description> Apple Configurator provides similar capabilities to the iPhone Configuration Utility, but offers enhanced ability for configuring a large number of devices for deployment. The tool is only available on the Apple platform.
+<br />
+<br />
+One key feature of the tool is the ability to control device configuration. The Supervise capability allows an administrator to maintain control over the configuration of devices, and ties the devices to the administrator computer - preventing the device from pairing with another computer.
+<br />
+<br />
+This trust relationship is accomplished through the use of a Supervisory Host Identity Certificate and device Escrow keybag. When paired, the host stores a certificate in the login keychain. The device Escrow keybag manages files that provide authentication of the trust relationship that was previously established with the host. Pairing with any other host via iTunes is then prevented due to the lack of a record of trust.
+</description>
+
+<rationale> Apple Configurator is a free tool that is available for download from the Apple App Store. Documentation is available at <b>help.apple.com/configurator/mac</b>. Additional information is available at <b>www.apple.com/support/ipad/enterprise</b>.
+</rationale>
+</Group>
+
 <Group id="manual_deployment_with_iphone_configuration_utility"> 
 <title>Manual Deployment with iPhone Configuration Utility</title>      
 <description> Manually using the iPhone Configuration Utility (iPCU) is the
@@ -47,7 +62,8 @@ well as it depends on administrators’ manual intervention. It also implies tha
 an MDM server will not be used to remotely monitor device status. Nevertheless,
 transferring the profile to a device which is directly connected via USB cable
 avoids threats to confidentiality and integrity inherent in network transfers.
-</description> 
+</description>
+ 
 <rationale> iPCU is available at <b>http://www.apple.com/support/iphone/enterprise/</b> (cryptographic checksum unavailable). Documentation is available at <b>http://help.apple.com/iosdeployment-ipcu/</b>.
 </rationale> 
 </Group>
