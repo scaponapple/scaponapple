@@ -16,7 +16,8 @@ system, they do have the ability to access data stored on the device such as
 Address Book, Location Data, or the Photo Library, and have the
 ability to transmit this information. </rationale> 
 <ident cce="28809" />
-<ref nist="CM-11(2)"/>
+<ref nist="CM-11(2)" />
+<ref disa="663" />
 </Rule>
 
 <Rule id="disable_camera"> 
@@ -24,7 +25,8 @@ ability to transmit this information. </rationale>
 <description> Disable <b>Allow use of camera</b>, if concerns exist about
 capturing sensitive images. </description> 
 <ident cce="28810" />
-<ref nist="SC-42"/>
+<ref nist="SC-42" />
+<ref disa="1150" />
 </Rule>
 
 <Rule id="disable_screen_capture">
@@ -35,6 +37,7 @@ storing screen contents in the Photo Library. </description>
 simultaneously pressing the Home and Sleep buttons) and lead to storage of
 sensitive information outside the intended storage area.</rationale>
 <ident cce="28811" />
+<ref disa="1150" />
 </Rule>
 </Group>
 
@@ -46,6 +49,7 @@ sensitive information outside the intended storage area.</rationale>
 <description> Deselect <b>Allow use of iTunes Store</b>, to prevent access to media content and applications.</description>
 <rationale>iTunes provides access to media content and applications.</rationale>
 <ident cce="28812" />
+<ref disa="663" />
 </Rule>
 
 <Group id="safari">

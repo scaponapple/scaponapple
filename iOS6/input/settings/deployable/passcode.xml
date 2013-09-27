@@ -62,8 +62,9 @@ password-guessing attack. A passcode length between 4 and 6 may be a reasonable 
 between user experience and security for many deployment scenarios.
 </rationale> 
 <ident cce="28802" />
-<ref nist="IA-5(1)"/>
-</Rule> 
+<ref nist="IA-5(1)" />
+<ref disa="205" />
+</Rule>
 
 <Rule id="set_minimum_number_of_complex_characters"> 
 <title>Set Minimum Number of Complex Characters</title> 
@@ -81,8 +82,9 @@ password-guessing attack. </rationale>
 <rationale> Changing passcodes prevents an attacker who has compromised the password from re-using it to regain access. This is an unlikely
 scenario, but is addressed by setting a password expiration. A value of 120 days is likely to be adequate for many deployment scenarios.</rationale> 
 <ident cce="28804" />
-<ref nist="IA-5(1)"/>
-</Rule> 
+<ref nist="IA-5(1)" />
+<ref disa="199" />
+</Rule>
 
 <Rule id="set_auto_lock_time"> 
 <title>Set Auto-Lock Time</title> 
@@ -94,6 +96,7 @@ between user experience and security for many deployment scenarios.
 ensures that the device will require passcode entry if lost or left unattended. 
 </rationale> 
 <ident cce="28805" />
+<ref disa="57" />
 </Rule> 
 
 <Rule id="set_passcode_history"> 
@@ -102,8 +105,9 @@ ensures that the device will require passcode entry if lost or left unattended.
 <rationale>Setting a passcode history ensures that users cannot trivially
 alternate between passcodes.</rationale> 
 <ident cce="28806" />
-<ref nist="IA-5(1)"/>
-</Rule> 
+<ref nist="IA-5(1)" />
+<ref disa="200" />
+</Rule>
 
 <Rule id="set_grace_period_for_device_lock"> 
 <title>Set Grace Period for Device Lock</title>
@@ -126,7 +130,8 @@ attempts can protect against witless password guessing attacks conducted
 through the unlock screen. 
 </rationale> 
 <ident cce="28808" />
-<ref nist="IA-5(1)"/>
+<ref nist="IA-5(1)" />
+<ref disa="1383" />
 </Rule>
 
 </Group>

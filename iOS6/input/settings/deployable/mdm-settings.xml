@@ -209,6 +209,7 @@ more appropriate with BYOD scenarios that are incompatible with IT staff wiping
 entire devices.
 </rationale>
 <ident cce="28855" />
+<ref disa="366" />
 </Rule>
 </Group>
 </Group>

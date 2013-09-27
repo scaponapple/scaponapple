@@ -24,6 +24,7 @@ connections to WiFi networks are being made.
 <rationale> Use <b>WPA / WPA2 Enterprise</b> for wireless network encryption. If enterprise authentication support is not available, <b>WPA / WPA2</b> can be selected instead. Proxy servers can be configured with WiFi as another layer for providing control of the connection.
 </rationale> 
 <ident cce="28826" />
+<ref disa="780" />
 </Rule> 
 
 <Rule id="use_tls_for_accepted_eap_type">
@@ -33,5 +34,6 @@ connections to WiFi networks are being made.
 <rationale> Using <b>TLS</b> for the authentication protocol is recommended. If TLS support is not available, <b>PEAP</b> is the next best choice for authentication. All other authentication protocols are not recommended.
 </rationale>
 <ident cce="28827" />
+<ref disa="780" />
 </Rule>
 </Group>

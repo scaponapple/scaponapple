@@ -35,7 +35,8 @@ in an enterprise infrastructure:
 </ul>
 </rationale>
 <ident cce="28828" />
-<ref nist="AC-18(1)"/>
+<ref nist="AC-18(1)" />
+<ref disa="1130" />
 </Rule>
 </Group>
 
