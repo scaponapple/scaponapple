@@ -226,7 +226,8 @@
      <!-- references TOC -->
      <xsl:if test="./cdf:reference">
        <p class="toc">
-         <xsl:value-of select="$refSecNum"/>. <a class="toc" href="#section---references">References</a>
+         <xsl:value-of select="$refSecNum"/>.
+         <a class="toc" href="#section---references">References</a>
        </p>
      </xsl:if>
   </div>
@@ -413,13 +414,14 @@
   </xsl:if>
 
   <xsl:if test="./cdf:reference">
-    <h4>References: 
-	<xsl:for-each select="./cdf:reference">
-	    <xsl:if test="@href">
-	      <a href="{@href}"><xsl:value-of select="text()"/></a>
-        </xsl:if>
-	</xsl:for-each>
-    </h4>
+    <h4>References:</h4>
+    <xsl:for-each select="./cdf:reference">
+        <div class="propertyText">
+            <xsl:if test="@href">
+                <a href="{@href}"><xsl:value-of select="text()"/></a>
+            </xsl:if>
+        </div>
+    </xsl:for-each>
   </xsl:if>
   </div>
 </xsl:template>
@@ -515,13 +517,14 @@
 
 
   <xsl:if test="./cdf:reference">
-     <h4>References:
-       <xsl:for-each select="./cdf:reference">
-	     <xsl:if test="@href">
-	      <a href="{@href}"><xsl:value-of select="text()"/></a>
-         </xsl:if>
-        </xsl:for-each>
-      </h4>
+    <h4>References:</h4>
+    <xsl:for-each select="./cdf:reference">
+        <div class="propertyText">
+            <xsl:if test="@href">
+                <a href="{@href}"><xsl:value-of select="text()"/></a>
+            </xsl:if>
+        </div>
+    </xsl:for-each>
   </xsl:if>
 
   <xsl:if test="./cdf:Group | ./cdf:Rule">
@@ -597,15 +600,16 @@
   </xsl:if>
 
   <xsl:if test="./cdf:reference">
-     <h4>References: 
+     <h4>References:</h4>
 	 <xsl:for-each select="./cdf:reference">
+       <div class="propertyText">
 	     <xsl:if test="@href">
 	        <a href="{@href}"><xsl:value-of select="text()"/></a>
          </xsl:if>
+       </div>
 	 </xsl:for-each>
-     </h4>
   </xsl:if>
-  </div>
+ </div>
 </xsl:template>
 
 <!-- templates in mode "text", for processing text with 
