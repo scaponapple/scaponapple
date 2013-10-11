@@ -35,6 +35,7 @@
 				<td>Rationale</td>
 				<td>Variable Setting</td>
 				<td>NIST 800-53 Mapping</td>
+				<td>DISA CCI</td>
 			</thead>
 		<xsl:for-each select="/cdf:Benchmark/cdf:Profile[@id=$profile]/cdf:select">
 			<xsl:variable name="idrefer" select="@idref" />
@@ -68,7 +69,13 @@
 					<xsl:value-of select="text()"/>
 					<br/>
 				</xsl:for-each>
-			</td> 
+			</td>
+			<td>
+                                <xsl:for-each select="cdf:reference[@href=$disa-cciuri]">
+                                        <xsl:value-of select="text()"/>
+                                        <br/>
+                                </xsl:for-each>
+                        </td> 
 		</tr>
 		</xsl:if>
 	</xsl:template>
