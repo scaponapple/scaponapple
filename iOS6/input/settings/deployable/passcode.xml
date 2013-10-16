@@ -43,6 +43,7 @@ of the entire keyboard for passcode entry, instead of only a numeric keypad.
 </rationale> 
 <ident cce="28800" />
 <ref nist="IA-5(1)"/>
+<ref disa="186"/>
 </Rule> 
 
 <Rule id="require_alphanumeric_value_for_passcode"> 
@@ -52,6 +53,7 @@ of the entire keyboard for passcode entry, instead of only a numeric keypad.
 password-guessing attack. </rationale> 
 <ident cce="28801" />
 <ref nist="IA-5(1)"/>
+<ref disa="186,193"/>
 </Rule> 
 
 <Rule id="set_minimum_passcode_length"> 
@@ -63,7 +65,7 @@ between user experience and security for many deployment scenarios.
 </rationale> 
 <ident cce="28802" />
 <ref nist="IA-5(1)" />
-<ref disa="205" />
+<ref disa="186,205" />
 </Rule>
 
 <Rule id="set_minimum_number_of_complex_characters"> 
@@ -74,6 +76,7 @@ between user experience and security for many deployment scenarios.
 password-guessing attack. </rationale> 
 <ident cce="28803" />
 <ref nist="IA-5(1)"/>
+<ref disa="186"/>
 </Rule> 
 
 <Rule id="set_maximum_passcode_age"> 
@@ -119,6 +122,7 @@ usability and makes users more likely to tolerate passcode requirements.
 </rationale> 
 <ident cce="28807" />
 <ref nist="IA-11"/>
+<ref disa="57"/>
 </Rule> 
 
 <Rule id="set_maximum_number_of_failed_attempts"> 
