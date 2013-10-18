@@ -121,7 +121,7 @@ an update is issued but is not supported on older devices. </description>
 <rationale> iOS updates include both security patches as well as new
 functionality. Ensure that all iOS device hardware provided and managed by the
 enterprise can always run the latest iOS. For example, all iPhone 3G devices
-should be immediately retired, because they cannot run iOS 6. </rationale>
+should be immediately retired, because they cannot run iOS 7. </rationale>
 </Group>
 
 <Group id="monitor_devices_using_mdm_especially_for_updates"> 
@@ -245,15 +245,13 @@ such as SSH. </rationale>
 <Group id="install_software_updates_when_available"> 
 <title>Install Software Updates When Available</title>  
 <description> Install software updates as quickly as possible. Updates can be
-applied over-the-air, and are indicated by a red circle on the "Settings" app.
-Apply by following <b>Settings &gt; General &gt; Software Update</b>.
+applied over-the-air (OTA) or by using iTunes. Available updates are indicated by a red circle on the "Settings" app. Information about available updates can be found by selecting <b>Settings &gt; General &gt; Software Update</b>.
 </description> 
 <rationale> Software updates for iOS devices can contain fixes for security
 vulnerabilities. As these vulnerabilities often become public knowledge when
 the updates are released, installing updates as soon as they are available is
 strongly recommended. Supported 3rd party software should not be broken by
-updates. Prior to iOS 5, applying iOS updates always required the use of
-iTunes. Migrating from iOS 5 to iOS 6 also requires the use of iTunes.
+updates.
 </rationale>  
 </Group>
 
