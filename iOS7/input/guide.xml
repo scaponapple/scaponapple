@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Benchmark id="iOS-6"
+<Benchmark id="iOS-7"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns:xhtml="http://www.w3.org/1999/xhtml" 
   xmlns:dc="http://purl.org/dc/elements/1.1/" 
@@ -7,7 +7,7 @@
   resolved="false"
   xml:lang="en-US" >
 
-  <status date="2013-07-20">draft</status>
+  <status date="2013-07-20">DRAFT</status>
   <title>Guide to the Secure Configuration of Apple iOS 7</title>
   <description>This guide is designed to provide comprehensive discussion of
   security-relevant configuration settings for Apple iOS 7. Providing system

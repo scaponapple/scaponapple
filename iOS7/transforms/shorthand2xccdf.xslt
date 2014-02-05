@@ -8,7 +8,7 @@
 
   <xsl:include href="constants.xslt"/>
 
-  <xsl:variable name="ovalfile">unlinked-ios6-oval.xml</xsl:variable>
+  <xsl:variable name="ovalfile">unlinked-ios7-oval.xml</xsl:variable>
   <xsl:variable name="defaultseverity" select="'low'" />
 
   <!-- put elements created in this stylesheet into the xccdf namespace,

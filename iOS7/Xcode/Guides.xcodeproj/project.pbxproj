@@ -6,10 +6,23 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		AF8D796E18A2E45100CE272E /* input */ = {isa = PBXFileReference; lastKnownFileType = folder; name = input; path = ../input; sourceTree = "<group>"; };
+		AF8D796F18A2E45100CE272E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AF8D797018A2E45100CE272E /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../Makefile; sourceTree = "<group>"; };
+		AF8D797118A2E45100CE272E /* output */ = {isa = PBXFileReference; lastKnownFileType = folder; name = output; path = ../output; sourceTree = "<group>"; };
+		AF8D797218A2E45100CE272E /* transforms */ = {isa = PBXFileReference; lastKnownFileType = folder; name = transforms; path = ../transforms; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		AF3B2A20188BC32000E612CC = {
 			isa = PBXGroup;
 			children = (
+				AF8D796E18A2E45100CE272E /* input */,
+				AF8D796F18A2E45100CE272E /* LICENSE */,
+				AF8D797018A2E45100CE272E /* Makefile */,
+				AF8D797118A2E45100CE272E /* output */,
+				AF8D797218A2E45100CE272E /* transforms */,
 			);
 			sourceTree = "<group>";
 		};
@@ -36,6 +49,7 @@
 		AF3B2A21188BC32000E612CC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "SCAP-On-Apple";
 			};
@@ -164,6 +178,7 @@
 				AF3B2A2A188BC32000E612CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
