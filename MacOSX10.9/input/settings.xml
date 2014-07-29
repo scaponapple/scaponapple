@@ -1,0 +1,48 @@
+<Benchmark xmlns="http://checklists.nist.gov/xccdf/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
+<status date="2014-07-28">draft</status>
+  <title>DoD Consensus Settings for Mac OS X 10.9</title>
+  <description>These security settings for Mac OS X 10.9 
+  were developed by the DoD Joint Consensus Working Group.
+  </description>
+  <!-- Many of the XCCDF elements used here 
+       are not used in the manner originally intended by
+       the XCCDF specification; 
+       this is a result of the SRG-based process,
+       which mixes requirements about security functionality
+       with requirements for security configuration. -->
+
+  <Rule id="rule1" >
+  <ident cci="123" srgid="456" />
+  <status>Applicable - Configurable</status>
+  <description>
+  Some description here.
+  </description>
+  <rationale>
+  Some description here.
+  </rationale>
+  </Rule>
+
+  <Rule id="rule2" >
+  <ident cci="124" srgid="457" />
+  <status>Applicable - Does Not Meet</status>
+  <description>
+  Some description here.
+  </description>
+  <rationale>
+  Some rationale here.
+  </rationale>
+  </Rule>
+
+
+  <Rule id="rule3" >
+  <ident cci="125" srgid="458" />
+  <status>Applicable - Inherently Meets</status>
+  <description>
+  Some description here.
+  </description>
+  <rationale>
+  Some description here.
+  </rationale>
+  </Rule>
+
+</Benchmark>
