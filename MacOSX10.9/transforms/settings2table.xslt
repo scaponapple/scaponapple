@@ -5,6 +5,8 @@
 <xsl:include href="constants.xslt"/>
 <xsl:include href="table-style.xslt"/>
 
+<xsl:param name="printonly" select="''"/>
+
 	<xsl:template match="/">
 		<html>
 		<head>
@@ -43,17 +45,19 @@
 
 
 	<xsl:template match="cdf:Rule">
+		<xsl:if test="(cdf:status='Applicable - Configurable' and $printonly='configurable') or $printonly=''">
 		<tr>
-			<td> TBD </td> 
+			<td> <xsl:value-of select="cdf:ident/@nist" /></td>
 			<td> <xsl:value-of select="cdf:ident/@cci" /></td>
 			<td> <xsl:value-of select="cdf:ident/@srgid" /></td>
 			<td> <xsl:apply-templates select="cdf:description"/> </td>
 			<td> <xsl:apply-templates select="cdf:rationale"/> </td>
 			<td> <xsl:apply-templates select="cdf:status"/> </td>
-			<td> </td> 
-			<td> </td> 
-			<td> </td> 
+			<td> <xsl:apply-templates select="cdf:check"/> </td>
+			<td> <xsl:apply-templates select="cdf:fixtext"/> </td>
+			<td> <xsl:value-of select="@severity" /></td>
 		</tr>
+		</xsl:if>
 	</xsl:template>
 
 
