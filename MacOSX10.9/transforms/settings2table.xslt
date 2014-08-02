@@ -15,6 +15,12 @@
 		<body>
 			<div class="tabletitle">
 			<xsl:value-of select="/cdf:Benchmark/cdf:title" />
+			<xsl:if test="$printonly='configurable'">
+				<p/><i>Configurable Items</i>
+			</xsl:if>
+			<xsl:if test="$printonly=''">
+				<p/><i>All Configurable and Nonconfigurable NIST Controls Selected by DISA FSO</i>
+			</xsl:if>
 			</div>
 			<!-- <xsl:value-of select="/cdf:Benchmark/cdf:description" /> -->
 			<xsl:apply-templates select="cdf:Benchmark"/>
