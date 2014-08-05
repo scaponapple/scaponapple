@@ -56,7 +56,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000016" srgid="SRG-OS-000002"
     nist="AC-2 (2)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Expired User Accounts</title>
     <description>The operating system must automatically remove or
     disable temporary user accounts after 72 hours.</description>
     <rationale>If temporary user accounts remain active when no
@@ -115,7 +115,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000018" srgid="SRG-OS-000004"
     nist="AC-2 (4)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Account Creation</title>
     <description>The operating system must automatically audit
     account creation.</description>
     <rationale>Once an attacker establishes initial access to a
@@ -153,7 +153,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000048" srgid="SRG-OS-000023" nist="AC-8 a" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Display the Mandatory DoD Notice and Consent Banner to
+    Users at Logon</title>
     <description>The operating system must display the Standard
     Mandatory DoD Notice and Consent Banner before granting access
     to the system.</description>
@@ -232,7 +233,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000050" srgid="SRG-OS-000024" nist="AC-8 b" />
     <status>Applicable - Inherently Meets</status>
-    <title></title>
+    <title>Require Users to Accept the Mandatory DoD Notice and
+    Consent Banner Before Logging In</title>
     <description>The operating system must retain the Standard
     Mandatory DoD Notice and Consent Banner on the screen until
     users acknowledge the usage conditions and take explicit
@@ -254,7 +256,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="">
     <ident cci="CCI-000052" srgid="SRG-OS-000025" nist="AC-9" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Configure SSH to Print the Timestamp for the Last
+    Successful Logon</title>
     <description>The operating system, upon successful logon, must
     display to the user the date and time of the last logon
     (access).</description>
@@ -297,7 +300,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000056" srgid="SRG-OS-000028" nist="AC-11 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Require Users to Unlock the Screensaver with their
+    Password</title>
     <description>The operating system must retain the session lock
     until the user reestablishes access using established
     identification and authentication procedures.</description>
@@ -322,7 +326,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000057" srgid="SRG-OS-000029" nist="AC-11 a" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Lock the Screen with a Screensaver after 15 Minutes of
+    Inactivity</title>
     <description>The operating system must initiate a session lock
     after a 15-minute period of inactivity.</description>
     <rationale>A session time-out lock is a temporary action taken
@@ -368,7 +373,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000060" srgid="SRG-OS-000031"
     nist="AC-11 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set a Default Screensaver for All Users</title>
     <description>The operating system must conceal, via the session
     lock, information previously visible on the display with a
     publicly viewable image.</description>
@@ -396,7 +401,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000067" srgid="SRG-OS-000032"
     nist="AC-17 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit All Logon Events</title>
     <description>The operating system must monitor remote access
     methods.</description>
     <rationale>Remote access services, such as those providing
@@ -430,7 +435,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000068" srgid="SRG-OS-000033"
     nist="AC-17 (2)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Unencrypted Remote Access</title>
     <description>The operating system must implement DoD-approved
     encryption to protect the confidentiality of remote access
     sessions.</description>
@@ -609,7 +614,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000140" srgid="SRG-OS-000047" nist="AU-5 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Shut down the Computer if Auditing Fails</title>
     <description>The operating system must shut down by default
     upon audit failure (unless availability is an overriding
     concern).</description>
@@ -717,7 +722,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000162" srgid="SRG-OS-000057" nist="AU-9" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Only Allow Authorized Users to View Audit Logs</title>
     <description>The operating system must protect audit
     information from unauthorized read access.</description>
     <rationale>If audit data were to become compromised, then
@@ -763,7 +768,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000163" srgid="SRG-OS-000058" nist="AU-9" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Only Allow Authorized Users to Modify Audit Logs</title>
     <description>The operating system must protect audit
     information from unauthorized modification.</description>
     <rationale>If audit data were to become compromised, then
@@ -804,7 +809,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000164" srgid="SRG-OS-000059" nist="AU-9" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Only Allow Authorized Users to Delete Audit Logs</title>
     <description>The operating system must protect audit
     information from unauthorized deletion.</description>
     <rationale>If audit data were to become compromised, then
@@ -846,7 +851,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000166" srgid="SRG-OS-000061" nist="AU-10" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must protect against an
     individual (or process acting on behalf of an individual)
@@ -873,7 +878,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000169" srgid="SRG-OS-000062" nist="AU-12 a" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Successful and Unsuccessful File Accesses, File
+    Modifications, Logon Attempts, User Account Modifications,
+    Privileged Elevation, and Kernel Module Loading and
+    Unloading</title>
     <description>The operating system must provide audit record
     generation capability for DoD-defined auditable events for all
     operating system components.</description>
@@ -932,7 +940,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000064" nist="AU-12 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Successful and Unsuccessful Attempts to Gain
+    Privileged Access</title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to access privileges
     occur.</description>
@@ -946,20 +955,20 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <check>The options to configure the audit daemon are located in
     the /etc/security/audit_control file. To view the current
     settings, run the following command: sudo grep ^flags
-    /etc/security/audit_control | sed 's/flags://' If the flags
-    option is not set, this is a finding.</check>
+    /etc/security/audit_control | sed 's/flags://' If the 'lo',
+    'ad', and 'aa' options are not set, this is a finding.</check>
     <fixtext>To set the audit flags to the recommended setting, run
     the following command: sudo sed -i.bak
-    's/^flags.*$/flags:lo,ad,nt,aa/' /etc/security/audit_control
-    You may also edit the /etc/security/audit_control file using a
-    text editor to define the flags your organization requires for
+    's/^flags.*$/flags:lo,ad,aa/' /etc/security/audit_control You
+    may also edit the /etc/security/audit_control file using a text
+    editor to define the flags your organization requires for
     auditing.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000185" srgid="SRG-OS-000066"
     nist="IA-5 (2) (a)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Validate Certificate Trust Chains</title>
     <description>The operating system, for PKI-based
     authentication, must validate certificates by constructing a
     certification path (which includes status information) to an
@@ -1154,7 +1163,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000197" srgid="SRG-OS-000074"
     nist="IA-5 (1) (c)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Telnet Service</title>
     <description>The operating system must transmit only
     cryptographically-protected passwords.</description>
     <rationale>Passwords need to be protected at all times and
@@ -1228,7 +1237,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000205" srgid="SRG-OS-000078"
     nist="IA-5 (1) (a)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set Minimum Password Length to 15 Characters</title>
     <description>The operating system must enforce a minimum
     15-character password length.</description>
     <rationale>The shorter the password, the lower the number of
@@ -1305,7 +1314,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000372" srgid="SRG-OS-000093"
     nist="CM-6 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Apply Configuration Settings With a Configuration
+    Profile</title>
     <description>The operating system must employ automated
     mechanisms to centrally verify configuration
     settings.</description>
@@ -1331,7 +1341,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="CM-7 a" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Non-essential Services</title>
     <description>The operating system must be configured to disable
     non-essential capabilities.</description>
     <rationale>It is detrimental for operating systems to provide,
@@ -1414,7 +1424,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000382" srgid="SRG-OS-000096" nist="CM-7 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Non-essential Services</title>
     <description>The operating system must be configured to
     prohibit or restrict the use of functions, ports, protocols,
     and/or services, as defined in the PPSM CAL and vulnerability
@@ -1638,7 +1648,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000770" srgid="SRG-OS-000109"
     nist="IA-2 (5)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Prevent Users from Logging in as Root Directly</title>
     <description>The operating system must require individuals to
     be authenticated with an individual authenticator prior to
     using a group authenticator.</description>
@@ -1678,7 +1688,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001941" srgid="SRG-OS-000112"
     nist="IA-2 (8)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Insecure SSH Version 1 Protocol</title>
     <description>The operating system must implement
     replay-resistant authentication mechanisms for network access
     to privileged accounts.</description>
@@ -1707,7 +1717,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001942" srgid="SRG-OS-000113"
     nist="IA-2 (9)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Insecure SSH Version 1 Protocol</title>
     <description>The operating system must implement
     replay-resistant authentication mechanisms for network access
     to non-privileged accounts.</description>
@@ -1832,7 +1842,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001682" srgid="SRG-OS-000123"
     nist="AC-2 (2)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Lock Expired User Accounts</title>
     <description>The operating system must be configured such that
     emergency administrator accounts are never automatically
     removed or disabled.</description>
@@ -1870,7 +1880,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000877" srgid="SRG-OS-000125" nist="MA-4 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Telnet Service</title>
     <description>The operating system must employ strong
     authenticators in the establishment of non-local maintenance
     and diagnostic sessions.</description>
@@ -1933,7 +1943,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001019" srgid="SRG-OS-000131"
     nist="MP-4 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Turn on FileVault Disk Encryption</title>
     <description>The operating system must employ cryptographic
     mechanisms to protect information in storage.</description>
     <rationale>When data is written to digital media, such as hard
@@ -2104,7 +2114,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001133" srgid="SRG-OS-000163" nist="SC-10" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set SSH Idle Timeout Interval</title>
     <description>The operating system must terminate all network
     connections associated with a communications session at the end
     of the session, or as follows: for in-band management sessions
@@ -2180,7 +2190,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001166" srgid="SRG-OS-000180"
     nist="SC-18 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable XProtect Update Service</title>
     <description>The operating system must identify prohibited
     mobile code.</description>
     <rationale>Decisions regarding the employment of mobile code
@@ -2305,7 +2315,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001199" srgid="SRG-OS-000185" nist="SC-28" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Turn on FileVault Disk Encryption</title>
     <description>The operating system must protect the
     confidentiality and integrity of all information at
     rest.</description>
@@ -2333,7 +2343,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001233" srgid="SRG-OS-000191"
     nist="SI-2 (2)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Configure Software Update to Use an Approved Update
+    Server</title>
     <description>The operating system must employ automated
     mechanisms to determine the state of system components with
     regard to flaw remediation using the following frequency:
@@ -2360,7 +2371,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001294" srgid="SRG-OS-000200" nist="SI-6 c" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must notify the IAO and IAM
     of failed security verification tests.</description>
@@ -2449,7 +2460,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001314" srgid="SRG-OS-000206" nist="SI-11 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Only Allow Authorized Users to Access System
+    Logs</title>
     <description>The operating system must reveal error messages
     only to the IAO, IAM, and SA.</description>
     <rationale>Only authorized personnel should be aware of errors
@@ -2495,7 +2507,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001348" srgid="SRG-OS-000215"
     nist="AU-9 (2)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Ensure Audit Logs Are Written to a Valid
+    Location</title>
     <description>The operating system must back up audit records at
     least every seven days onto a different system or system
     component than the system or component being
@@ -2566,7 +2579,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001384, CCI-001385, CCI-001386, CCI-001387, CCI-001388"
     srgid="SRG-OS-000228" nist="AC-8 c 1, AC-8 c 2, AC-8 c 3" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Display the Mandatory DoD Notice and Consent Banner to
+    Users at Logon</title>
     <description>The publicly accessible operating system must
     display the Standard Mandatory DoD Notice and Consent Banner
     before granting access to the system.</description>
@@ -2647,7 +2661,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-000371" srgid="SRG-OS-000229"
     nist="CM-6 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Apply Configuration Settings With a Configuration
+    Profile</title>
     <description>Configuration profiles must be applied to the
     system.</description>
     <rationale>Configuration settings are the configurable
@@ -2661,8 +2676,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     efficiency and manageability of applications in a large scale
     environment.</rationale>
     <check>To check if the computer has a configuration profile
-    applied to the workstation, run the following command:sudo
-    profiles -HIf there are no profiles installed, this is a
+    applied to the workstation, run the following command: sudo
+    profiles -H If there are no profiles installed, this is a
     finding.</check>
     <fixtext>Obtain a configuration profile from an MDM or trusted
     provider containing the configuration settings required to be
@@ -2672,7 +2687,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001200" srgid="SRG-OS-000230"
     nist="SC-28 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Turn on FileVault Disk Encryption</title>
     <description>The operating system must employ cryptographic
     mechanisms to prevent unauthorized disclosure of information at
     rest unless otherwise protected by alternative physical
@@ -2695,7 +2710,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001403" srgid="SRG-OS-000239"
     nist="AC-2 (4)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit User Account Creation</title>
     <description>The operating system must automatically audit
     account modification.</description>
     <rationale>Once an attacker establishes initial access to a
@@ -2721,7 +2736,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001404" srgid="SRG-OS-000240"
     nist="AC-2 (4)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit User Account Disablement</title>
     <description>The operating system must automatically audit
     account disabling actions.</description>
     <rationale>When operating system accounts are disabled, user
@@ -2741,9 +2756,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <check>In order to view the currently configured flags for the
     audit daemon, run the following command: sudo grep ^flags
     /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
-    grep ad The account creation events are logged by way of the
-    'ad' flag. If 'ad' is not listed in the result of the check,
-    this is a finding.</check>
+    grep ad The account modification events are logged by way of
+    the 'ad' flag. If 'ad' is not listed in the result of the
+    check, this is a finding.</check>
     <fixtext>To make sure the appropriate flags are enabled for
     auditing, run the following command: sudo sed -i.bak '/^flags/
     s/$/,ad/' /etc/security/audit_control</fixtext>
@@ -2752,7 +2767,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001405" srgid="SRG-OS-000241"
     nist="AC-2 (4)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit User Account Deletion</title>
     <description>The operating system must automatically audit
     account removal actions.</description>
     <rationale>When operating system accounts are removed, user
@@ -2772,9 +2787,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <check>In order to view the currently configured flags for the
     audit daemon, run the following command: sudo grep ^flags
     /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
-    grep ad The account creation events are logged by way of the
-    'ad' flag. If 'ad' is not listed in the result of the check,
-    this is a finding.</check>
+    grep ad The account modification events are logged by way of
+    the 'ad' flag. If 'ad' is not listed in the result of the
+    check, this is a finding.</check>
     <fixtext>To make sure the appropriate flags are enabled for
     auditing, run the following command: sudo sed -i.bak '/^flags/
     s/$/,ad/' /etc/security/audit_control</fixtext>
@@ -2782,7 +2797,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001414" srgid="SRG-OS-000242" nist="AC-4" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable an Approved Firewall</title>
     <description>The operating system must enforce approved
     authorizations for controlling the flow of information between
     interconnected systems based on organization-defined
@@ -2827,7 +2842,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="">
     <ident cci="CCI-001452" srgid="SRG-OS-000249" nist="AC-7 a" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Prevent Brute Force Password Attempts</title>
     <description>The information system enforces the
     organization-defined time period during which the limit of
     consecutive invalid access attempts by a user is
@@ -2850,7 +2865,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001453" srgid="SRG-OS-000250"
     nist="AC-17 (2)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Telnet Service</title>
     <description>The operating system must implement cryptography
     to protect the integrity of remote access
     sessions.</description>
@@ -2989,7 +3004,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001499" srgid="SRG-OS-000259"
     nist="CM-5 (6)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Verify Default File Permissions</title>
     <description>The operating system must limit privileges to
     change software resident within software
     libraries.</description>
@@ -3039,7 +3054,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001662" srgid="SRG-OS-000268"
     nist="SC-18 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Gatekeeper</title>
     <description>The operating system must block, quarantine,
     and/or alert administrators when prohibited mobile code is
     identified.</description>
@@ -3235,7 +3250,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002361" srgid="SRG-OS-000279" nist="AC-12" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must automatically terminate
     a user session after organization-defined conditions or trigger
@@ -3308,7 +3323,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002262" srgid="SRG-OS-000294" nist="AC-16 a" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must associate
     organization-defined types of security attributes having
@@ -3338,7 +3353,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002263" srgid="SRG-OS-000295" nist="AC-16 a" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must associate
     organization-defined types of security attributes having
@@ -3368,7 +3383,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002264" srgid="SRG-OS-000296" nist="AC-16 a" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must associate
     organization-defined types of security attributes having
@@ -3655,7 +3670,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-002234" srgid="SRG-OS-000327"
     nist="AC-6 (9)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Privileged Access</title>
     <description>The operating system must audit the execution of
     privileged functions.</description>
     <rationale>Misuse of privileged functions, either intentionally
@@ -3669,16 +3684,16 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <check>In order to view the currently configured flags for the
     audit daemon, run the following command: sudo grep ^flags
     /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
-    grep aa The authentication events are logged via the 'aa' flag.
+    grep ad The authentication events are logged via the 'ad' flag.
     If 'aa' is not listed in the result of the check, this is a
     finding.</check>
     <fixtext>To make sure the appropriate flags are enabled for
     auditing, run the following command: sudo sed -i.bak '/^flags/
-    s/$/,aa/' /etc/security/audit_control</fixtext>
+    s/$/,ad/' /etc/security/audit_control</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002238" srgid="SRG-OS-000329" nist="AC-7 b" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must automatically lock the
     account until the locked account is released by an
@@ -3761,7 +3776,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001849" srgid="SRG-OS-000341" nist="AU-4" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Ensure Audit Has Sufficient Storage</title>
     <description>The operating system must allocate audit record
     storage capacity in accordance with organization-defined audit
     record storage requirements.</description>
@@ -3788,7 +3803,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001851" srgid="SRG-OS-000342"
     nist="AU-4 (1)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must off-load audit records
     onto a different system or media than the system being
@@ -3804,7 +3819,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001855" srgid="SRG-OS-000343"
     nist="AU-5 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Notify Administrators if Audit Has Insufficient
+    Storage</title>
     <description>The operating system must provide an immediate
     warning to the SA and IAO (at a minimum) when allocated audit
     record storage volume reaches 75% of repository maximum audit
@@ -3822,7 +3838,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001858" srgid="SRG-OS-000344"
     nist="AU-5 (2)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Notify Administrators of Auditing Failues</title>
     <description>The operating system must provide an immediate
     real-time alert to the SA and IAO, at a minimum, of all audit
     failure events requiring real-time alerts.</description>
@@ -3834,8 +3850,20 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     organizations with urgent messages. Real-time alerts provide
     these messages immediately (i.e., the time from event detection
     to alert occurs in seconds or less).</rationale>
-    <check></check>
-    <fixtext></fixtext>
+    <check>By default, auditd only logs errors to syslog. To verify
+    if auditd has been configured to send immediate alerts to the
+    SA or IAO, ask the SA if /etc/security/audit_warn has been
+    configured to send emails or print alerts to the terminal
+    window when audit errors occur. For example, to see if audit
+    has been configured to print error messages to the console, run
+    the following command: sudo grep logger
+    /etc/security/audit_warn If the argument '-s' is missing, or if
+    audit_warn has not been otherwise modified to print errors to
+    the console or send email alerts to the SA and IAO, this is a
+    finding.</check>
+    <fixtext>To make auditd log errors to standard error as well as
+    syslogd, run the following command: sudo sed -i.bak 's/logger
+    -p/logger -s -p/' /etc/security/audit_warn</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001875" srgid="SRG-OS-000348" nist="AU-7 a" />
@@ -3876,7 +3904,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     requirement is specific to operating systems with audit
     reduction capabilities.</rationale>
     <check></check>
-    <fixtext></fixtext>
+    <fixtext>sudo sed -i.ba</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001878" srgid="SRG-OS-000350" nist="AU-7 a" />
@@ -3982,7 +4010,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001891" srgid="SRG-OS-000355"
     nist="AU-8 (1) (a)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must, for networked systems,
     compare internal information system clocks at least every 24
@@ -4009,7 +4037,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-002046" srgid="SRG-OS-000356"
     nist="AU-8 (1) (b)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must synchronize internal
     information system clocks to the authoritative time source when
@@ -4170,8 +4198,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001814" srgid="SRG-OS-000365"
     nist="CM-5 (1)" />
-    <status></status>
-    <title></title>
+    <status>Applicable - Configurable</status>
+    <title>Audit Privileged Access</title>
     <description>The operating system must audit the enforcement
     actions used to restrict access associated with changes to the
     system.</description>
@@ -4186,9 +4214,15 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     file permissions (access restriction). Audit items may consist
     of lists of actions blocked by access restrictions or changes
     identified after the fact.</rationale>
-    <check>MAURA: I need to look this one up, and see what it would
-    take to make audit flag access control changes.</check>
-    <fixtext></fixtext>
+    <check>In order to view the currently configured flags for the
+    audit daemon, run the following command: sudo grep ^flags
+    /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
+    grep ad Administrative actions and changes to configuration
+    settings are logged by way of the 'ad' flag. If 'ad' is not
+    listed in the result of the check, this is a finding.</check>
+    <fixtext>To make sure the appropriate flags are enabled for
+    auditing, run the following command: sudo sed -i.bak '/^flags/
+    s/$/,ad/' /etc/security/audit_control</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001749" srgid="SRG-OS-000366"
@@ -4255,7 +4289,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-001774" srgid="SRG-OS-000370"
     nist="CM-7 (5) (b)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Only Allow Authorized Applications</title>
     <description>The operating system must employ a deny-all,
     permit-by-exception policy to allow the execution of authorized
     software programs.</description>
@@ -4272,9 +4306,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     requirement applies to operating system programs, functions,
     and services designed to manage system processes and
     configurations (e.g., group policies).</rationale>
-    <check>MAURA: Applications Restrictions exist and can be pushed
-    out by policy.</check>
-    <fixtext></fixtext>
+    <check>To check if there is a configuration policy defined for
+    Application Restrictions, run the following command: sudo
+    profiles -Pv | grep 'Application Restrictions' If nothing is
+    returned, this is a finding.</check>
+    <fixtext>A configuration profile should exist to restrict
+    launching of applications.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002038" srgid="SRG-OS-000373" nist="IA-11" />
@@ -4302,7 +4339,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002039" srgid="SRG-OS-000374" nist="IA-11" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must require devices to
     reauthenticate when organization-defined circumstances or
@@ -4332,14 +4369,14 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001948" srgid="SRG-OS-000375"
     nist="IA-2 (11)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must implement multifactor
     authentication for remote access to privileged accounts such
     that one of the factors is provided by a device separate from
     the system gaining access. Requires further clarification from
     NIST.</description>
-    <rationale>Using a an authentication device, such as a CAC or
+    <rationale>Using an authentication device, such as a CAC or
     token that is separate from the information system, ensures
     that even if the information system is compromised, that
     compromise will not affect credentials stored on the
@@ -4360,13 +4397,16 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     capability). This does not apply to authentication for the
     purpose of configuring the device itself (management). Requires
     further clarification from NIST.</rationale>
-    <check></check>
+    <check>MAURA: Third party support has traditionally been
+    required for multifactor authentication with CAC. Apple
+    suggested full built in support is coming in 10.9 or
+    10.10.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001953" srgid="SRG-OS-000376"
     nist="IA-2 (12)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must accept Personal Identity
     Verification (PIV) credentials.</description>
@@ -4376,13 +4416,16 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     management and personal authentication for systems covered
     under HSPD 12, as well as a primary component of layered
     protection for national security systems.</rationale>
-    <check></check>
+    <check>MAURA: Third party support has traditionally been
+    required for multifactor authentication with CAC. Apple
+    suggested full built in support is coming in 10.9 or
+    10.10.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001954" srgid="SRG-OS-000377"
     nist="IA-2 (12)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must electronically verify
     Personal Identity Verification (PIV) credentials.</description>
@@ -4392,12 +4435,15 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     management and personal authentication for systems covered
     under HSPD 12, as well as a primary component of layered
     protection for national security systems.</rationale>
-    <check></check>
+    <check>MAURA: Third party support has traditionally been
+    required for multifactor authentication with CAC. Apple
+    suggested full built in support is coming in 10.9 or
+    10.10.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001958" srgid="SRG-OS-000378" nist="IA-3" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must authenticate peripherals
     before establishing a connection.</description>
@@ -4480,7 +4526,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001991" srgid="SRG-OS-000384"
     nist="IA-5 (2) (d)" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system, for PKI-based
     authentication, must implement a local cache of revocation data
@@ -4498,7 +4544,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-002009" srgid="SRG-OS-000385"
     nist="IA-8 (1)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must accept Personal Identity
     Verification (PIV) credentials from other federal
@@ -4517,7 +4563,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-002010" srgid="SRG-OS-000386"
     nist="IA-8 (1)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must electronically verify
     Personal Identity Verification (PIV) credentials from other
@@ -4530,13 +4576,16 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     Memorandum 11-11 requires federal agencies to continue
     implementing the requirements specified in HSPD-12 to enable
     agency-wide use of PIV credentials.</rationale>
-    <check></check>
+    <check>MAURA: Third party support has traditionally been
+    required for multifactor authentication with CAC. Apple
+    suggested full built in support is coming in 10.9 or
+    10.10.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002011" srgid="SRG-OS-000387"
     nist="IA-8 (2)" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must accept FICAM-approved
     third-party credentials.</description>
@@ -4550,13 +4599,16 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     non-federal government entities approved by the Federal
     Identity, Credential, and Access Management (FICAM) Trust
     Framework Solutions initiative.</rationale>
-    <check></check>
+    <check>MAURA: Third party support has traditionally been
+    required for multifactor authentication with CAC. Apple
+    suggested full built in support is coming in 10.9 or
+    10.10.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002014" srgid="SRG-OS-000388"
     nist="IA-8 (4)" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must conform to FICAM-issued
     profiles.</description>
@@ -4565,14 +4617,17 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     FICAM-authentication protocols, such as SAML 2.0 and OpenID
     2.0. This requirement addresses open identity management
     standards.</rationale>
-    <check></check>
+    <check>MAURA: Third party support has traditionally been
+    required for multifactor authentication with CAC. Apple
+    suggested full built in support is coming in 10.9 or
+    10.10.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002884" srgid="SRG-OS-000392"
     nist="MA-4 (1) (a)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Privileged Access</title>
     <description>Operating systems sessions must audit non-local
     maintenance and diagnostic sessions organization-defined audit
     events.</description>
@@ -4596,15 +4651,21 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     implementing "ping," "ls," "ipconfig," or the hardware and
     software implementing the monitoring port of an Ethernet
     switch.</rationale>
-    <check>MAURA: Normal logging will pick up anything with sudo,
-    auditing can be configured to catch most of the rest.</check>
-    <fixtext></fixtext>
+    <check>In order to view the currently configured flags for the
+    audit daemon, run the following command: sudo grep ^flags
+    /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
+    grep ad Administrative actions and changes to configuration
+    settings are logged by way of the 'ad' flag. If 'ad' is not
+    listed in the result of the check, this is a finding.</check>
+    <fixtext>To make sure the appropriate flags are enabled for
+    auditing, run the following command: sudo sed -i.bak '/^flags/
+    s/$/,ad/' /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002890" srgid="SRG-OS-000393"
     nist="MA-4 (6)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Telnet Service</title>
     <description>Operating systems used for non-local maintenance
     sessions must implement cryptographic mechanisms to protect the
     integrity of non-local maintenance and diagnostic
@@ -4643,7 +4704,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <ident cci="CCI-003123" srgid="SRG-OS-000394"
     nist="MA-4 (6)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Telnet Service</title>
     <description>Operating systems used for non-local maintenance
     sessions must implement cryptographic mechanisms to protect the
     confidentiality of non-local maintenance and diagnostic
@@ -4699,7 +4760,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-002450" srgid="SRG-OS-000396" nist="SC-13" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Ensure that the NSA-approved Cryptography Module Has Not
+    Been Modified</title>
     <description>The operating system must implement NSA-approved
     cryptography to protect classified information in accordance
     with applicable federal laws, Executive Orders, directives,
@@ -4744,7 +4806,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002465" srgid="SRG-OS-000399" nist="SC-21" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must request data origin
     authentication verification on the name/address resolution
@@ -4777,7 +4839,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002466" srgid="SRG-OS-000400" nist="SC-21" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must request data integrity
     verification on the name/address resolution responses the
@@ -4806,7 +4868,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002467" srgid="SRG-OS-000401" nist="SC-21" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must perform data integrity
     verification on the name/address resolution responses the
@@ -4835,7 +4897,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002468" srgid="SRG-OS-000402" nist="SC-21" />
-    <status></status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must perform data origin
     verification authentication on the name/address resolution
@@ -4866,7 +4928,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-002470" srgid="SRG-OS-000403"
     nist="SC-23 (5)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must only allow the use of
     DoD PKI established certificate authorities for verification of
@@ -4881,14 +4943,16 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     or external certificate authority. Reliance on CAs for the
     establishment of secure sessions includes, for example, the use
     of SSL/TLS certificates.</rationale>
-    <check></check>
+    <check>MAURA: Needs clarification. It seems to imply that all
+    third party certificate authorities should be removed from the
+    system.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002475" srgid="SRG-OS-000404"
     nist="SC-28 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Turn on FileVault Disk Encryption</title>
     <description>The operating system must implement cryptographic
     mechanisms to prevent unauthorized modification of
     organization-defined information at rest on
@@ -4905,14 +4969,18 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     information on storage devices (i.e., full disk encryption) or
     encrypt specific data structures (e.g., files, records, or
     fields).</rationale>
-    <check>MAURA: FileVault2 has this functionality</check>
-    <fixtext></fixtext>
+    <check>To check if FileVault 2 is enabled, run the following
+    command: sudo fdesetup status If FileVault is 'OFF', this is a
+    finding.</check>
+    <fixtext>Open System Preferences-&gt;Security and Privacy, and
+    navigate to the FileVault tab. Use this panel to configure
+    full-disk encryption.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002476" srgid="SRG-OS-000405"
     nist="SC-28 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Turn on FileVault Disk Encryption</title>
     <description>The operating system must implement cryptographic
     mechanisms to prevent unauthorized disclosure of
     organization-defined information at rest on
@@ -4929,8 +4997,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     information on storage devices (i.e., full disk encryption) or
     encrypt specific data structures (e.g., files, records, or
     fields).</rationale>
-    <check>MAURA: FileVault2 has this functionality</check>
-    <fixtext></fixtext>
+    <check>To check if FileVault 2 is enabled, run the following
+    command: sudo fdesetup status If FileVault is 'OFF', this is a
+    finding.</check>
+    <fixtext>Open System Preferences-&gt;Security and Privacy, and
+    navigate to the FileVault tab. Use this panel to configure
+    full-disk encryption.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002530" srgid="SRG-OS-000408" nist="SC-39" />
@@ -4978,7 +5050,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="high">
     <ident cci="CCI-002418" srgid="SRG-OS-000423" nist="SC-8" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Network Services that Do Not Support
+    Encryption</title>
     <description>The operating system must protect the
     confidentiality and integrity of transmitted
     information.</description>
@@ -4998,14 +5071,17 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     techniques). If physical means of protection are employed, then
     logical means (cryptography) do not have to be employed, and
     vice versa.</rationale>
-    <check></check>
+    <check>MAURA: Individual services must be configured to use
+    TLS. Other checks disable unencrypted services
+    (telnet).</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002421" srgid="SRG-OS-000424"
     nist="SC-8 (1)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Network Services that Do Not Support
+    Encryption</title>
     <description>The operating system must implement cryptographic
     mechanisms to prevent unauthorized disclosure of information
     and/or detect changes to information during transmission unless
@@ -5030,13 +5106,15 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     unencrypted, the PDS must provide adequate electrical,
     electromagnetic, and physical safeguards to deter
     exploitation.</rationale>
-    <check></check>
+    <check>MAURA: Individual services must be configured to use
+    TLS. Other checks disable unencrypted services
+    (telnet).</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002420" srgid="SRG-OS-000425"
     nist="SC-8 (2)" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must maintain the
     confidentiality and integrity of information during preparation
@@ -5057,13 +5135,14 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     transmitting data, operating systems need to support
     transmission protection mechanisms such as TLS, SSL VPNs, or
     IPSEC.</rationale>
-    <check>MAURA: Has anyone evaluated this?</check>
+    <check>MAURA: Has anyone evaluated this? Data at rest and in
+    memory is generally protected by access controls.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002422" srgid="SRG-OS-000426"
     nist="SC-8 (2)" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must maintain the
     confidentiality and integrity of information during
@@ -5083,7 +5162,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     transfer and handling process. When receiving data, operating
     systems need to leverage protection mechanisms such as TLS, SSL
     VPNs, or IPSEC.</rationale>
-    <check>MAURA: Has anyone evaluated this?</check>
+    <check>MAURA: Has anyone evaluated this? Data at rest and in
+    memory is generally protected by access controls.</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -5162,7 +5242,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-002605" srgid="SRG-OS-000439" nist="SI-2 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Automatic Software Updates</title>
     <description>The operating system must install
     security-relevant software updates within the time period
     directed by an authoritative source (e.g. IAVM, CTOs, DTMs, and
@@ -5205,7 +5285,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-002607" srgid="SRG-OS-000440" nist="SI-2 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Automatic Security Updates</title>
     <description>The operating system must install
     security-relevant firmware updates within the time period
     directed by an authoritative source (e.g. IAVM, CTOs, DTMs, and
@@ -5280,7 +5360,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002696" srgid="SRG-OS-000445" nist="SI-6 a" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must verify correct operation
     of organization-defined security functions.</description>
@@ -5297,13 +5377,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     applies to operating systems performing security function
     verification/testing and/or systems and environments that
     require this functionality.</rationale>
-    <check>MAURA: Follow up on this one, figure out what this
-    verification entails.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002699" srgid="SRG-OS-000446" nist="SI-6 b" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must perform verification of
     the correct operation of security functions: upon system
@@ -5325,13 +5404,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     This requirement applies to operating systems performing
     security function verification/testing and/or systems and
     environments that require this functionality.</rationale>
-    <check>MAURA: Follow up on this one, figure out what this
-    verification entails.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002702" srgid="SRG-OS-000447" nist="SI-6 d" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must shut down the
     information system, restart the information system, and/or
@@ -5354,15 +5432,14 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     an appropriate response. The organization may choose to shut
     down or restart the information system upon security function
     anomaly detection.</rationale>
-    <check>MAURA: Follow up on this one, figure out what this
-    verification entails.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002460" srgid="SRG-OS-000453"
     nist="SC-18 (4)" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Gatekeeper</title>
     <description>The operating system must prompt the user for
     action prior to executing mobile code.</description>
     <rationale>Mobile code can cause damage to the system. It can
@@ -5372,15 +5449,17 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     This requirement applies to mobile code-enabled software, which
     is capable of executing one or more types of mobile
     code.</rationale>
-    <check>MAURA: I think this is supported and configurable due to
-    the fact that downloads are labeled and users are prompted to
-    run them and because browsers can be configured to use no
-    script and other plugins.</check>
-    <fixtext></fixtext>
+    <check>To check to make sure the user cannot override
+    Gatekeeper settings, type the following code: system_profiler
+    SPConfigurationProfileDataType | grep DisableOverride | awk '{
+    print $3 }' | sed 's/;//' If the returned value is not '1',
+    this is a finding.</check>
+    <fixtext>This can be enforced using a configuration
+    profile.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000458" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to access security
@@ -5397,7 +5476,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000460" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to access security levels
@@ -5414,7 +5493,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000461" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to access categories of
@@ -5443,12 +5522,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     for one. Audit records can be generated from various components
     within the information system (e.g., module or policy
     filter).</rationale>
-    <check></check>
+    <check>MAURA: Need clarification</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000463" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to modify security
@@ -5465,7 +5544,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000464" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to modify security levels
@@ -5482,7 +5561,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000465" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to modify categories of
@@ -5499,7 +5578,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000466" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to delete privileges
@@ -5516,7 +5595,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000467" nist="AU-12 c" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to delete security levels
@@ -5533,7 +5612,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000468" nist="AU-12 c" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to delete security
@@ -5550,7 +5629,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000469" nist="AU-12 c" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful attempts to delete categories of
@@ -5568,7 +5647,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000470" nist="AU-12 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Successful and Unsuccessful Logon Attempts</title>
     <description>The operating system must generate audit records
     when successful/unsuccessful logon attempts
     occur.</description>
@@ -5579,13 +5658,20 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     for one. Audit records can be generated from various components
     within the information system (e.g., module or policy
     filter).</rationale>
-    <check></check>
-    <fixtext></fixtext>
+    <check>In order to view the currently configured flags for the
+    audit daemon, run the following command: sudo grep ^flags
+    /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
+    grep aa Logon events are logged by way of the 'aa' flag. If
+    'aa' is not listed in the result of the check, this is a
+    finding.</check>
+    <fixtext>To make sure the appropriate flags are enabled for
+    auditing, run the following command: sudo sed -i.bak '/^flags/
+    s/$/,aa/' /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000471" nist="AU-12 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Privileged Access</title>
     <description>The operating system must generate audit records
     for privileged activities or other system-level
     access.</description>
@@ -5596,12 +5682,19 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     for one. Audit records can be generated from various components
     within the information system (e.g., module or policy
     filter).</rationale>
-    <check></check>
-    <fixtext></fixtext>
+    <check>In order to view the currently configured flags for the
+    audit daemon, run the following command: sudo grep ^flags
+    /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
+    grep ad Privileged activities are logged by way of the 'ad'
+    flag. If 'ad' is not listed in the result of the check, this is
+    a finding.</check>
+    <fixtext>To make sure the appropriate flags are enabled for
+    auditing, run the following command: sudo sed -i.bak '/^flags/
+    s/$/,ad/' /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000472" nist="AU-12 c" />
-    <status></status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must generate audit records
     showing starting and ending time for user access to the
@@ -5613,12 +5706,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     for one. Audit records can be generated from various components
     within the information system (e.g., module or policy
     filter).</rationale>
-    <check>MAURA: Need to verify if audit tracks end times</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000473" nist="AU-12 c" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must generate audit records
     when concurrent logons from different workstations
@@ -5630,12 +5723,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     for one. Audit records can be generated from various components
     within the information system (e.g., module or policy
     filter).</rationale>
-    <check>MAURA: Need clarification</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000474" nist="AU-12 c" />
-    <status></status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must generate audit records
     when successful/unsuccessful accesses to objects
@@ -5647,13 +5740,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     for one. Audit records can be generated from various components
     within the information system (e.g., module or policy
     filter).</rationale>
-    <check>MAURA: Need clarification</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000475" nist="AU-12 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit All Direct Access</title>
     <description>The operating system must generate audit records
     for all direct access to the information system.</description>
     <rationale>Without generating audit records that are specific
@@ -5671,7 +5764,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000476" nist="AU-12 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Account Creation, Modification, and
+    Deletion</title>
     <description>The operating system must generate audit records
     for all account creations, modifications, disabling, and
     termination events.</description>
@@ -5690,7 +5784,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000477" nist="AU-12 c" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Kernel Module Loading and Unloading</title>
     <description>The operating system must generate audit records
     for all kernel module load, unload, and restart actions, and
     also for all program initiations.</description>
@@ -5728,7 +5822,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001851" srgid="SRG-OS-000479"
     nist="AU-4 (1)" />
-    <status>Applicable - Configurable</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must, at a minimum, off-load
     interconnected systems in real time and off-load standalone
@@ -5737,14 +5831,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     accidental or incidental deletion or alteration. Off-loading is
     a common process in information systems with limited audit
     storage capacity.</rationale>
-    <check>MAURA: It should be possible to automate this or hand
-    copy this data.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Apply Best Practice Security Configuration</title>
     <description>The operating system must be configured in
     accordance with the security configuration settings based on
     DoD security configuration or implementation guidance,
@@ -5771,7 +5864,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Automatic Logons</title>
     <description>Automatic login must be disabled.</description>
     <rationale>Automatic login must be disabled.</rationale>
     <check>To check if the system if configured to automatically
@@ -5785,7 +5878,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Prompt Users for a Username and Password</title>
     <description>The login window must be configured to prompt for
     username and password, rather than show a list of
     users.</description>
@@ -5803,7 +5896,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Prevent Administrators from Unlocking Other User's
+    Screens</title>
     <description>The ability for administrative accounts to unlock
     Screen Saver must be disabled.</description>
     <rationale>The ability for administrative accounts to unlock
@@ -5822,7 +5916,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Configure sudo to Prompt for a Password at Least Once in
+    Each Terminal Window</title>
     <description>The sudoers file must be configured to
     authenticate users on a per-tty basis.</description>
     <rationale>Do not allow direct root login because the logs
@@ -5840,7 +5935,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set the Global Umask Setting for Users</title>
     <description>The default global umask setting must be changed
     for user applications.</description>
     <rationale>The default global umask setting must be changed for
@@ -5856,7 +5951,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set the Global Umask Setting for the System</title>
     <description>The default global umask setting must be changed
     for system processes.</description>
     <rationale>The default global umask setting must be configured
@@ -5870,7 +5965,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable System Logging</title>
     <description>Local logging must be enabled.</description>
     <rationale>Local logging must be enabled.</rationale>
     <check>To check if the newsyslog daemon is disabled, run the
@@ -5885,7 +5980,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Rotate System Logs</title>
     <description>Newsyslog must be correctly configured to rotate
     log files.</description>
     <rationale>Newsyslog needs to be correctly configured to rotate
@@ -5901,7 +5996,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Ensure Only root has the UID 0</title>
     <description>The root account must be the only account having a
     UID of 0.</description>
     <rationale>The root account must be the only account having a
@@ -5915,7 +6010,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="low">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set Trash to Securely Erase Items</title>
     <description>Finder must be set to always empty Trash
     securely.</description>
     <rationale>Finder must be set to always empty Trash securely.
@@ -5934,7 +6029,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Application Firewall</title>
     <description>The application firewall must be
     enabled.</description>
     <rationale>The application firewall must be
@@ -5951,7 +6046,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Fast User Switching</title>
     <description>Fast User Switching must be
     disabled.</description>
     <rationale>Fast User Switching must be disabled.</rationale>
@@ -5966,7 +6061,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Kernel Core Dumps</title>
     <description>Kernel core dumps must be disabled unless
     needed.</description>
     <rationale>Kernel core dumps must be disabled unless
@@ -5980,7 +6075,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set the Owner of Public Directories to root or a System
+    Account</title>
     <description>All public directories must be owned by root or an
     application account.</description>
     <rationale>All public directories must be owned by root or an
@@ -5995,7 +6091,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Finger Service</title>
     <description>The system must not have the finger service
     active.</description>
     <rationale>The system must not have the finger service
@@ -6014,7 +6110,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Set the Sticky Bit on Public Directories</title>
     <description>The sticky bit must be set on all public
     directories.</description>
     <rationale>The sticky bit must be set on all public
@@ -6030,7 +6126,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable the Prompt for Apple ID and iCloud</title>
     <description>The prompt for Apple ID and iCloud must be
     disabled.</description>
     <rationale>The prompt for Apple ID and iCloud must be
@@ -6040,7 +6136,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     defaults read /System/Library/User\
     Template/English.lproj/Library/Preferences/com.apple.SetupAssistant
     If there is no result, or the results do not include
-    'DidSeeCloudSetup = 1 AND LastSeenCloudProductVersion = 10.8',
+    'DidSeeCloudSetup = 1 AND LastSeenCloudProductVersion = 10.9',
     this is a finding.</check>
     <fixtext>To ensure that the prompt for Apple ID and iCloud is
     disabled, run the following commands:sudo defaults write
@@ -6049,12 +6145,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     DidSeeCloudSetup -bool TRUE; sudo defaults write
     /System/Library/User\
     Template/English.lproj/Library/Preferences/com.apple.SetupAssistant
-    LastSeenCloudProductVersion '10.8'</fixtext>
+    LastSeenCloudProductVersion '10.9'</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Prevent Users from Signing into iCloud</title>
     <description>Users must not have Apple IDs signed into
     iCloud.</description>
     <rationale>Users should not have Apple ID's signed into
@@ -6071,7 +6167,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="low">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable iTunes Music Sharing</title>
     <description>iTunes Music Sharing must be
     disabled.</description>
     <rationale>iTunes Music Sharing must be disabled.</rationale>
@@ -6086,7 +6182,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Remove the setuid Bit Unless Set by the Vendor</title>
     <description>All setuid executables on the system must be
     vendor-supplied.</description>
     <rationale>All files with the setuid bit set will allow anyone
@@ -6100,14 +6196,14 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     the following command: sudo find / -perm 4000 -exec ls -ldb {}
     \; If any of the files listed are not documented as needing to
     have the setuid bit set by the vendor, this is a
-    finding</check>
+    finding.</check>
     <fixtext>Document all of the files with the setuid bit
     set.</fixtext>
   </Rule>
   <Rule severity="low">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable iTunes Radio</title>
     <description>iTunes Radio must be disabled.</description>
     <rationale>iTunes Radio must be disabled.</rationale>
     <check>To check if the iTunes radio is disabled, run the
@@ -6121,7 +6217,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="low">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable iTunes Podcasts</title>
     <description>iTunes Podcasts must be disabled.</description>
     <rationale>iTunes Podcasts must be disabled.</rationale>
     <check>To check if the iTunes podcasts are disabled, run the
@@ -6135,7 +6231,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Remove Unnecessary Software</title>
     <description>Unnecessary packages must not be
     installed.</description>
     <rationale>Unnecessary packages must not be
@@ -6150,56 +6246,41 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The centralized process core dump data directory
     must be owned by root.</description>
     <rationale>The centralized process core dump data directory
     must be owned by root.</rationale>
-    <check>To check the ownership of the process core dump
-    directory, run the following command: sudo ls -ld
-    /Library/Logs/DiagnosticReports/ If the owner is not 'root',
-    this is a finding.</check>
-    <fixtext>To change the ownership to 'root', run the following
-    command:sudo chown root
-    /Library/Logs/DiagnosticReports/</fixtext>
+    <check></check>
+    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The centralized process core dump data directory
     must have mode 0750 or less permissive.</description>
     <rationale>The centralized process core dump data directory
     must have mode '0750' or less permissive.</rationale>
-    <check>To check the permissions of the process core dump
-    directory, run the following command: sudo stat -f %A
-    /Library/Logs/DiagnosticReports/ If the permissions are not
-    '0750', this is a finding.</check>
-    <fixtext>To change the permissions of the directory, run the
-    following command:sudo chmod 0750
-    /Library/Logs/DiagnosticReports/</fixtext>
+    <check></check>
+    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The centralized process core dump data directory
     must be group-owned by admin.</description>
     <rationale>The centralized process core dump data directory
     must be group-owned by admin.</rationale>
-    <check>To check the group ownership of the process core dump
-    directory, run the following command: sudo ls -ld
-    /Library/Logs/DiagnosticReports/ If the group is not 'admin',
-    this is a finding.</check>
-    <fixtext>To change the group ownership to ''admin run the
-    following command:sudo chgrp admin
-    /Library/Logs/DiagnosticReports/</fixtext>
+    <check></check>
+    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Block Responses to ICMPv4 Echos</title>
     <description>The system must not respond to Internet Control
     Message Protocol [ICMPv4] echoes sent to a broadcast
     address.</description>
@@ -6217,7 +6298,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Drop Incoming Source-Routed Packets</title>
     <description>The system must not accept source-routed IPv4
     packets.</description>
     <rationale>The system must not accept source-routed IPv4
@@ -6233,7 +6314,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Drop Incoming ICMPv4 Redirect Messages</title>
     <description>The system must ignore IPv4 ICMP redirect
     messages.</description>
     <rationale>The system must ignore IPv4 ICMP redirect
@@ -6249,7 +6330,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable IPv4 Forwarding</title>
     <description>IP forwarding for IPv4 must not be enabled, unless
     the system is a router.</description>
     <rationale>IP forwarding for IPv4 must not be enabled, unless
@@ -6264,7 +6345,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Don't Send ICMPv4 Redirect Messages</title>
     <description>The system must not send IPv4 ICMP redirects by
     default.</description>
     <rationale>The system must not send IPv4 ICMP redirects by
@@ -6279,7 +6360,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Don't Send Source-Routed Packets</title>
     <description>The system must prevent local applications from
     generating source-routed packets.</description>
     <rationale>The system must prevent local applications from
@@ -6294,7 +6375,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Drop Incoming ICMPv4 Timestamp Requests</title>
     <description>The system must not process Internet Control
     Message Protocol [ICMP] timestamp requests.</description>
     <rationale>The system must not process Internet Control Message
@@ -6309,7 +6390,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Audio Recording</title>
     <description>Audio recording support software must be
     disabled.</description>
     <rationale>Audio recording support software must be
@@ -6342,7 +6423,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Unused Network Devices</title>
     <description>Unused network devices must be
     disabled.</description>
     <rationale>Unused network devices must be disabled.</rationale>
@@ -6357,7 +6438,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Stealth Mode in the Application Firewall</title>
     <description>Stealth Mode must be enabled on the
     firewall.</description>
     <rationale>Stealth Mode must be enabled on the
@@ -6374,7 +6455,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Turn on Secure Virtual Memory</title>
     <description>Secure virtual memory must be used.</description>
     <rationale>Secure virtual memory must be used.</rationale>
     <check>To check if the system is using secure virtual memory
@@ -6389,7 +6470,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Ensure All System Updates are Installed</title>
     <description>The Operating System must be current and at the
     latest release level.</description>
     <rationale>The Operating System must be current and at the
@@ -6408,7 +6489,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Install and Configure an Approved Firewall</title>
     <description>A host-based firewall must be
     installed.</description>
     <rationale>Access into an organization's internal network and
@@ -6425,7 +6506,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Install and Configure an Approved Firewall</title>
     <description>The operating system must enforce requirements for
     remote connections to the information system.</description>
     <rationale>The organization will define the requirements for
@@ -6443,7 +6524,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Turn on Firewall Logging</title>
     <description>The OS X firewall must have logging
     enabled</description>
     <rationale>Firewall logging must be enabled. This requirement
@@ -6460,7 +6541,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Screen Sharing</title>
     <description>The operating system must enforce requirements for
     remote connections to the information system.</description>
     <rationale>Screen Sharing must be disabled.</rationale>
@@ -6478,7 +6559,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Bluetooth</title>
     <description>The operating system must monitor for unauthorized
     connections of mobile devices to organizational information
     systems.</description>
@@ -6515,7 +6596,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="low">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Bluetooth</title>
     <description>The Bluetooth protocol driver must be
     removed.</description>
     <rationale>Wireless access introduces security risks which must
@@ -6540,7 +6621,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Bluetooth</title>
     <description>Bluetooth support software must be
     disabled.</description>
     <rationale>Bluetooth support software must be
@@ -6559,7 +6640,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Prevent Bluetooth Devices from Waking the
+    Computer</title>
     <description>Bluetooth devices must not be allowed to wake the
     computer.</description>
     <rationale>Bluetooth devices must not be allowed to wake the
@@ -6578,7 +6660,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Bluetooth Sharing</title>
     <description>Bluetooth Sharing must be disabled.</description>
     <rationale>Bluetooth Sharing must be disabled.</rationale>
     <check>To check if Bluetooth Sharing is enabled, Open up System
@@ -6591,7 +6673,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Wi-Fi</title>
     <description>Wi-Fi support software must be
     disabled.</description>
     <rationale>Wi-Fi support software must be disabled.</rationale>
@@ -6606,7 +6688,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Infrared [IR]</title>
     <description>Infrared [IR] support must be
     removed.</description>
     <rationale>Infrared [IR] support must be removed.</rationale>
@@ -6621,7 +6703,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Automatic Actions for Blank CDs</title>
     <description>Automatic actions must be disabled for blank
     CDs.</description>
     <rationale>Automatic actions must be disabled for blank
@@ -6639,7 +6721,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Automatic Actions for Blank DVDs</title>
     <description>Automatic actions must be disabled for blank
     DVDs.</description>
     <rationale>Automatic actions must be disabled for blank
@@ -6657,7 +6739,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Automatic Actions for Music CDs</title>
     <description>Automatic actions must be disabled for music
     CDs.</description>
     <rationale>Automatic actions must be disabled for music
@@ -6672,7 +6754,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Automatic Actions for Picture CDs</title>
     <description>Automatic actions must be disabled for picture
     CDs.</description>
     <rationale>Automatic actions must be disabled for picture
@@ -6688,7 +6770,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable Automatic Actions for Video DVDs</title>
     <description>Automatic actions must be disabled for video
     DVDs.</description>
     <rationale>Automatic actions must be disabled for video
@@ -6704,7 +6786,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Apply Settings with a Configuration Profile</title>
     <description>The operating system must employ automated
     mechanisms to centrally manage configuration
     settings.</description>
@@ -6733,7 +6815,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Install and Configure an Approved Anti-virus
+    Application</title>
     <description>The operating system must employ automated
     mechanisms to detect the presence of unauthorized software on
     organizational information systems and notify designated
@@ -6755,7 +6838,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Only Allow Authorized Applications</title>
     <description>A configuration profile must exist to restrict
     launching of applications.</description>
     <rationale>The operating system must enforce software
@@ -6775,7 +6858,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Gatekeeper</title>
     <description>The system must allow only applications downloaded
     from the App Store to run.</description>
     <rationale>Gatekeeper settings must be configured
@@ -6791,13 +6874,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Enable Gatekeeper</title>
     <description>End users must not be able to override Gatekeeper
     settings.</description>
     <rationale>Gatekeeper settings must be configured
     correctly.</rationale>
     <check>To check to make sure the user cannot override
-    Gatekeepser settings, type the following code: system_profiler
+    Gatekeeper settings, type the following code: system_profiler
     SPConfigurationProfileDataType | grep DisableOverride | awk '{
     print $3 }' | sed 's/;//' If the returned value is not '1',
     this is a finding.</check>
@@ -6807,7 +6890,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Disable IPv6 if Not in Use</title>
     <description>System Preferences must be securely configured so
     IPv6 is turned off if not being used.</description>
     <rationale>System Preferences must be securely configured so
@@ -6817,7 +6900,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     -listallnetworkservices If any enabled network interfaces have
     IPv6 enabled that do not require the use of IPv6, this is a
     finding.</check>
-    <fixtext>Run:networksetup -setv6off Ethernetto turn ipv6
+    <fixtext>Run: networksetup -setv6off 'Ethernet' to turn ipv6
     addressing off for the Ethernet interface. Repeat command for
     each interface that is active, interface names are case
     sensitive.</fixtext>
@@ -6825,7 +6908,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Use a DoD-Approved Proxy Server</title>
     <description>DoD proxies must be configured on all active
     network interfaces.</description>
     <rationale>A proxy server is designed to hide the identity of
@@ -6836,7 +6919,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     with the servers it is connecting to; the proxy server is in
     the middle handling both sides of the session.</rationale>
     <check>To show the proxy configuration for the Ethernet
-    interface, run the following command:networksetup
+    interface, run the following command: networksetup
     -getautoproxyurl 'Ethernet' and replace 'Ethernet' with the
     plain English name of the network interface you need to verify.
     If there is no proxy defined, or enabled is set to 'No', this
@@ -6844,13 +6927,14 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     -listallnetworkservices will list the plain English names of
     all configured network interfaces on the computer.</check>
     <fixtext>Ensure that DoD proxies are configured on all active
-    network interfaces listed from the command:networksetup
+    network interfaces listed from the command: networksetup
     -listallnetworkservices</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Install DoD-Approved Certificates to the System
+    Keychain</title>
     <description>The operating system must issue or obtain public
     key certificates under an appropriate certificate policy from
     an approved service provider.</description>
@@ -6876,7 +6960,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title></title>
+    <title>Audit Network Connections</title>
     <description>The operating system must ensure remote sessions
     for accessing an organization-defined list of security
     functions and security-relevant information are
@@ -6894,8 +6978,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <check>In order to view the currently configured flags for the
     audit daemon, run the following command: sudo grep ^flags
     /etc/security/audit_control | sed 's/flags://' | tr ',' '\n' |
-    grep nt The network are logged by way of the 'nt' flag. If 'nt'
-    is not listed in the result of the check, this is a
+    grep nt Network connections are logged by way of the 'nt' flag.
+    If 'nt' is not listed in the result of the check, this is a
     finding.</check>
     <fixtext>To make sure the appropriate flags are enabled for
     auditing, run the following command: sudo sed -i.bak '/^flags/
