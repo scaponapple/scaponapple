@@ -14,6 +14,8 @@
 		</head>
 		<body>
 			<div class="tabletitle">
+				<i>WORKING DRAFT</i>
+				<p/>
 			<xsl:value-of select="/cdf:Benchmark/cdf:title" />
 			<xsl:choose>
 			<xsl:when test="$printonly=''">
