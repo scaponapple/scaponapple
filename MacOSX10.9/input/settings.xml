@@ -4397,10 +4397,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     capability). This does not apply to authentication for the
     purpose of configuring the device itself (management). Requires
     further clarification from NIST.</rationale>
-    <check>MAURA: Third party support has traditionally been
-    required for multifactor authentication with CAC. Apple
-    suggested full built in support is coming in 10.9 or
-    10.10.</check>
+    <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4416,10 +4413,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     management and personal authentication for systems covered
     under HSPD 12, as well as a primary component of layered
     protection for national security systems.</rationale>
-    <check>MAURA: Third party support has traditionally been
-    required for multifactor authentication with CAC. Apple
-    suggested full built in support is coming in 10.9 or
-    10.10.</check>
+    <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4435,10 +4429,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     management and personal authentication for systems covered
     under HSPD 12, as well as a primary component of layered
     protection for national security systems.</rationale>
-    <check>MAURA: Third party support has traditionally been
-    required for multifactor authentication with CAC. Apple
-    suggested full built in support is coming in 10.9 or
-    10.10.</check>
+    <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4526,7 +4517,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001991" srgid="SRG-OS-000384"
     nist="IA-5 (2) (d)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system, for PKI-based
     authentication, must implement a local cache of revocation data
@@ -4537,8 +4528,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     data, there is the potential to allow access to users who are
     no longer authorized (users with revoked
     certificates).</rationale>
-    <check>MAURA: I admit I don't know the details of how
-    revocation data is stored or cached in Mac OS X.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4576,10 +4566,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     Memorandum 11-11 requires federal agencies to continue
     implementing the requirements specified in HSPD-12 to enable
     agency-wide use of PIV credentials.</rationale>
-    <check>MAURA: Third party support has traditionally been
-    required for multifactor authentication with CAC. Apple
-    suggested full built in support is coming in 10.9 or
-    10.10.</check>
+    <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4599,10 +4586,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     non-federal government entities approved by the Federal
     Identity, Credential, and Access Management (FICAM) Trust
     Framework Solutions initiative.</rationale>
-    <check>MAURA: Third party support has traditionally been
-    required for multifactor authentication with CAC. Apple
-    suggested full built in support is coming in 10.9 or
-    10.10.</check>
+    <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4617,10 +4601,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     FICAM-authentication protocols, such as SAML 2.0 and OpenID
     2.0. This requirement addresses open identity management
     standards.</rationale>
-    <check>MAURA: Third party support has traditionally been
-    required for multifactor authentication with CAC. Apple
-    suggested full built in support is coming in 10.9 or
-    10.10.</check>
+    <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4806,7 +4787,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002465" srgid="SRG-OS-000399" nist="SC-21" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must request data origin
     authentication verification on the name/address resolution
@@ -4832,14 +4813,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     enable clients to verify the authenticity of response data.
     This applies to operating systems that have integrated DNS
     clients.</rationale>
-    <check>MAURA: Mac OS X can see DNSSEC records, but I'm not sure
-    how to go about enforcing support for only DNSSEC
-    records.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002466" srgid="SRG-OS-000400" nist="SC-21" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must request data integrity
     verification on the name/address resolution responses the
@@ -4861,14 +4840,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     authenticated channels to recursive resolvers that perform such
     validations. This applies to operating systems that have
     integrated DNS clients.</rationale>
-    <check>MAURA: Mac OS X can see DNSSEC records, but I'm not sure
-    how to go about enforcing support for only DNSSEC
-    records.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002467" srgid="SRG-OS-000401" nist="SC-21" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must perform data integrity
     verification on the name/address resolution responses the
@@ -4890,14 +4867,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     authenticated channels to recursive resolvers that perform such
     validations. This applies to operating systems that have
     integrated DNS clients.</rationale>
-    <check>MAURA: Mac OS X can see DNSSEC records, but I'm not sure
-    how to go about enforcing support for only DNSSEC
-    records.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002468" srgid="SRG-OS-000402" nist="SC-21" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must perform data origin
     verification authentication on the name/address resolution
@@ -4920,15 +4895,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     signatures, or clients use authenticated channels to recursive
     resolvers that perform such validations. This applies to
     operating systems that have integrated DNS clients.</rationale>
-    <check>MAURA: Mac OS X can see DNSSEC records, but I'm not sure
-    how to go about enforcing support for only DNSSEC
-    records.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002470" srgid="SRG-OS-000403"
     nist="SC-23 (5)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must only allow the use of
     DoD PKI established certificate authorities for verification of
@@ -4943,9 +4916,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     or external certificate authority. Reliance on CAs for the
     establishment of secure sessions includes, for example, the use
     of SSL/TLS certificates.</rationale>
-    <check>MAURA: Needs clarification. It seems to imply that all
-    third party certificate authorities should be removed from the
-    system.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -5049,7 +5020,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="high">
     <ident cci="CCI-002418" srgid="SRG-OS-000423" nist="SC-8" />
-    <status>Applicable - Configurable</status>
+    <status>Not Applicable</status>
     <title>Disable Network Services that Do Not Support
     Encryption</title>
     <description>The operating system must protect the
@@ -5071,15 +5042,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     techniques). If physical means of protection are employed, then
     logical means (cryptography) do not have to be employed, and
     vice versa.</rationale>
-    <check>MAURA: Individual services must be configured to use
-    TLS. Other checks disable unencrypted services
-    (telnet).</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002421" srgid="SRG-OS-000424"
     nist="SC-8 (1)" />
-    <status>Applicable - Configurable</status>
+    <status>Not Applicable</status>
     <title>Disable Network Services that Do Not Support
     Encryption</title>
     <description>The operating system must implement cryptographic
@@ -5106,15 +5075,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     unencrypted, the PDS must provide adequate electrical,
     electromagnetic, and physical safeguards to deter
     exploitation.</rationale>
-    <check>MAURA: Individual services must be configured to use
-    TLS. Other checks disable unencrypted services
-    (telnet).</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002420" srgid="SRG-OS-000425"
     nist="SC-8 (2)" />
-    <status>Applicable - Inherently Meets</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must maintain the
     confidentiality and integrity of information during preparation
@@ -5135,14 +5102,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     transmitting data, operating systems need to support
     transmission protection mechanisms such as TLS, SSL VPNs, or
     IPSEC.</rationale>
-    <check>MAURA: Has anyone evaluated this? Data at rest and in
-    memory is generally protected by access controls.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002422" srgid="SRG-OS-000426"
     nist="SC-8 (2)" />
-    <status>Applicable - Inherently Meets</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must maintain the
     confidentiality and integrity of information during
@@ -5162,14 +5128,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     transfer and handling process. When receiving data, operating
     systems need to leverage protection mechanisms such as TLS, SSL
     VPNs, or IPSEC.</rationale>
-    <check>MAURA: Has anyone evaluated this? Data at rest and in
-    memory is generally protected by access controls.</check>
+    <check></check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002754" srgid="SRG-OS-000432"
     nist="SI-10 (3)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must behave in a predictable
     and documented manner that reflects organizational and system

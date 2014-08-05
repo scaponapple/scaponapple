@@ -15,12 +15,6 @@
 		<body>
 			<div class="tabletitle">
 			<xsl:value-of select="/cdf:Benchmark/cdf:title" />
-			<xsl:if test="$printonly='configurable'">
-				<p/><i>Configurable Items</i>
-			</xsl:if>
-			<xsl:if test="$printonly=''">
-				<p/><i>All Configurable and Nonconfigurable NIST Controls Selected by DISA FSO</i>
-			</xsl:if>
 			</div>
 			<!-- <xsl:value-of select="/cdf:Benchmark/cdf:description" /> -->
 			<xsl:apply-templates select="cdf:Benchmark"/>
@@ -32,17 +26,30 @@
 	<xsl:template match="cdf:Benchmark">
 		<xsl:call-template name="table-style" />
 		<table>
-			<thead>
-				<td>NIST<p/>Control</td>
-				<td>CCI</td>
-				<td>SRGID</td>
-				<td>Requirement</td>
-				<td>VulDiscussion</td>
-				<td>Status</td>
-				<td>Check</td>
-				<td>Fix</td>
-				<td>Severity</td>
-			</thead>
+		<thead>
+		<xsl:choose>
+		<xsl:when test="$printonly=''">
+			<td>NIST<p/>Control</td>
+			<td>CCI</td>
+			<td>SRGID</td>
+			<td>Requirement</td>
+			<td>VulDiscussion</td>
+			<td>Status</td>
+			<td>Check</td>
+			<td>Fix</td>
+			<td>Severity</td>
+		</xsl:when>	
+		<xsl:when test="$printonly='configurable'">
+			<td>Title</td>
+			<td>VulDiscussion</td>
+			<td>Check</td>
+			<td>Fix</td>
+			<td>Severity</td>
+			<td>NIST<p/>Control</td>
+		</xsl:when>
+		</xsl:choose>
+
+		</thead>
 
 		<xsl:apply-templates select="//cdf:Rule" /> 
 
@@ -51,8 +58,10 @@
 
 
 	<xsl:template match="cdf:Rule">
-		<xsl:if test="(cdf:status='Applicable - Configurable' and $printonly='configurable') or $printonly=''">
+		<!-- only print row if it's configurable, when that parameter is populated -->
 		<tr>
+		<xsl:choose>
+		<xsl:when test="$printonly=''">
 			<td> <xsl:value-of select="cdf:ident/@nist" /></td>
 			<td> <xsl:value-of select="cdf:ident/@cci" /></td>
 			<td> <xsl:value-of select="cdf:ident/@srgid" /></td>
@@ -62,8 +71,17 @@
 			<td> <xsl:apply-templates select="cdf:check"/> </td>
 			<td> <xsl:apply-templates select="cdf:fixtext"/> </td>
 			<td> <xsl:value-of select="@severity" /></td>
+		</xsl:when>
+		<xsl:when test="cdf:status='Applicable - Configurable' and $printonly='configurable'">
+			<td> <xsl:value-of select="cdf:title" /></td>
+			<td> <xsl:apply-templates select="cdf:rationale"/> </td>
+			<td> <xsl:apply-templates select="cdf:check"/> </td>
+			<td> <xsl:apply-templates select="cdf:fixtext"/> </td>
+			<td> <xsl:value-of select="@severity" /></td>
+			<td> <xsl:value-of select="cdf:ident/@nist" /></td>
+		</xsl:when>
+		</xsl:choose>
 		</tr>
-		</xsl:if>
 	</xsl:template>
 
 
