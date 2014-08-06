@@ -19,7 +19,7 @@
 			<xsl:value-of select="/cdf:Benchmark/cdf:title" />
 			<xsl:choose>
 			<xsl:when test="$printonly=''">
-				<p/><i>All Configurable and Nonconfigurable NIST Controls Selected by DISA FSO</i>
+				<p/><i>All Configurable and Non-configurable NIST Controls Selected in SRG</i>
 			</xsl:when>	
 			<xsl:when test="$printonly='configurable'">
 				<p/><i>Configurable Items</i>

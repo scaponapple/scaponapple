@@ -3,9 +3,9 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:xhtml="http://www.w3.org/1999/xhtml"
 xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <status date="2014-07-28">draft</status>
-  <title>DoD Consensus Settings for Mac OS X 10.9</title>
+  <title>Consensus Group Settings for Mac OS X 10.9</title>
   <description>These security settings for Mac OS X 10.9 were
-  developed by the DoD Joint Consensus Working Group.</description>
+  developed by the Joint Consensus Working Group.</description>
   <!-- Many of the XCCDF elements used here 
        are not used in the manner originally intended by
        the XCCDF specification; 
@@ -1132,7 +1132,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     the following command:
     <p />
     <p />sudo sed -i.bak 's/^flags.*$/flags:lo,ad,nt,aa/'
-    /etc/security/audit_control
+    /etc/security/audit_control; sudo audit -s
     <p />
     <p />You may also edit the /etc/security/audit_control file
     using a text editor to define the flags your organization
@@ -1186,7 +1186,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     the following command:
     <p />
     <p />sudo sed -i.bak 's/^flags.*$/flags:lo,ad,aa/'
-    /etc/security/audit_control
+    /etc/security/audit_control; sudo audit -s
     <p />
     <p />You may also edit the /etc/security/audit_control file
     using a text editor to define the flags your organization
@@ -1248,9 +1248,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />The RevocationFirst option must be set correctly. To check
     to see if RevocationFirst is set with a configuration profile,
-    run the following command:system_profiler
-    SPConfigurationProfileDataType | grep RevocationFirst | awk '{
-    print $3 }' | sed 's/;//'
+    run the following command:
+    <p />
+    <p />system_profiler SPConfigurationProfileDataType | grep
+    RevocationFirst | awk '{ print $3 }' | sed 's/;//'
     <p />
     <p />The result should be 'OCSP'. If nothing is returned or the
     result is incorrect, this is a finding.
@@ -1267,13 +1268,14 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />The CRLSufficientPerCert option must be set correctly. To
     check to see if CRLSufficientPerCert is set with a
-    configuration profile, run the following
-    command:system_profiler SPConfigurationProfileDataType | grep
+    configuration profile, run the following command:
+    <p />
+    <p />system_profiler SPConfigurationProfileDataType | grep
     CRLSufficientPerCert | awk '{ print $3 }' | sed 's/;//'
     <p />
     <p />The result should be '1'. If nothing is returned or the
     result is incorrect, this is a finding.</check>
-    <fixtext>This is enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -1745,8 +1747,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />sudo defaults write /System/Library/LaunchDaemons/shell
     Disabled 1
     <p />
-    <p />To enable Application Restrictions, use a configuration
-    profile to restrict launching of applications.
+    <p />Application Restrictions is enforced using a configuration
+    profile.
     <p />
     <p />To disable Remote Apple Events, run the following command:
     <p />
@@ -1835,6 +1837,24 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the result is not '1' this is a finding.
     <p />
+    <p />Internet Sharing must be disabled. To check if Internet
+    sharing is disabled, run the following command:
+    <p />
+    <p />sudo /usr/libexec/PlistBuddy -c 'print
+    com.apple.InternetSharing:Disabled'
+    /var/db/launchd.db/com.apple.launchd/overrides.plist
+    <p />
+    <p />If the returned value isn't 'true' or doesn't exist, this
+    is a finding.
+    <p />
+    <p />Web Sharing must be disabled. To check if Web Sharing is
+    enabled, run the following command:
+    <p />
+    <p />sudo defaults read
+    /System/Library/LaunchDaemons/org.apache.httpd.plist Disabled
+    <p />
+    <p />If the result is not '1', this is a finding.
+    <p />
     <p />Bonjour multicast advertising must be disabled on the
     system. To check if multicast advertisements have been
     disabled, run the following command:
@@ -1884,6 +1904,18 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     Preferences-&gt;Security &amp; Privacy-&gt;Location Services.
     Uncheck the box that says 'Enable Location Services'.This
     setting can be enforced using a configuration profile.
+    <p />
+    <p />To disable Internet Sharing, run the following command:
+    <p />
+    <p />sudo defaults write
+    /private/var/db/launchd.db/com.apple.launchd/overrides.plist
+    'com.apple.InternetSharing' -dict Disabled -bool true
+    <p />
+    <p />To disable Web Sharing, run the following command:
+    <p />
+    <p />sudo defaults write
+    /System/Library/LaunchDaemons/org/apache.httpd.plist Disabled
+    -bool true
     <p />
     <p />To configure Bonjour to disable multicast advertising, run
     the following command:
@@ -2922,7 +2954,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If it is not defined or set to the correct
     organization-defined value, this is a finding.</check>
-    <fixtext>This should be configured with a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -3367,7 +3399,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     auditing, run the following command:
     <p />
     <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001404" srgid="SRG-OS-000240"
@@ -3405,7 +3437,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     auditing, run the following command:
     <p />
     <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001405" srgid="SRG-OS-000241"
@@ -3443,7 +3475,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     auditing, run the following command:
     <p />
     <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001414" srgid="SRG-OS-000242" nist="AC-4" />
@@ -3471,39 +3503,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     default-deny policy. Ask the SA or IAO if an approved firewall
     is loaded on the system. The recommended system is the McAfee
     HBSS. If there is no local firewall installed on the system,
-    and configured with a default deny policy, this is a finding.
-    <p />
-    <p />Internet Sharing must be disabled. To check if Internet
-    sharing is disabled, run the following command:
-    <p />
-    <p />sudo /usr/libexec/PlistBuddy -c 'print
-    com.apple.InternetSharing:Disabled'
-    /var/db/launchd.db/com.apple.launchd/overrides.plist
-    <p />
-    <p />If the returned value isn't 'true' or doesn't exist, this
-    is a finding.
-    <p />
-    <p />Web Sharing must be disabled. To check if Web Sharing is
-    enabled, run the following command:
-    <p />
-    <p />sudo defaults read
-    /System/Library/LaunchDaemons/org.apache.httpd.plist Disabled
-    <p />
-    <p />If the result is not '1', this is a finding.</check>
+    and configured with a default deny policy, this is a
+    finding.</check>
     <fixtext>Install an approved HBSS or firewall solution onto the
-    system and configure it with a default-deny policy.
-    <p />
-    <p />To disable Internet Sharing, run the following command:
-    <p />
-    <p />sudo defaults write
-    /private/var/db/launchd.db/com.apple.launchd/overrides.plist
-    'com.apple.InternetSharing' -dict Disabled -bool true
-    <p />
-    <p />To disable Web Sharing, run the following command:
-    <p />
-    <p />sudo defaults write
-    /System/Library/LaunchDaemons/org/apache.httpd.plist Disabled
-    -bool true</fixtext>
+    system and configure it with a default-deny policy.</fixtext>
   </Rule>
   <Rule severity="">
     <ident cci="CCI-001452" srgid="SRG-OS-000249" nist="AC-7 a" />
@@ -3803,7 +3806,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the returned value is not '1', this is a
     finding.</check>
-    <fixtext>This can be enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4453,7 +4456,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     auditing, run the following command:
     <p />
     <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002238" srgid="SRG-OS-000329" nist="AC-7 b" />
@@ -4569,7 +4572,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     following command to set the 'minfree' value to '25%':
     <p />
     <p />sudo sed -i.bak 's/.*minfree.*/minfree:25/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001851" srgid="SRG-OS-000342"
@@ -4616,7 +4619,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     following command to set the 'minfree' value to '25%':
     <p />
     <p />sudo sed -i.bak 's/.*minfree.*/minfree:25/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001858" srgid="SRG-OS-000344"
@@ -4653,7 +4656,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     syslogd, run the following command:
     <p />
     <p />sudo sed -i.bak 's/logger -p/logger -s -p/'
-    /etc/security/audit_warn</fixtext>
+    /etc/security/audit_warn; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001875" srgid="SRG-OS-000348" nist="AU-7 a" />
@@ -4698,7 +4701,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />This requirement is specific to operating systems with
     audit reduction capabilities.</rationale>
     <check></check>
-    <fixtext>sudo sed -i.ba</fixtext>
+    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001878" srgid="SRG-OS-000350" nist="AU-7 a" />
@@ -5049,8 +5052,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     settings are logged by way of the 'ad' flag. If 'ad' is not
     listed in the result of the check, this is a finding.</check>
     <fixtext>To make sure the appropriate flags are enabled for
-    auditing, run the following command: sudo sed -i.bak '/^flags/
-    s/$/,ad/' /etc/security/audit_control</fixtext>
+    auditing, run the following command:
+    <p />
+    <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001749" srgid="SRG-OS-000366"
@@ -5148,8 +5153,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />sudo profiles -Pv | grep 'Application Restrictions'
     <p />
     <p />If nothing is returned, this is a finding.</check>
-    <fixtext>A configuration profile should exist to restrict
-    launching of applications.</fixtext>
+    <fixtext>This setting is enforced using a configuration
+    profile.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002038" srgid="SRG-OS-000373" nist="IA-11" />
@@ -6197,7 +6202,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If it is not defined or set to the correct
     organization-defined value, this is a finding.</check>
-    <fixtext>This should be configured with a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -6246,7 +6251,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If it is not defined or set to the correct
     organization-defined value, this is a finding.</check>
-    <fixtext>This should be configured with a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -6399,7 +6404,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the returned value is not '1', this is a
     finding.</check>
-    <fixtext>This can be enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -6844,7 +6849,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     auditing, run the following command:
     <p />
     <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000477" nist="AU-12 c" />
@@ -6876,7 +6881,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     auditing, run the following command:
     <p />
     <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
-    /etc/security/audit_control</fixtext>
+    /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002450" srgid="SRG-OS-000478" nist="SC-13" />
@@ -6950,11 +6955,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <description>Automatic login must be disabled.</description>
     <rationale>Automatic login must be disabled.</rationale>
     <check>To check if the system if configured to automatically
-    log in, run the following command:system_profiler
-    SPConfigurationProfileDataType | grep DisableAutoLoginClient |
-    awk '{ print $3 }' | sed 's/;//'If the result is not '1', this
-    is a finding.</check>
-    <fixtext>This is enforced using a configuration
+    log in, run the following command:
+    <p />
+    <p />system_profiler SPConfigurationProfileDataType | grep
+    DisableAutoLoginClient | awk '{ print $3 }' | sed 's/;//'
+    <p />
+    <p />If the result is not '1', this is a finding.</check>
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -6968,11 +6975,14 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     username and password, rather than show a list of
     users.</rationale>
     <check>To check if the login window is configured to prompt for
-    user name and password, run the following
-    command:system_profiler SPConfigurationProfileDataType | grep
-    SHOWFULLNAME | awk '{ print $3 }' | sed 's/;//'If this setting
-    is not defined, or not set to '1', this is a finding.</check>
-    <fixtext>This is enforced using a configuration
+    user name and password, run the following command:
+    <p />
+    <p />system_profiler SPConfigurationProfileDataType | grep
+    SHOWFULLNAME | awk '{ print $3 }' | sed 's/;//'
+    <p />
+    <p />If this setting is not defined, or not set to '1', this is
+    a finding.</check>
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7077,7 +7087,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the result shows a '1', this is a finding.</check>
     <fixtext>To ensure that the newsyslog daemon is not disabled,
-    run the following command:sudo defaults write
+    run the following command:
+    <p />
+    <p />sudo defaults write
     /System/Library/LaunchDaemons/com.apple.newsyslog Disabled
     -bool FALSE</fixtext>
   </Rule>
@@ -7136,7 +7148,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the result does not return a setting, or the setting is
     not '1', this is a finding.</check>
-    <fixtext>This should be enforced by a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7154,8 +7166,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     --getglobalstate
     <p />
     <p />If the result is not enabled, this is a finding.</check>
-    <fixtext>To enable the firewall run the following command:sudo
-    /usr/libexec/ApplicationFirewall/socketfilterfw
+    <fixtext>To enable the firewall run the following command:
+    <p />
+    <p />sudo /usr/libexec/ApplicationFirewall/socketfilterfw
     --setglobalstate on</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7172,7 +7185,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     MultipleSessionEnabled | awk '{ print $3 }' | sed 's/;//'
     <p />
     <p />If the setting is not '0', this is a finding.</check>
-    <fixtext>This is enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7208,8 +7221,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If anything is returned, this is a finding.</check>
     <fixtext>To change the ownership of any finding, run the
-    following command:sudo find / -type d -perm -1002 -not -uid 0
-    -exec chown root {} \;</fixtext>
+    following command:
+    <p />
+    <p />sudo find / -type d -perm -1002 -not -uid 0 -exec chown
+    root {} \;</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -7229,7 +7244,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />If the returned value isn't 'true' or doesn't exist, this
     is a finding.</check>
     <fixtext>To ensure that the finger service is disabled, run the
-    following command:sudo defaults write
+    following command:
+    <p />
+    <p />sudo defaults write
     /private/var/db/launchd.db/com.apple.launchd/overrides.plist
     'com.apple.fingerd' -dict Disabled -bool true</fixtext>
   </Rule>
@@ -7248,8 +7265,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If anything is returned, this is a finding.</check>
     <fixtext>Run the following command to set the sticky bit on all
-    world-writable directories:sudo find / -type d \( -perm -0002
-    -a ! -perm -1000 \) -exec chmod +t {} \;</fixtext>
+    world-writable directories:
+    <p />
+    <p />sudo find / -type d \( -perm -0002 -a ! -perm -1000 \)
+    -exec chmod +t {} \;</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -7269,8 +7288,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     'DidSeeCloudSetup = 1 AND LastSeenCloudProductVersion = 10.9',
     this is a finding.</check>
     <fixtext>To ensure that the prompt for Apple ID and iCloud is
-    disabled, run the following commands:sudo defaults write
-    /System/Library/User\
+    disabled, run the following commands:
+    <p />
+    <p />sudo defaults write /System/Library/User\
     Template/English.lproj/Library/Preferences/com.apple.SetupAssistant
     DidSeeCloudSetup -bool TRUE; sudo defaults write
     /System/Library/User\
@@ -7312,7 +7332,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the value returned is not '1', this is a
     finding.</check>
-    <fixtext>This can be enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7353,7 +7373,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the value returned is not '1', this is a
     finding.</check>
-    <fixtext>This can be enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="low">
@@ -7370,7 +7390,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the value returned is not '1', this is a
     finding.</check>
-    <fixtext>This can be enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7580,14 +7600,18 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     Microphone hardware can also be physically removed from the
     device prior to deployment to meet this requirement.</check>
     <fixtext>To disable all audio input/output on the device run
-    the following commands:sudo rm -rf
+    the following commands:
+    <p />
+    <p />sudo rm -rf
     /System/Library/Extensions/AppleUSBAudio.kext;sudo rm -rf
     /System/Library/Extensions/IOAudioFamily.kext;sudo rm -rf
     /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleMikeyDriver.kext
-    To fix a non '0' input volume on a machine that requires audio
-    output functionality, run this command on a repeating interval
-    or Manually change the input volume to '0':osascript -e 'set
-    volume input volume 0'</fixtext>
+    <p />
+    <p />To fix a non '0' input volume on a machine that requires
+    audio output functionality, run this command on a repeating
+    interval or manually change the input volume to '0':
+    <p />
+    <p />osascript -e 'set volume input volume 0'</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -7604,7 +7628,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />If any service is listed that is not being used, it must
     be disabled.</check>
     <fixtext>To disable a network service, run the following
-    command:sudo networksetup -setnetworkserviceenabled
+    command:
+    <p />
+    <p />sudo networksetup -setnetworkserviceenabled
     &lt;networkservice&gt; off</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7623,7 +7649,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the result is 'Disabled', this is a finding.</check>
     <fixtext>To enable the firewall stealth mode, run the following
-    command:sudo /usr/libexec/ApplicationFirewall/socketfilterfw
+    command:
+    <p />
+    <p />sudo /usr/libexec/ApplicationFirewall/socketfilterfw
     --setstealthmode on</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7640,7 +7668,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />If the result does not show (encrypted), this is a
     finding.</check>
     <fixtext>To ensure secure virtual memory is secure, run the
-    following command:sudo defaults write
+    following command:
+    <p />
+    <p />sudo defaults write
     /Library/Preferences/com.apple.virtualMemory
     DisableEncryptedSwap -bool FALSE</fixtext>
   </Rule>
@@ -7663,8 +7693,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     applied. If there are any required updates that have not been
     applied, this is a finding.</check>
     <fixtext>To install software updates, run the following
-    command:sudo softwareupdate --install [name of
-    update]</fixtext>
+    command:
+    <p />
+    <p />sudo softwareupdate --install [name of update]</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -7717,7 +7748,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the result is not enabled, this is a finding.</check>
     <fixtext>To enable the firewall logging, run the following
-    command:/usr/libexec/ApplicationFirewall/socketfilterfw
+    command:
+    <p />
+    <p />sudo /usr/libexec/ApplicationFirewall/socketfilterfw
     --setloggingmode on</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7736,8 +7769,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the returned value isn't 'true' or doesn't exist, this
     is a finding.</check>
-    <fixtext>To disable screen sharing, run the following
-    command:sudo defaults write
+    <fixtext>To disable screen sharing, run the following command:
+    <p />
+    <p />sudo defaults write
     /private/var/db/launchd.db/com.apple.launchd/overrides.plist
     'com.apple.screensharing' -dict Disabled -bool true</fixtext>
   </Rule>
@@ -7776,9 +7810,12 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />If there is a result, this is a finding.</check>
     <fixtext>Removing the kernel extensions for Bluetooth will
     remove the system's ability to load Bluetooth devices, use the
-    following commands to remove them: sudo rm -rf
-    /System/Library/Extensions/IOBluetoothFamily.kext; sudo rm -rf
-    /System/Library/Extensions/IOBluetoothHIDDDriver.kext</fixtext>
+    following commands to remove them:
+    <p />
+    <p />sudo rm -rf
+    /System/Library/Extensions/IOBluetoothFamily.kext
+    /System/Library/Extensions/IOBluetoothHIDDDriver.kext; sudo
+    touch /System/Library/Extensions</fixtext>
   </Rule>
   <Rule severity="low">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -7802,8 +7839,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />If there is a result, this is a finding.</check>
     <fixtext>Removing the kernel extensions for Bluetooth will
     remove the system's ability to load Bluetooth devices, use the
-    following commands to remove them: sudo rm -rf
-    /System/Library/Extensions/IOBluetoothFamily.kext; sudo rm -rf
+    following commands to remove them:
+    <p />
+    <p />sudo rm -rf
+    /System/Library/Extensions/IOBluetoothFamily.kext
     /System/Library/Extensions/IOBluetoothHIDDDriver.kext; sudo
     touch /System/Library/Extensions</fixtext>
   </Rule>
@@ -7823,8 +7862,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />If there is a result, this is a finding.</check>
     <fixtext>Removing the kernel extensions for Bluetooth will
     remove the system's ability to load Bluetooth devices, use the
-    following commands to remove them: sudo rm -rf
-    /System/Library/Extensions/IOBluetoothFamily.kext; sudo rm -rf
+    following commands to remove them:
+    <p />
+    <p />sudo rm -rf
+    /System/Library/Extensions/IOBluetoothFamily.kext
     /System/Library/Extensions/IOBluetoothHIDDDriver.kext; sudo
     touch /System/Library/Extensions</fixtext>
   </Rule>
@@ -7879,7 +7920,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />If there is a result showing the file is present, this is
     a finding.</check>
     <fixtext>To remove the software component for Wi-Fi support,
-    run the following command:sudo rm -rf
+    run the following command:
+    <p />
+    <p />sudo rm -rf
     /System/Library/Extensions/IO80211Family.kext</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7897,8 +7940,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the result shows the file is present, this is a
     finding.</check>
-    <fixtext>To remove support for IR, run the following
-    command:sudo rm -rf
+    <fixtext>To remove support for IR, run the following command:
+    <p />
+    <p />sudo rm -rf
     /System/Library/Extensions/AppleIRController.kext</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7918,7 +7962,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />The check should return a value of '1'. If this is not
     defined or not set to '1', this is a finding.</check>
-    <fixtext>This setting must be configured using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -7938,7 +7982,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />The check should return a value of '1'. If this is not
     defined or not set to '1', this is a finding.</check>
-    <fixtext>This setting must be configured using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -8062,8 +8106,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />sudo profiles -Pv | grep 'Application Restrictions'
     <p />
     <p />If nothing is returned, this is a finding.</check>
-    <fixtext>A configuration profile should exist to restrict
-    launching of applications.</fixtext>
+    <fixtext>This setting is enforced using a configuration
+    profile.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -8081,7 +8125,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the returned value is not '0', this is a
     finding.</check>
-    <fixtext>This can be enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -8100,7 +8144,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />If the returned value is not '1', this is a
     finding.</check>
-    <fixtext>This can be enforced using a configuration
+    <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
@@ -8212,6 +8256,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     finding.</check>
     <fixtext>To make sure the appropriate flags are enabled for
     auditing, run the following command: sudo sed -i.bak '/^flags/
-    s/$/,nt/' /etc/security/audit_control</fixtext>
+    s/$/,nt/' /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
 </Benchmark>
