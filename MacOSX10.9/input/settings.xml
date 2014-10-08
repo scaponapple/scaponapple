@@ -59,35 +59,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Apply Best Practice Security Configuration</title>
-    <description>The operating system must be configured in
-    accordance with the security configuration settings based on
-    DoD security configuration or implementation guidance,
-    including STIGs, NSA configuration guides, CTOs, and
-    DTMs.</description>
-    <rationale>Configuring the operating system to implement
-    organization-wide security implementation guides and security
-    checklists ensures compliance with federal standards and
-    establishes a common security baseline across DoD that reflects
-    the most restrictive security posture consistent with
-    operational requirements. 
-    <p />
-    <p />Configuration settings are the set of parameters that can
-    be changed in hardware, software, or firmware components of the
-    system that affect the security posture and/or functionality of
-    the system. Security-related parameters are those parameters
-    impacting the security state of the system, including the
-    parameters required to satisfy other security control
-    requirements. Security-related parameters include, for example:
-    registry settings; account, file, directory permission
-    settings; and settings for functions, ports, protocols,
-    services, and remote connections.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-000017" srgid="SRG-OS-000003"
     nist="AC-2 (3)" />
     <status>Applicable - Does Not Meet</status>
@@ -148,7 +119,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000044" srgid="SRG-OS-000021" nist="AC-7 a" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must enforce the limit of
     three consecutive invalid logon attempts by a user during a 15
@@ -159,36 +130,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     imposed by locking the account.</rationale>
     <check></check>
     <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000371" srgid="SRG-OS-000229"
-    nist="CM-6 (1)" />
-    <status>Applicable - Configurable</status>
-    <title>Apply Configuration Settings With a Configuration
-    Profile</title>
-    <description>Configuration profiles must be applied to the
-    system.</description>
-    <rationale>Use a configuration profile to apply configuration
-    settings to the system. Configuration settings are the
-    configurable security-related parameters of the operating
-    system. Security-related parameters are those parameters
-    impacting the security state of the system including parameters
-    related to meeting other security control requirements. Rather
-    than visiting each and every system when making configuration
-    changes, organizations will employ automated tools that can
-    make changes across all systems. This greatly increases
-    efficiency and manageability of applications in a large scale
-    environment.</rationale>
-    <check>To check if the computer has a configuration profile
-    applied to the workstation, run the following command:
-    <p />
-    <p />sudo profiles -H
-    <p />
-    <p />If there are no profiles installed, this is a
-    finding.</check>
-    <fixtext>Obtain a configuration profile from an MDM or trusted
-    provider containing the configuration settings required to be
-    applied.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000050" srgid="SRG-OS-000024" nist="AC-8 b" />
@@ -213,40 +154,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     indicating "OK".</rationale>
     <check></check>
     <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Apply Configuration Settings With a Configuration
-    Profile</title>
-    <description>The operating system must employ automated
-    mechanisms to centrally manage configuration
-    settings.</description>
-    <rationale>Configuration profiles must be managed and deployed
-    by a centrally managed system such as an MDM. Configuration
-    settings are the configurable security-related parameters of
-    information technology products that are part of the
-    information system. Security-related parameters are those
-    parameters impacting the security state of the system including
-    parameters related to meeting other security control
-    requirements. Security-related parameters include, for example,
-    registry settings; account, file, and directory settings (i.e.,
-    permissions); and settings for services, ports, protocols, and
-    remote connections. Rather than visiting each system when
-    making configuration changes, organizations must employ
-    automated tools that can make changes across all systems. This
-    greatly increases efficiency and manageability of applications
-    in a large scale environment.</rationale>
-    <check>To check if the computer has a configuration profile
-    applied to the workstation, run the following command:
-    <p />
-    <p />sudo profiles -H
-    <p />
-    <p />If there are no profiles installed, this is a
-    finding.</check>
-    <fixtext>Obtain a configuration profile from an MDM or trusted
-    provider containing the configuration settings required to be
-    applied.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000054" srgid="SRG-OS-000027" nist="AC-10" />
@@ -434,42 +341,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     auditing, run the following command:
     <p />
     <p />sudo sed -i.bak '/^flags/ s/$/,ad/'
-    /etc/security/audit_control; sudo audit -s
-    <p />
-    <p />You may also edit the /etc/security/audit_control file
-    using a text editor to define the flags your organization
-    requires for auditing.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Audit Network Connections</title>
-    <description>The operating system must ensure remote sessions
-    for accessing an organization-defined list of security
-    functions and security-relevant information are
-    audited.</description>
-    <rationale>Remote access is any access to an organizational
-    operating system by a user (or an information system)
-    communicating through an external, non-organization-controlled
-    network. Remote access to security functions (e.g., user
-    management, audit log management, etc.) and security-relevant
-    information requires the activity be audited by the
-    organization. Any operating system providing remote access must
-    support organizational requirements to audit access or
-    organization-defined security functions and security-relevant
-    information.</rationale>
-    <check>In order to view the currently configured flags for the
-    audit daemon, run the following command:
-    <p />
-    <p />sudo grep ^flags /etc/security/audit_control
-    <p />
-    <p />Network connections are logged by way of the 'nt' flag. If
-    'nt' is not listed in the result of the check, this is a
-    finding.</check>
-    <fixtext>To make sure the appropriate flags are enabled for
-    auditing, run the following command:
-    <p />
-    <p />sudo sed -i.bak '/^flags/ s/$/,nt/'
     /etc/security/audit_control; sudo audit -s
     <p />
     <p />You may also edit the /etc/security/audit_control file
@@ -885,35 +756,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />You may also edit the /etc/security/audit_control file
     using a text editor to define the flags your organization
     requires for auditing.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000166" srgid="SRG-OS-000061" nist="AU-10" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must protect against an
-    individual (or process acting on behalf of an individual)
-    falsely denying having performed organization-defined actions
-    to be covered by non-repudiation.</description>
-    <rationale>Without non-repudiation, it is impossible to
-    positively attribute an action to an individual (or process
-    acting on behalf of an individual). 
-    <p />
-    <p />Non-repudiation services can be used to determine if
-    information originated from a particular individual, or if an
-    individual took specific actions (e.g., updated a particular
-    file, invoked a specific command, or copied a specific file) or
-    received specific information. The system will be configured to
-    provide non-repudiation services for an organization-defined
-    set of commands that are used by the user (or processes action
-    on behalf of the user). 
-    <p />
-    <p />DoD PKI provides for non-repudiation through the use of
-    digital signatures. Non-repudiation requirements will vary from
-    one system to another and will be defined based on system
-    functionality, data sensitivity and mission
-    requirements.</rationale>
-    <check></check>
-    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000172" srgid="SRG-OS-000462" nist="AU-12 c" />
@@ -1857,29 +1699,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Block Responses to ICMPv4 Echos</title>
-    <description>The system must not respond to Internet Control
-    Message Protocol [ICMPv4] echoes sent to a broadcast
-    address.</description>
-    <rationale>Internet Control Message Protocol [ICMPv4] echoes
-    could be used by an attacker to map network resources, so
-    responses to these packets should be disabled. By disabling
-    this functionality, this reduces the chance that an attacker
-    could find other systems to target on the network.</rationale>
-    <check>To check if the system is configured to respond to ICMP
-    echoes, run the following command:
-    <p />
-    <p />sysctl net.inet.icmp.bmcastecho
-    <p />
-    <p />If the value is not set to '1', this is a finding.</check>
-    <fixtext>To disable ICMP responses to broadcast traffic add the
-    following line to /etc/sysctl.conf:
-    <p />
-    <p />net.inet.icmp.bmcastecho=1</fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-001233" srgid="SRG-OS-000191"
     nist="SI-2 (2)" />
     <status>Applicable - Configurable</status>
@@ -1937,32 +1756,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     connection.</rationale>
     <check></check>
     <fixtext></fixtext>
-  </Rule>
-  <Rule severity="">
-    <ident cci="CCI-000052" srgid="SRG-OS-000025" nist="AC-9" />
-    <status>Applicable - Configurable</status>
-    <title>Configure SSH to Print the Timestamp for the Last
-    Successful Logon</title>
-    <description>The operating system, upon successful logon, must
-    display to the user the date and time of the last logon
-    (access).</description>
-    <rationale>SSH must be configured to provide users with
-    information regarding the date and time of their last
-    successful login as this allows the user to determine if any
-    unauthorized activity has occurred. Users can then alert
-    administrators that a possible breach has occurred.</rationale>
-    <check>To see if SSH is configured to display the last login
-    information, run the following command:
-    <p />
-    <p />sudo grep [^\#]PrintLastLog /etc/sshd_config
-    <p />
-    <p />If there is no result returned, or is 'no', this is a
-    finding.</check>
-    <fixtext>To set the SSH server to print the last login
-    information, run the following command:
-    <p />
-    <p />sudo sed -i.bak 's/.*PrintLastLog.*/PrintLastLog yes/'
-    /etc/sshd_config</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001082" srgid="SRG-OS-000132" nist="SC-2" />
@@ -2068,7 +1861,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001094" srgid="SRG-OS-000141"
     nist="SC-5 (1)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must restrict the ability of
     individuals to use information systems to launch any Denial of
@@ -2099,7 +1892,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001095" srgid="SRG-OS-000142"
     nist="SC-5 (2)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must manage excess capacity,
     bandwidth, or other redundancy to limit the effects of
@@ -2146,120 +1939,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />Defaults tty_tickets</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-001150" srgid="SRG-OS-000175" nist="SC-15 a" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must prohibit remote
-    activation of collaborative computing devices. (Centrally
-    managed, dedicated VTC suites located in approved VTC locations
-    are excluded from this requirement.)</description>
-    <rationale>An adversary may be able to gain access to
-    information on whiteboards or listen to conversations on a
-    microphone since collaboration equipment is typically not
-    designed with the security access controls and protection
-    measures of more sophisticated networked clients.
-    <p />
-    <p />Collaborative computing devices include, for example,
-    networked whiteboards, cameras, and microphones.
-    <p />
-    <p />This requirement applies to collaboration operating
-    systems that control collaborative computing devices. This
-    requirement is not intended to prohibit remote activation of
-    centrally managed, dedicated VTC Suites for the purpose of
-    remote testing of the equipment.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-001166" srgid="SRG-OS-000180"
-    nist="SC-18 (1)" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must identify prohibited
-    mobile code.</description>
-    <rationale>Decisions regarding the employment of mobile code
-    within operating systems are based on the potential for the
-    code to cause damage to the system if used maliciously.
-    <p />
-    <p />Mobile code is defined as software modules obtained from
-    remote systems, transferred across a network, and then
-    downloaded and executed on a local system without explicit
-    installation or execution by the recipient.
-    <p />
-    <p />DoD has identified prohibited mobile code in DoDI 8552.01
-    as: all Category 1X mobile code, unsigned Category 1A mobile
-    code, Category 2 mobile code that violates usage requirements,
-    all Emerging Technologies mobile code (all mobile code
-    technologies, systems, platforms, or languages whose
-    capabilities and threat level have not yet undergone a risk
-    assessment and been assigned to a risk category), and all
-    mobile code that downloads via an email body or email
-    attachment that executes automatically when the user opens the
-    email body or attachment.
-    <p />
-    <p />Usage restrictions and implementation guidance apply to
-    both the selection and use of mobile code installed,
-    downloaded, or executed on all endpoints (e.g., servers,
-    workstations, and smart phones). This requirement applies to
-    operating systems that execute, evaluate, or otherwise process
-    mobile code.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-001695" srgid="SRG-OS-000181"
-    nist="SC-18 (3)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must prevent the execution of
-    prohibited mobile code.</description>
-    <rationale>Decisions regarding the employment of mobile code
-    within organizational information systems are based on the
-    potential for the code to cause damage to the system if used
-    maliciously. 
-    <p />
-    <p />Mobile code is defined as software modules obtained from
-    remote systems, transferred across a network, and then
-    downloaded and executed on a local system without explicit
-    installation or execution by the recipient.
-    <p />
-    <p />Usage restrictions and implementation guidance apply to
-    both the selection and use of mobile code installed,
-    downloaded, or executed on all endpoints (e.g., servers,
-    workstations, and smart phones).This requirement applies to
-    operating systems that execute, evaluate, or otherwise process
-    mobile code.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-001170" srgid="SRG-OS-000183"
-    nist="SC-18 (4)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must prevent the automatic
-    execution of mobile code.</description>
-    <rationale>Mobile code can cause damage to the system. It can
-    execute without explicit action from, or notification to, a
-    user. 
-    <p />
-    <p />Examples of prevention mechanisms include disabling auto
-    execute features on information system components employing
-    portable storage devices, such as Compact Disks (CDs), Digital
-    Video Disks (DVDs), and Universal Serial Bus (USB) devices.
-    <p />
-    <p />Usage restrictions and implementation guidance apply to
-    both the selection and use of mobile code installed,
-    downloaded, or executed on all endpoints (e.g., servers,
-    workstations, and smart phones). This requirement applies to
-    operating systems that execute, evaluate, or otherwise process
-    mobile code.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-001190" srgid="SRG-OS-000184" nist="SC-24" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must fail to a secure state
     if system initialization fails, shutdown fails, or aborts
@@ -2279,49 +1960,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     and unexpected terminations.</rationale>
     <check></check>
     <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Disable Audio Recording</title>
-    <description>Audio recording support software must be
-    disabled.</description>
-    <rationale>An attacker could use the system's built in
-    microphone to record sound without alerting the user. Disabling
-    the audio system software or removing the microphone hardware
-    mitigates this attack.</rationale>
-    <check>Disabling the microphone completely will also remove all
-    audio output from the computer. If audio is not a mission
-    requirement check for presence of the following files, presence
-    of any of these files is a finding.
-    <p />
-    <p />ls -l /System/Library/Extensions/AppleUSBAudio.kext
-    /System/Library/Extensions/IOAudioFamily.kext
-    /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleMikeyDriver.kext
-    <p />
-    <p />If audio output is required for the mission the only way
-    to disable the microphone without disabling all audio is to run
-    the following command to ensure the input volume is 0. The
-    volume can be checked by running the following script:
-    <p />
-    <p />osascript -e 'get volume settings' 
-    <p />
-    <p />Any value other than '0' for 'input volume' is a finding.
-    Microphone hardware can also be physically removed from the
-    device prior to deployment to meet this requirement.</check>
-    <fixtext>To disable all audio input/output on the device run
-    the following commands:
-    <p />
-    <p />sudo rm -rf
-    /System/Library/Extensions/AppleUSBAudio.kext;sudo rm -rf
-    /System/Library/Extensions/IOAudioFamily.kext;sudo rm -rf
-    /System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleMikeyDriver.kext
-    <p />
-    <p />To fix a non '0' input volume on a machine that requires
-    audio output functionality, run this command on a repeating
-    interval or manually change the input volume to '0':
-    <p />
-    <p />osascript -e 'set volume input volume 0'</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -2484,7 +2122,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001350" srgid="SRG-OS-000216"
     nist="AU-9 (3)" />
-    <status>Not Applicable</status>
+    <status>Applicable - Does Not Meet</status>
     <title></title>
     <description>The operating system must use cryptographic
     mechanisms to protect the integrity of audit
@@ -2500,31 +2138,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     data. An example of a cryptographic mechanism is the
     computation and application of a cryptographic-signed hash
     using asymmetric cryptography.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-001368" srgid="SRG-OS-000221" nist="AC-4" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must enforce approved
-    authorizations for controlling the flow of information within
-    the system based on organization-defined information flow
-    control policies.</description>
-    <rationale>A mechanism to detect and prevent unauthorized
-    communication flow must be configured or provided as part of
-    the system design. If information flow is not enforced based on
-    approved authorizations, the system may become compromised.
-    Information flow control regulates where information is allowed
-    to travel within a system and between interconnected systems.
-    The flow of all system information must be monitored and
-    controlled so it does not introduce any unacceptable risk to
-    the systems or data. 
-    <p />
-    <p />Operating systems providing information flow control must
-    be able to enforce approved authorizations for controlling the
-    flow of information within the system in accordance with
-    applicable policy.</rationale>
     <check></check>
     <fixtext></fixtext>
   </Rule>
@@ -2679,23 +2292,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title>Disable Fast User Switching</title>
-    <description>Fast User Switching must be
-    disabled.</description>
-    <rationale>Fast User Switching must be disabled.</rationale>
-    <check>To check if Fast User Switching is enabled, run the
-    following command:
-    <p />
-    <p />system_profiler SPConfigurationProfileDataType | grep
-    MultipleSessionEnabled | awk '{ print $3 }' | sed 's/;//'
-    <p />
-    <p />If the setting is not '0', this is a finding.</check>
-    <fixtext>This setting is enforced using a configuration
-    profile.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
     <title>Disable Infrared [IR]</title>
     <description>Infrared [IR] support must be
     removed.</description>
@@ -2753,7 +2349,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001464" srgid="SRG-OS-000254"
     nist="AU-14 (1)" />
-    <status>Not Applicable</status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must initiate session audits
     at system startup.</description>
@@ -2871,7 +2467,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />networksetup -listallnetworkservices
     <p />
     <p />If any enabled network interfaces have IPv6 enabled that
-    do not require the use of IPv6, this is a finding.</check>
+    do not require the use of IPv6, this is a finding.
+    <p />
+    <p />networksetup -listallnetworkservices | (while read dev; do
+    networksetup -getinfo "$dev"; done)</check>
     <fixtext>Run the following command to turn off ipv6 addressing
     for the Ethernet interface:
     <p />
@@ -2953,7 +2552,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001683" srgid="SRG-OS-000274"
     nist="AC-2 (4)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must notify System
     Administrators and Information Assurance Officers when accounts
@@ -2980,7 +2579,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001684" srgid="SRG-OS-000275"
     nist="AC-2 (4)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must notify System
     Administrators and Information Assurance Officers when accounts
@@ -3008,7 +2607,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001685" srgid="SRG-OS-000276"
     nist="AC-2 (4)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must notify System
     Administrators and Information Assurance Officers for account
@@ -3037,7 +2636,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001686" srgid="SRG-OS-000277"
     nist="AC-2 (4)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must notify System
     Administrators and Information Assurance Officers for account
@@ -3172,106 +2771,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     types of interactive sessions including, for example, remote
     login, information systems typically send logout messages as
     final messages prior to terminating sessions.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002262" srgid="SRG-OS-000294" nist="AC-16 a" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must associate
-    organization-defined types of security attributes having
-    organization-defined security attribute values with information
-    in storage.</description>
-    <rationale>Without the association of security attributes to
-    information, there is no basis for the operating system to make
-    security related access-control and flow-control decisions.
-    <p />
-    <p />Security attributes are abstractions representing the
-    basic properties or characteristics of an entity (e.g.,
-    subjects and objects) with respect to safeguarding information.
-    
-    <p />
-    <p />These attributes are typically associated with internal
-    data structures (e.g., records, buffers, files) within the
-    information system and are used to enable the implementation of
-    access control and flow control policies, reflect special
-    dissemination, handling or distribution instructions, or
-    support other aspects of the information security policy. 
-    <p />
-    <p />One example includes marking data as classified or FOUO.
-    These security attributes may be assigned manually or during
-    data processing but either way, it is imperative these
-    assignments are maintained while the data is in storage. If the
-    security attributes are lost when the data is stored, there is
-    the risk of a data compromise.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002263" srgid="SRG-OS-000295" nist="AC-16 a" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must associate
-    organization-defined types of security attributes having
-    organization-defined security attribute values with information
-    in process.</description>
-    <rationale>Without the association of security attributes to
-    information, there is no basis for the operating system to make
-    security related access-control and flow-control decisions.
-    <p />
-    <p />Security attributes are abstractions representing the
-    basic properties or characteristics of an entity (e.g.,
-    subjects and objects) with respect to safeguarding information.
-    
-    <p />
-    <p />These attributes are typically associated with internal
-    data structures (e.g., records, buffers, files) within the
-    information system and are used to enable the implementation of
-    access control and flow control policies, reflect special
-    dissemination, handling or distribution instructions, or
-    support other aspects of the information security policy. 
-    <p />
-    <p />One example includes marking data as classified or FOUO.
-    These security attributes may be assigned manually or during
-    data processing but either way, it is imperative these
-    assignments are maintained while the data is in process. If the
-    security attributes are lost when the data is being processed,
-    there is the risk of a data compromise.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002264" srgid="SRG-OS-000296" nist="AC-16 a" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must associate
-    organization-defined types of security attributes having
-    organization-defined security attribute values with information
-    in transmission.</description>
-    <rationale>Without the association of security attributes to
-    information, there is no basis for the operating system to make
-    security related access-control and flow-control decisions.
-    <p />
-    <p />Security attributes are abstractions representing the
-    basic properties or characteristics of an entity (e.g.,
-    subjects and objects) with respect to safeguarding information.
-    
-    <p />
-    <p />These attributes are typically associated with internal
-    data structures (e.g., records, buffers, files) within the
-    information system and are used to enable the implementation of
-    access control and flow control policies, reflect special
-    dissemination, handling or distribution instructions, or
-    support other aspects of the information security policy. 
-    <p />
-    <p />One example includes marking data as classified or FOUO.
-    These security attributes may be assigned manually or during
-    data processing but either way, it is imperative these
-    assignments are maintained while the data is in transmission.
-    If the security attributes are lost when the data is being
-    transmitted, there is the risk of a data
-    compromise.</rationale>
     <check></check>
     <fixtext></fixtext>
   </Rule>
@@ -3545,23 +3044,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <check></check>
     <fixtext></fixtext>
   </Rule>
-  <Rule severity="low">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Disable iTunes Podcasts</title>
-    <description>iTunes Podcasts must be disabled.</description>
-    <rationale>iTunes Podcasts must be disabled.</rationale>
-    <check>To check if the iTunes podcasts are disabled, run the
-    following command:
-    <p />
-    <p />system_profiler SPConfigurationProfileDataType | grep
-    disablePodcasts | awk '{ print $3 }' | sed 's/;//'
-    <p />
-    <p />If the value returned is not '1', this is a
-    finding.</check>
-    <fixtext>This setting is enforced using a configuration
-    profile.</fixtext>
-  </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002238" srgid="SRG-OS-000329" nist="AC-7 b" />
     <status>Applicable - Does Not Meet</status>
@@ -3644,23 +3126,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <check></check>
     <fixtext></fixtext>
   </Rule>
-  <Rule severity="low">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Disable iTunes Radio</title>
-    <description>iTunes Radio must be disabled.</description>
-    <rationale>iTunes Radio must be disabled.</rationale>
-    <check>To check if the iTunes radio is disabled, run the
-    following command:
-    <p />
-    <p />system_profiler SPConfigurationProfileDataType | grep
-    disableRadio | awk '{ print $3 }' | sed 's/;//'
-    <p />
-    <p />If the value returned is not '1', this is a
-    finding.</check>
-    <fixtext>This setting is enforced using a configuration
-    profile.</fixtext>
-  </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001851" srgid="SRG-OS-000342"
     nist="AU-4 (1)" />
@@ -3676,31 +3141,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     with limited audit storage capacity.</rationale>
     <check></check>
     <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Disable Kernel Core Dumps</title>
-    <description>Kernel core dumps must be disabled unless
-    needed.</description>
-    <rationale>Kernel core dumps must be disabled as they may
-    contain sensitive information that an attacker could use, such
-    as usernames and passwords. A core dump is a file that contains
-    the working contents of memory at the time an application
-    crashed. A kernel core dump is potentially more damaging
-    because the kernel runs in a privileged mode and is much more
-    likely to have sensitive data loaded into memory at the time of
-    a crash. Disabling kernel core dumps mitigates this
-    risk.</rationale>
-    <check>To check if kernel core dumps are enabled, run the
-    following command:
-    <p />
-    <p />sysctl kern.coredump
-    <p />
-    <p />If the value is not '0', this is a finding.</check>
-    <fixtext>Add or correct the following line in /etc/sysctl.conf:
-    <p />
-    <p />kern.coredump=0</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="CM-7 a" />
@@ -3852,11 +3292,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="CM-7 a" />
     <status>Applicable - Configurable</status>
-    <title>Disable Web Sharing Service if Not in Use</title>
+    <title>Disable Web Sharing Service</title>
     <description>The operating system must be configured to disable
     non-essential capabilities.</description>
-    <rationale>If the system is not configured to act as a web
-    server, Web Sharing is non-essential and must be disabled.
+    <rationale>Web Sharing is non-essential and must be disabled.
     Enabling any service increases the attack surface for an
     intruder. By disabling unnecessary services, the attack surface
     is minimized.</rationale>
@@ -3876,14 +3315,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="CM-7 a" />
     <status>Applicable - Configurable</status>
-    <title>Disable File Sharing Services if Not in Use</title>
+    <title>Disable File Sharing Services</title>
     <description>The operating system must be configured to disable
     non-essential capabilities.</description>
-    <rationale>If the system is not configured to act as a file
-    server (SMB or AFP), File Sharing is non-essential and must be
-    disabled. Enabling any service increases the attack surface for
-    an intruder. By disabling unnecessary services, the attack
-    surface is minimized.</rationale>
+    <rationale>File Sharing is non-essential and must be disabled.
+    Enabling any service increases the attack surface for an
+    intruder. By disabling unnecessary services, the attack surface
+    is minimized.</rationale>
     <check>File Sharing must be disabled.
     <p />
     <p />To check if Apple File (AFP) Sharing is disabled, run the
@@ -3965,7 +3403,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001878" srgid="SRG-OS-000350" nist="AU-7 a" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must support a report
     generation capability that supports on-demand audit review and
@@ -3987,7 +3425,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001879" srgid="SRG-OS-000351" nist="AU-7 a" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must support a report
     generation capability that supports on-demand reporting
@@ -4008,7 +3446,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001880" srgid="SRG-OS-000352" nist="AU-7 a" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>The operating system must provide a report
     generation capability that supports after-the-fact
@@ -4054,7 +3492,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001882" srgid="SRG-OS-000354" nist="AU-7 b" />
-    <status>Not Applicable</status>
+    <status>Applicable - Inherently Meets</status>
     <title></title>
     <description>An operating system that provides a report
     generation capability must not alter original content or time
@@ -4078,7 +3516,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001891" srgid="SRG-OS-000355"
     nist="AU-8 (1) (a)" />
-    <status>Applicable - Inherently Meets</status>
+    <status>Applicable - Configurable</status>
     <title></title>
     <description>The operating system must, for networked systems,
     compare internal information system clocks at least every 24
@@ -4173,7 +3611,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001811" srgid="SRG-OS-000361"
     nist="CM-11 (1)" />
-    <status>Applicable - Does Not Meet</status>
+    <status>Not Applicable</status>
     <title></title>
     <description>The operating system must alert the IAO, IAM, and
     other designated personnel (deemed appropriate by the local
@@ -4590,10 +4028,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <description>The operating system must implement multifactor
     authentication for remote access to privileged accounts such
     that one of the factors is provided by a device separate from
-    the system gaining access.
-    <p />
-    <p />
-    <p />Requires further clarification from NIST.</description>
+    the system gaining access.</description>
     <rationale>Using an authentication device, such as a CAC or
     token that is separate from the information system, ensures
     that even if the information system is compromised, that
@@ -4620,9 +4055,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     specific to the function of the device or has the concept of an
     organizational user (e.g., VPN, proxy capability). This does
     not apply to authentication for the purpose of configuring the
-    device itself (management).
-    <p />
-    <p />Requires further clarification from NIST.</rationale>
+    device itself (management).</rationale>
     <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
@@ -4760,87 +4193,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     no longer authorized (users with revoked
     certificates).</rationale>
     <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002009" srgid="SRG-OS-000385"
-    nist="IA-8 (1)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must accept Personal Identity
-    Verification (PIV) credentials from other federal
-    agencies.</description>
-    <rationale>Access may be denied to authorized users if federal
-    agency PIV credentials are not accepted. 
-    <p />
-    <p />Personal Identity Verification (PIV) credentials are those
-    credentials issued by federal agencies that conform to FIPS
-    Publication 201 and supporting guidance documents. OMB
-    Memorandum 11-11 requires federal agencies to continue
-    implementing the requirements specified in HSPD-12 to enable
-    agency-wide use of PIV credentials.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002010" srgid="SRG-OS-000386"
-    nist="IA-8 (1)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must electronically verify
-    Personal Identity Verification (PIV) credentials from other
-    federal agencies.</description>
-    <rationale>Inappropriate access may be granted to unauthorized
-    users if federal agency PIV credentials are not electronically
-    verified. 
-    <p />
-    <p />Personal Identity Verification (PIV) credentials are those
-    credentials issued by federal agencies that conform to FIPS
-    Publication 201 and supporting guidance documents. OMB
-    Memorandum 11-11 requires federal agencies to continue
-    implementing the requirements specified in HSPD-12 to enable
-    agency-wide use of PIV credentials.</rationale>
-    <check>Investigate: third party support?</check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002011" srgid="SRG-OS-000387"
-    nist="IA-8 (2)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must accept FICAM-approved
-    third-party credentials.</description>
-    <rationale>Access may be denied to legitimate users if
-    FICAM-approved third-party credentials are not accepted. 
-    <p />
-    <p />This requirement typically applies to organizational
-    information systems that are accessible to non-federal
-    government agencies and other partners. This allows federal
-    government relying parties to trust such credentials at their
-    approved assurance levels.
-    <p />
-    <p />Third-party credentials are those credentials issued by
-    non-federal government entities approved by the Federal
-    Identity, Credential, and Access Management (FICAM) Trust
-    Framework Solutions initiative.</rationale>
-    <check>Investigate: third party support?</check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002014" srgid="SRG-OS-000388"
-    nist="IA-8 (4)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must conform to FICAM-issued
-    profiles.</description>
-    <rationale>Without conforming to FICAM-issued profiles, the
-    information system may not be interoperable with
-    FICAM-authentication protocols, such as SAML 2.0 and OpenID
-    2.0.
-    <p />
-    <p />This requirement addresses open identity management
-    standards.</rationale>
-    <check>Investigate: third party support?</check>
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
@@ -4983,32 +4335,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     /System/Library/User\
     Template/English.lproj/Library/Preferences/com.apple.SetupAssistant
     LastSeenCloudProductVersion '10.9'</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-001152" srgid="SRG-OS-000397" nist="SC-15 b" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must provide an explicit
-    indication of use to users physically present at collaborative
-    computing devices.</description>
-    <rationale>An adversary may be able to gain access to
-    information on whiteboards or listen to conversations on a
-    microphone since collaboration equipment is typically not
-    designed with the security access controls and protection
-    measures of more sophisticated networked clients. 
-    <p />
-    <p />Collaborative computing devices include, for example,
-    networked whiteboards, cameras, and microphones. Explicit
-    indication of use includes, for example, signals to users when
-    collaborative computing devices are activated.
-    <p />
-    <p />This requirement applies to collaboration operating
-    systems that control collaborative computing devices. This
-    requirement is not intended to prohibit remote activation of
-    centrally managed, dedicated VTC Suites for the purpose of
-    remote testing of the equipment.</rationale>
-    <check></check>
-    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002465" srgid="SRG-OS-000399" nist="SC-21" />
@@ -5221,26 +4547,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     'com.apple.telnetd' -dict Disabled -bool true</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-002530" srgid="SRG-OS-000408" nist="SC-39" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must maintain a separate
-    execution domain for each executing process.</description>
-    <rationale>Operating systems can maintain separate execution
-    domains for each executing process by assigning each process a
-    separate address space. Each information system process has a
-    distinct address space so that communication between processes
-    is performed in a manner controlled through the security
-    functions, and one process cannot modify the executing code of
-    another process. Maintaining separate execution domains for
-    executing processes can be achieved, for example, by
-    implementing separate address spaces. This capability is
-    available in most commercial operating systems that employ
-    multistate processor technologies.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-002385" srgid="SRG-OS-000420" nist="SC-5" />
     <status>Applicable - Does Not Meet</status>
     <title></title>
@@ -5449,22 +4755,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-002618" srgid="SRG-OS-000438"
-    nist="SI-2 (6)" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The operating system must remove all firmware
-    components after updated versions have been
-    installed.</description>
-    <rationale>Previous versions of firmware components that are
-    not removed from the information system after updates have been
-    installed may be exploited by adversaries. Some information
-    technology products may remove older versions of firmware
-    automatically from the information system.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-001453" srgid="SRG-OS-000250"
     nist="AC-17 (2)" />
     <status>Applicable - Configurable</status>
@@ -5531,45 +4821,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />sudo defaults write
     /private/var/db/launchd.db/com.apple.launchd/overrides.plist
     'com.apple.telnetd' -dict Disabled -bool true</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002664" srgid="SRG-OS-000444"
-    nist="SI-4 (5)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must alert the IAO, IAM, and
-    other individuals designated by the local organization when the
-    following Indicators of Compromise (IOCs) or potential
-    compromise are detected: real-time intrusion detection; threats
-    identified by authoritative sources (e.g., CTOs); and Category
-    I, II, IV, and VII incidents in accordance with CJCSM
-    6510.01B.</description>
-    <rationale>When a security event occurs, the application that
-    has detected the event must immediately notify the appropriate
-    support personnel so they can respond appropriately. 
-    <p />
-    <p />Alerts may be generated from a variety of sources,
-    including, audit records or inputs from malicious code
-    protection mechanisms, intrusion detection, or prevention
-    mechanisms. Alerts may be transmitted, for example,
-    telephonically, by electronic mail messages, or by text
-    messaging. Individuals designated by the local organization to
-    receive alerts may include, for example, system administrators,
-    mission/business owners, or system owners.
-    <p />
-    <p />IOCs are forensic artifacts from intrusions that are
-    identified on organizational information systems (at the host
-    or network level). IOCs provide organizations with valuable
-    information on objects or information systems that have been
-    compromised. These indicators reflect the occurrence of a
-    compromise or a potential compromise.
-    <p />
-    <p />This requirement applies when the functionality is fully
-    integrated into the operating system and not provided via a
-    separate application, such as mobile operating
-    systems.</rationale>
-    <check></check>
-    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002696" srgid="SRG-OS-000445" nist="SI-6 a" />
@@ -5819,7 +5070,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
-    <title>Disable Wi-Fi</title>
+    <title>Disable Wi-Fi if Not Required</title>
     <description>Wi-Fi support software must be
     disabled.</description>
     <rationale>The kernel extension for Wi-Fi network devices such
@@ -5829,7 +5080,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     Administrator users may need to periodically check to ensure
     that the file remains deleted. Alternately, the wireless card
     hardware may be removed from the system.</rationale>
-    <check>To check if the Wi-Fi software components are present on
+    <check>REVISE TO USE NETWORKSETUP TO DISABLE
+    <p />
+    <p />To check if the Wi-Fi software components are present on
     the system, run the following command:
     <p />
     <p />sudo ls -d /System/Library/Extensions/IO80211Family.kext
@@ -6355,7 +5608,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001414" srgid="SRG-OS-000242" nist="AC-4" />
     <status>Applicable - Configurable</status>
-    <title>Enable an Approved Firewall</title>
+    <title>Enable a Rule-Based Approved Firewall</title>
     <description>The operating system must enforce approved
     authorizations for controlling the flow of information between
     interconnected systems based on organization-defined
@@ -6398,60 +5651,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     --setglobalstate on</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-002607" srgid="SRG-OS-000440" nist="SI-2 c" />
-    <status>Applicable - Configurable</status>
-    <title>Enable Automatic Security Updates</title>
-    <description>The operating system must install
-    security-relevant firmware updates within the time period
-    directed by an authoritative source (e.g. IAVM, CTOs, DTMs, and
-    STIGs).</description>
-    <rationale>Automatic Security Updates must be enabled and must
-    use an approved update server. This ensures that security
-    updates will be applied promptly.
-    <p />
-    <p />Security flaws with firmware are discovered daily. Vendors
-    are constantly updating and patching their products to address
-    newly discovered security vulnerabilities. Organizations
-    (including any contractor to the organization) are required to
-    promptly install security-relevant firmware updates. Flaws
-    discovered during security assessments, continuous monitoring,
-    incident response activities, or information system error
-    handling must also be addressed expeditiously. 
-    <p />
-    <p />Organization-defined time periods for updating
-    security-relevant firmware may vary based on a variety of
-    factors including, for example, the security category of the
-    information system or the criticality of the update (i.e.,
-    severity of the vulnerability related to the discovered flaw). 
-    <p />
-    <p />Patch criticality, as well as system criticality will
-    vary. Therefore, the tactical situations regarding the patch
-    management process will also vary. This means that the time
-    period utilized must be a configurable parameter. Time frames
-    for application of security-relevant firmware updates may be
-    dependent upon the Information Assurance Vulnerability
-    Management (IAVM) process.
-    <p />
-    <p />The application will be configured to check for and
-    install security-relevant firmware updates within an identified
-    time period from the availability of the update. The specific
-    time period will be defined by an authoritative source (e.g.
-    IAVM, CTOs, DTMs, and STIGs).</rationale>
-    <check>The system must be defined to use an approved software
-    update server. To check the value of the software update
-    server, run the following command:
-    <p />
-    <p />sudo system_profiler SPConfigurationProfileDataType | grep
-    'CatalogURL' | awk '{ print $3 }' | sed 's/;//'
-    <p />
-    <p />If it is not defined or set to the correct
-    organization-defined value, this is a finding.</check>
-    <fixtext>This setting is enforced using a configuration
-    profile.</fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-002605" srgid="SRG-OS-000439" nist="SI-2 c" />
-    <status>Applicable - Configurable</status>
+    <status>Not Applicable</status>
     <title>Enable Automatic Software Updates</title>
     <description>The operating system must install
     security-relevant software updates within the time period
@@ -6490,20 +5691,11 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     time period from the availability of the update. The specific
     time period will be defined by an authoritative source (e.g.
     IAVM, CTOs, DTMs, and STIGs).</rationale>
-    <check>The system must be defined to use an approved software
-    update server. To check the value of the software update
-    server, run the following command:
-    <p />
-    <p />sudo system_profiler SPConfigurationProfileDataType | grep
-    'CatalogURL' | awk '{ print $3 }' | sed 's/;//'
-    <p />
-    <p />If it is not defined or set to the correct
-    organization-defined value, this is a finding.</check>
-    <fixtext>This setting is enforced using a configuration
-    profile.</fixtext>
+    <check></check>
+    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
+    <ident cci="CCI-001749" srgid="SRG-OS-000366" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
     <title>Enable Gatekeeper</title>
     <description>The system must allow only applications downloaded
@@ -6527,79 +5719,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     finding.</check>
     <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Enable Stealth Mode in the Application Firewall</title>
-    <description>Stealth Mode must be enabled on the
-    firewall.</description>
-    <rationale>Stealth mode blocks incoming ping requests and must
-    be enabled. By blocking incoming ping requests, the chance that
-    an attacker could use network diagnostic tools to discover the
-    system is reduced.</rationale>
-    <check>To check if the OSX firewall (not pf.conf) is running in
-    stealth mode run the following command:
-    <p />
-    <p />sudo /usr/libexec/ApplicationFirewall/socketfilterfw
-    --getstealthmode | awk '{ print $NF }'
-    <p />
-    <p />If the result is 'Disabled', this is a finding.</check>
-    <fixtext>To enable the firewall stealth mode, run the following
-    command:
-    <p />
-    <p />sudo /usr/libexec/ApplicationFirewall/socketfilterfw
-    --setstealthmode on</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-001169" srgid="SRG-OS-000182"
-    nist="SC-18 (3)" />
-    <status>Applicable - Does Not Meet</status>
-    <title></title>
-    <description>The operating system must prevent the download of
-    prohibited mobile code.</description>
-    <rationale>Decisions regarding the employment of mobile code
-    within organizational information systems are based on the
-    potential for the code to cause damage to the system if used
-    maliciously. 
-    <p />
-    <p />Mobile code is defined as software modules obtained from
-    remote systems, transferred across a network, and then
-    downloaded and executed on a local system without explicit
-    installation or execution by the recipient.
-    <p />
-    <p />Usage restrictions and implementation guidance apply to
-    both the selection and use of mobile code installed,
-    downloaded, or executed on all endpoints (e.g., servers,
-    workstations, and smart phones). This requirement applies to
-    operating systems that execute, evaluate, or otherwise process
-    mobile code.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Ensure All System Updates are Installed</title>
-    <description>The Operating System must be current and at the
-    latest release level.</description>
-    <rationale>The Operating System must be current, as this
-    ensures that system vulnerabilities are patched. If an OS is at
-    an unsupported release level, this will be upgraded to a
-    Category I finding since security updates are not generally
-    available for unsupported versions of the OS.</rationale>
-    <check>To check which software update are available for the
-    system, run the following command:
-    <p />
-    <p />sudo softwareupdate --list --all
-    <p />
-    <p />Review the results and determine if any updates need to be
-    applied. If there are any required updates that have not been
-    applied, this is a finding.</check>
-    <fixtext>To install software updates, run the following
-    command:
-    <p />
-    <p />sudo softwareupdate --install [name of update]</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001849" srgid="SRG-OS-000341" nist="AU-4" />
@@ -6635,7 +5754,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   <Rule severity="medium">
     <ident cci="CCI-001348" srgid="SRG-OS-000215"
     nist="AU-9 (2)" />
-    <status>Applicable - Configurable</status>
+    <status>Not Applicable</status>
     <title>Ensure Audit Logs Are Written to a Valid
     Location</title>
     <description>The operating system must back up audit records at
@@ -6693,9 +5812,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-002450" srgid="SRG-OS-000396" nist="SC-13" />
-    <status>Applicable - Configurable</status>
-    <title>Ensure that the NSA-approved Cryptography Module Has Not
-    Been Modified</title>
+    <status>Applicable - Inherently Meets</status>
+    <title></title>
     <description>The operating system must implement NSA-approved
     cryptography to protect classified information in accordance
     with applicable federal laws, Executive Orders, directives,
@@ -6706,17 +5824,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     adhering to the higher standards approved by the federal
     government since this provides assurance they have been tested
     and validated.</rationale>
-    <check>Run the following command to ensure the correct FIPS
-    administrative and cryptographic modules are installed
-    correctly:
-    <p />
-    <p />sudo codesign -dvvv /usr/libexec/cc_fips_test 2&gt;&amp;1
-    | grep CDHash | sed 's/CDHash=//'
-    <p />
-    <p />For Mac OS X 10.9, the result should be
-    '8c4030c92275806756dca48de0156da85d781d32'. If it differs, this
-    is a finding.</check>
-    <fixtext>The operating system must be reinstalled.</fixtext>
+    <check></check>
+    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
@@ -6744,50 +5853,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     system.</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Install and Configure an Approved Firewall</title>
-    <description>A host-based firewall must be
-    installed.</description>
-    <rationale>An approved firewall must be installed and
-    configured to run in order to guard incoming and outgoing
-    network traffic.
-    <p />
-    <p />Access into an organization's internal network and to key
-    internal boundaries must be tightly controlled and managed. In
-    the case of the operating system, the key boundary may be the
-    workstation on the public internet.</rationale>
-    <check>Ask the SA or IAO if an approved firewall is loaded on
-    the system. The recommended system is the McAfee HBSS. If there
-    is no local firewall installed on the system, this is a
-    finding.</check>
-    <fixtext>Install an approved HBSS or firewall solution onto the
-    system.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Install and Configure an Approved Firewall</title>
-    <description>The operating system must enforce requirements for
-    remote connections to the information system.</description>
-    <rationale>An approved firewall must be installed and
-    configured to run in order to guard incoming and outgoing
-    network traffic.
-    <p />
-    <p />The organization will define the requirements for
-    connection of remote connections. In order to ensure the
-    connection provides adequate integrity and confidentiality of
-    the connection, the operating system must enforce these
-    requirements.</rationale>
-    <check>Ask the SA or IAO if an approved firewall is loaded on
-    the system. The recommended system is the McAfee HBSS. If there
-    is no local firewall installed on the system, this is a
-    finding.</check>
-    <fixtext>Install an approved HBSS or firewall solution onto the
-    system.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
+    <ident cci="CCI-002450" srgid="SRG-OS-000478" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
     <title>Install DoD-Approved Certificates to the System
     Keychain</title>
@@ -7002,27 +6068,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     profile.</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Only Allow Authorized Applications</title>
-    <description>A configuration profile must exist to restrict
-    launching of applications.</description>
-    <rationale>Application Restrictions must be enabled for user
-    accounts and configured to only allow users to execute approved
-    applications. Its settings should be enforced with a
-    configuration profile to ensure that users will not be able to
-    change the chosen whitelisted applications to a less
-    restrictive set.</rationale>
-    <check>To check if there is a configuration policy defined for
-    Application Restrictions, run the following command:
-    <p />
-    <p />sudo profiles -Pv | grep 'Application Restrictions'
-    <p />
-    <p />If nothing is returned, this is a finding.</check>
-    <fixtext>This setting is enforced using a configuration
-    profile.</fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-001314" srgid="SRG-OS-000206" nist="SI-11 b" />
     <status>Applicable - Configurable</status>
     <title>Only Allow Authorized Users to Access System
@@ -7084,39 +6129,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />
     <p />[log file] is the full path to the log file in
     question.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The centralized process core dump data directory
-    must be owned by root.</description>
-    <rationale>The centralized process core dump data directory
-    must be owned by root.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The centralized process core dump data directory
-    must have mode 0750 or less permissive.</description>
-    <rationale>The centralized process core dump data directory
-    must have mode '0750' or less permissive.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Inherently Meets</status>
-    <title></title>
-    <description>The centralized process core dump data directory
-    must be group-owned by admin.</description>
-    <rationale>The centralized process core dump data directory
-    must be group-owned by admin.</rationale>
-    <check></check>
-    <fixtext></fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000164" srgid="SRG-OS-000059" nist="AU-9" />
@@ -7346,75 +6358,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     this computer' is not checked.</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-001662" srgid="SRG-OS-000268"
-    nist="SC-18 (1)" />
-    <status>Not Applicable</status>
-    <title></title>
-    <description>The operating system must block, quarantine,
-    and/or alert administrators when prohibited mobile code is
-    identified.</description>
-    <rationale>Decisions regarding the employment of mobile code
-    within organizational information systems are based on the
-    potential for the code to cause damage to the system if used
-    maliciously. 
-    <p />
-    <p />Mobile code is defined as software modules obtained from
-    remote systems, transferred across a network, and then
-    downloaded and executed on a local system without explicit
-    installation or execution by the recipient.
-    <p />
-    <p />DoD has defined the corrective actions to be taken, when
-    prohibited mobile code is identified, in DoDI 8552.01, "Use of
-    Mobile Code Technologies in DoD Information Systems".
-    <p />
-    <p />DoD has identified prohibited mobile code in DoDI 8552.01
-    as: all Category 1X mobile code, unsigned Category 1A mobile
-    code, Category 2 mobile code that violates usage requirements,
-    all Emerging Technologies mobile code (all mobile code
-    technologies, systems, platforms, or languages whose
-    capabilities and threat level have not yet undergone a risk
-    assessment and been assigned to a risk category), and all
-    mobile code that downloads via an email body or email
-    attachment that executes automatically when the user opens the
-    email body or attachment.
-    <p />
-    <p />Usage restrictions and implementation guidance apply to
-    both the selection and use of mobile code installed,
-    downloaded, or executed on all endpoints (e.g., servers,
-    workstations, and smart phones). This requirement applies to
-    operating systems that execute, evaluate, or otherwise process
-    mobile code.
-    <p />
-    <p />Corrective actions when unacceptable mobile code is
-    detected include, for example, blocking, quarantine, or
-    alerting administrators. Blocking includes, for example,
-    preventing transmission of word processing files with embedded
-    macros when such macros have been defined to be unacceptable
-    mobile code.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-002460" srgid="SRG-OS-000453"
-    nist="SC-18 (4)" />
-    <status>Not Applicable</status>
-    <title></title>
-    <description>The operating system must prompt the user for
-    action prior to executing mobile code.</description>
-    <rationale>Mobile code can cause damage to the system. It can
-    execute without explicit action from, or notification to, a
-    user. 
-    <p />
-    <p />Actions enforced before executing mobile code include, for
-    example, prompting users prior to executing mobile code.
-    <p />
-    <p />This requirement applies to mobile code-enabled software,
-    which is capable of executing one or more types of mobile
-    code.</rationale>
-    <check></check>
-    <fixtext></fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
     <status>Applicable - Configurable</status>
     <title>Prevent Users from Disabling Gatekeeper</title>
@@ -7478,8 +6421,10 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     storage or that users could inadventently introduce viruses or
     malware previously saved to iCloud from other
     systems.</rationale>
-    <check>To see if any user account has configured an Apple ID
-    for iCloud usage, run the following command:
+    <check>CHECK IF 10.9 WILL OBEY CONFIGURATION PROFILE
+    <p />
+    <p />To see if any user account has configured an Apple ID for
+    iCloud usage, run the following command:
     <p />
     <p />sudo find /Users/ -name 'MobileMeAccounts.plist' -exec
     defaults read '{}' \;
@@ -7544,27 +6489,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     set.</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Remove Unnecessary Software</title>
-    <description>Unnecessary packages must not be
-    installed.</description>
-    <rationale>Unnecessary applications that come preinstalled on
-    the system, such as iPhoto, iMovie, and GarageBand, must be
-    removed unless they are required for mission purposes. Only
-    required software should ever be added to a system.</rationale>
-    <check>To view a list of packages and applications installed on
-    the system, run the following command:
-    <p />
-    <p />sudo pkgutil / --pkgs
-    <p />
-    <p />If any of the packages listed are not required for proper
-    operation of the system, this is a finding.</check>
-    <fixtext>If there are any unnecessary packages installed on the
-    system, verify any dependencies and remove those not
-    required.</fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-000056" srgid="SRG-OS-000028" nist="AC-11 b" />
     <status>Applicable - Configurable</status>
     <title>Require Users to Unlock the Screensaver with their
@@ -7586,42 +6510,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     defined or not set to '1', this is a finding.</check>
     <fixtext>This setting is enforced using a configuration
     profile.</fixtext>
-  </Rule>
-  <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Rotate System Logs</title>
-    <description>Newsyslog must be correctly configured to rotate
-    log files.</description>
-    <rationale>The syslogd configuration files newsyslog.conf and
-    asl.conf must be correctly configured to rotate plain text log
-    files. The number and size of generated log files to keep on
-    the local system is determined by the organization. The value
-    should reflect the need to retain system and process data while
-    ensuring that overly large log files will not consume system
-    resources and affect system availability.</rationale>
-    <check>To view the settings for the log file rotation, run the
-    following command:
-    <p />
-    <p />sudo grep -v '^#' /etc/newsyslog.conf /etc/newsyslog.d/*
-    <p />
-    <p />The third column is the number of files to keep in
-    rotation. If this is not set to the correct value for the
-    organization, this is a finding.
-    <p />
-    <p />Additionally, options for rotating log files may be
-    specified in /etc/asl.conf and in individual configuration
-    files inside /etc/asl. Review the contents of these files and
-    look for lines that begin with the shorthand character '&gt;'
-    or contain the 'file' directive. The 'file_max' and 'all_max'
-    options should be set to the correct values for the
-    organization:
-    <p />
-    <p />sudo grep -e '^&gt;' -e '\bfile\b' /etc/asl.conf
-    /etc/asl/*</check>
-    <fixtext>Edit the appropriate line in /etc/newsyslog.conf,
-    /etc/newsyslog.d, /etc/asl.conf, or /etc/asl to configure the
-    correct values.</fixtext>
   </Rule>
   <Rule severity="medium">
     <ident cci="CCI-000060" srgid="SRG-OS-000031"
@@ -7765,8 +6653,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />umask
     <p />
     <p />If the setting is not '022', this is a finding.</check>
-    <fixtext>To set the umask setting for user applications, run
-    the following command:
+    <fixtext>To set the umask setting for applications, run the
+    following command:
     <p />
     <p />sudo sh -c 'echo 'umask 022' &gt;
     /etc/launchd.conf'</fixtext>
@@ -7919,27 +6807,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     <p />sudo sed -i.bak '/^policy/ s/$/,ahlt/'
     /etc/security/audit_control; sudo audit -s</fixtext>
   </Rule>
-  <Rule severity="">
-    <ident cci="CCI-001019" srgid="SRG-OS-000131"
-    nist="MP-4 (1)" />
-    <status>Applicable - Configurable</status>
-    <title>Turn on FileVault Disk Encryption</title>
-    <description>The operating system must employ cryptographic
-    mechanisms to protect information in storage.</description>
-    <rationale>FileVault Disk Encryption must be enabled. This
-    prevents unauthorized users from accessing sensitive data that
-    may be stored on the hard drive when the system is powered
-    off.</rationale>
-    <check>To check if FileVault 2 is enabled, run the following
-    command:
-    <p />
-    <p />sudo fdesetup status
-    <p />
-    <p />If FileVault is 'Off', this is a finding.</check>
-    <fixtext>Open System Preferences-&gt;Security and Privacy, and
-    navigate to the FileVault tab. Use this panel to configure
-    full-disk encryption.</fixtext>
-  </Rule>
   <Rule severity="medium">
     <ident cci="CCI-001199" srgid="SRG-OS-000185" nist="SC-28" />
     <status>Applicable - Configurable</status>
@@ -7959,38 +6826,6 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     storage (e.g., hard drives and non-volatile memory) can be
     read, copied, or altered. FileVault Disk Encryption mitigates
     this risk.</rationale>
-    <check>To check if FileVault 2 is enabled, run the following
-    command:
-    <p />
-    <p />sudo fdesetup status
-    <p />
-    <p />If FileVault is 'Off', this is a finding.</check>
-    <fixtext>Open System Preferences-&gt;Security and Privacy, and
-    navigate to the FileVault tab. Use this panel to configure
-    full-disk encryption.</fixtext>
-  </Rule>
-  <Rule severity="">
-    <ident cci="CCI-001200" srgid="SRG-OS-000230"
-    nist="SC-28 (1)" />
-    <status>Applicable - Configurable</status>
-    <title>Turn on FileVault Disk Encryption</title>
-    <description>The operating system must employ cryptographic
-    mechanisms to prevent unauthorized disclosure of information at
-    rest unless otherwise protected by alternative physical
-    measures.</description>
-    <rationale>FileVault Disk Encryption must be enabled unless
-    physical measures have been taken to protect the system. This
-    ensures that any data stored on the hard drive will be
-    protected by cryptographic means when the system is powered
-    off, mitigating the risk of unauthorized disclosure of that
-    data.
-    <p />
-    <p />This control is intended to address the confidentiality
-    and integrity of information at rest in non-mobile devices and
-    covers user information and system information. Information at
-    rest refers to the state of information when it is located on a
-    secondary storage device (e.g., disk drive, tape drive) within
-    an organizational information system.</rationale>
     <check>To check if FileVault 2 is enabled, run the following
     command:
     <p />
@@ -8115,40 +6950,9 @@ xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.9">
     DisableEncryptedSwap -bool FALSE</fixtext>
   </Rule>
   <Rule severity="medium">
-    <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
-    <status>Applicable - Configurable</status>
-    <title>Use a DoD-Approved Proxy Server</title>
-    <description>DoD proxies must be configured on all active
-    network interfaces.</description>
-    <rationale>All active network interfaces should be configured
-    to use a DoD-approved proxy server. A proxy server is designed
-    to hide the identity of the client when making a connection to
-    a server on the outside of its network. This prevents any
-    hackers on the outside of learning IP addresses within the
-    private network. With a proxy acting as the mediator, the
-    client does not interact directly with the servers it is
-    connecting to; the proxy server is in the middle handling both
-    sides of the session.</rationale>
-    <check>To show the proxy configuration for the Ethernet
-    interface, run the following command:
-    <p />
-    <p />networksetup -getautoproxyurl 'Ethernet' 
-    <p />
-    <p />and replace 'Ethernet' with the plain English name of the
-    network interface you need to verify. If there is no proxy
-    defined, or enabled is set to 'No', this is a finding. This
-    command: networksetup -listallnetworkservices will list the
-    plain English names of all configured network interfaces on the
-    computer.</check>
-    <fixtext>Ensure that DoD proxies are configured on all active
-    network interfaces listed from the command:
-    <p />
-    <p />networksetup -listallnetworkservices</fixtext>
-  </Rule>
-  <Rule severity="medium">
     <ident cci="CCI-000185" srgid="SRG-OS-000066"
     nist="IA-5 (2) (a)" />
-    <status>Applicable - Configurable</status>
+    <status>Applicable - Inherently Meets</status>
     <title>Validate Certificate Trust Chains</title>
     <description>The operating system, for PKI-based
     authentication, must validate certificates by constructing a
