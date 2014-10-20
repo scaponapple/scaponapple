@@ -43,11 +43,11 @@
 <Rule severity="medium">
 <ident cci="CCI-000044" srgid="SRG-OS-000021" nist="AC-7 a" />
 <status>Applicable - Configurable</status>
-<title></title>
+<title>Lock User Accounts after Three Failed Login Attempts</title>
 <description>The operating system must enforce the limit of three consecutive invalid logon attempts by a user during a 15 minute time period.</description>
-<rationale>By limiting the number of failed login attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute forcing, is reduced. Limits are imposed by locking the account.</rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>By limiting the number of failed login attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute forcing, is reduced. Limits are imposed by locking the account. Setting a lockout expiration of 15 minutes is an effective deterrent against brute forcing that also makes allowances for legitimate mistakes by users.</rationale>
+<check>To check if the password policy is configured to disable an account for 15 minutes after three unsuccessful login attempts, run the following command:<p/><p/>sudo pwpolicy getglobalpolicy | tr ' ' '\n' | grep 'maxFailedLoginAttempts\|minutesUntilFailedLoginReset'<p/><p/>If the result is not 'maxFailedLoginAttempts=3' and 'minutesUntilFailedLoginReset=15', and password policy is not controlled by a directory server, this is a finding.</check>
+<fixtext>To set the password policy, run the following command:<p/><p/>sudo pwpolicy setglobalpolicy 'maxFailedLoginAttempts=3 minutesUntilFailedLoginReset=15'</fixtext>
 </Rule>
 
 <Rule severity="medium">
@@ -853,11 +853,11 @@
 <Rule severity="medium">
 <ident cci="CCI-001464" srgid="SRG-OS-000254" nist="AU-14 (1)" />
 <status>Applicable - Configurable</status>
-<title></title>
+<title>Enable the Audit Service</title>
 <description>The operating system must initiate session audits at system startup.</description>
 <rationale>If auditing is enabled late in the startup process, the actions of some start-up processes may not be audited. Some audit systems also maintain state information only available if auditing is enabled before a given process is created.</rationale>
-<check></check>
-<fixtext></fixtext>
+<check>To check if the audit service is running, use the following command:<p/><p/>sudo launchctl list | grep com.apple.auditd<p/><p/>If nothing is returned, the audit service is not running and this is a finding.</check>
+<fixtext>To enable the audit service, run the following command:<p/><p/>sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.auditd.plist</fixtext>
 </Rule>
 
 <Rule severity="medium">
@@ -1123,7 +1123,7 @@
 <Rule severity="medium">
 <ident cci="CCI-002238" srgid="SRG-OS-000329" nist="AC-7 b" />
 <status>Applicable - Configurable</status>
-<title></title>
+<title>Lock User Accounts after Three Failed Login Attempts</title>
 <description>The operating system must automatically lock the account until the locked account is released by an administrator when three unsuccessful login attempts in 15 minutes are exceeded.</description>
 <rationale>By limiting the number of failed login attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute forcing, is reduced. Limits are imposed by locking the account. Setting a lockout expiration of 15 minutes is an effective deterrent against brute forcing that also makes allowances for legitimate mistakes by users.</rationale>
 <check>To check if the password policy is configured to disable an account for 15 minutes after three unsuccessful login attempts, run the following command:<p/><p/>sudo pwpolicy getglobalpolicy | tr ' ' '\n' | grep 'maxFailedLoginAttempts\|minutesUntilFailedLoginReset'<p/><p/>If the result is not 'maxFailedLoginAttempts=3' and 'minutesUntilFailedLoginReset=15', and password policy is not controlled by a directory server, this is a finding.</check>
