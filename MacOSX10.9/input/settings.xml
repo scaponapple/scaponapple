@@ -1283,11 +1283,11 @@
 <Rule severity="medium">
 <ident cci="CCI-001891" srgid="SRG-OS-000355" nist="AU-8 (1) (a)" />
 <status>Applicable - Configurable</status>
-<title></title>
+<title>Configure a Network Time Server</title>
 <description>The operating system must, for networked systems, compare internal information system clocks at least every 24 hours with a server which is synchronized to one of the redundant United States Naval Observatory (USNO) time servers or a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).</description>
 <rationale>Inaccurate time stamps make it more difficult to correlate events and can lead to an inaccurate analysis. Determining the correct time a particular event occurred on a system is critical when conducting forensic analysis and investigating system events. Sources outside of the configured acceptable allowance (drift) may be inaccurate. <p/><p/>Synchronizing internal information system clocks provides uniformity of time stamps for information systems with multiple system clocks and systems connected over a network. <p/><p/>Organizations should consider endpoints that may not have regular access to the authoritative time server (e.g., mobile, teleworking, and tactical endpoints).</rationale>
-<check></check>
-<fixtext></fixtext>
+<check>The Network Time Protocol (NTP) service must be enabled on all networked systems. To check if the service is running, use the following command:<p/><p/>sudo launchctl list | grep org.ntp.ntpd<p/><p/>If nothing is returned, this is a finding.<p/><p/>To ensure that an authorized NTP server is configured, run the following command or examine /etc/ntp.conf:<p/><p/>sudo grep ^server /etc/ntp.conf<p/><p/>Only approved time servers should be configured for use. If no server is configured, or if an unapproved time server is in use, this is a finding.</check>
+<fixtext>To enable the NTP service, run the following command:<p/><p/>sudo launchctl load -w /System/Library/LaunchDaemons/org.ntp.ntpd.plist<p/><p/>To configure one or more time servers for use, edit /etc/ntp.conf and enter each hostname or ip address on a separate line, prefixing each one with the keyword "server".</fixtext>
 </Rule>
 
 <Rule severity="medium">
