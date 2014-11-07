@@ -46,14 +46,18 @@
 			<td>VulDiscussion</td>
 			<td>Status</td>
 			<td>Check</td>
+			<td>Yosemite Check</td>
 			<td>Fix</td>
+			<td>Yosemite Fix</td>
 			<td>Severity</td>
 		</xsl:when>	
 		<xsl:when test="$printonly='configurable'">
 			<td>Title</td>
 			<td>VulDiscussion</td>
 			<td>Check</td>
+			<td>Yosemite Check</td>
 			<td>Fix</td>
+			<td>Yosemite Fix</td>
 			<td>Severity</td>
 			<td>NIST<p/>Control</td>
 		</xsl:when>
@@ -79,14 +83,18 @@
 			<td> <xsl:apply-templates select="cdf:rationale"/> </td>
 			<td> <xsl:apply-templates select="cdf:status"/> </td>
 			<td> <xsl:apply-templates select="cdf:check"/> </td>
+			<td> <xsl:apply-templates select="cdf:checkyosemite"/> </td>
 			<td> <xsl:apply-templates select="cdf:fixtext"/> </td>
+			<td> <xsl:apply-templates select="cdf:fixtextyosemite"/> </td>
 			<td> <xsl:value-of select="@severity" /></td>
 		</xsl:when>
 		<xsl:when test="cdf:status='Applicable - Configurable' and $printonly='configurable'">
 			<td> <xsl:value-of select="cdf:title" /></td>
 			<td> <xsl:apply-templates select="cdf:rationale"/> </td>
 			<td> <xsl:apply-templates select="cdf:check"/> </td>
+			<td> <xsl:apply-templates select="cdf:checkyosemite"/> </td>
 			<td> <xsl:apply-templates select="cdf:fixtext"/> </td>
+			<td> <xsl:apply-templates select="cdf:fixtextyosemite"/> </td>
 			<td> <xsl:value-of select="@severity" /></td>
 			<td> <xsl:value-of select="cdf:ident/@nist" /></td>
 		</xsl:when>
