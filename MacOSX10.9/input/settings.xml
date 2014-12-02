@@ -810,7 +810,7 @@
 <rationale>The sudo command must be configured to prompt for the administrator user's password at least once in each newly opened Terminal window or remote login session, as this prevents a malicious user from taking advantage of an unlocked computer or an abandoned login session to bypass the normal password prompt requirement. Without the tty_tickets option, all open local and remote login sessions would be authenticated to use sudo without a password for the duration of the configured password timeout window.</rationale>
 <check>To check if the tty_tickets option is set for sudo, run the following command:<p/><p/>sudo grep tty_tickets /etc/sudoers<p/><p/>If there is no result, this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
-<fixtext>Edit the /etc/sudoers file to contain the line:<p/><p/>Defaults tty_tickets</fixtext>
+<fixtext>Edit the /etc/sudoers file to contain the line:<p/><p/>Defaults tty_tickets<p/><p/>This line can be placed in the Defaults section or at the end of the file.</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
 </Rule>
 
@@ -832,10 +832,10 @@
 <title>Disable Automatic Actions for Blank CDs</title>
 <description>Automatic actions must be disabled for blank CDs.</description>
 <rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for blank CDs mitigates this risk.</rationale>
-<check>To check if the system has the correct setting for blank CDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep 'com.apple.digihub.blank.cd.appeared' | grep 'action' | awk '{ print $3 }' | sed 's/;//'<p/><p/>The check should return a value of '1'. If this is not defined or not set to '1', this is a finding.</check>
-<checkyosemite></checkyosemite>
+<check>To check if the system has the correct setting for blank CDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 3 blankcd<p/><p/>If this is not defined or the 'eject' option is not present, this is a finding.</check>
+<checkyosemite>No change</checkyosemite>
 <fixtext>This setting is enforced using a configuration profile.</fixtext>
-<fixtextyosemite></fixtextyosemite>
+<fixtextyosemite>No change</fixtextyosemite>
 </Rule>
 
 <Rule severity="medium">
@@ -880,10 +880,10 @@
 <title>Disable Automatic Actions for Blank DVDs</title>
 <description>Automatic actions must be disabled for blank DVDs.</description>
 <rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for blank DVDs mitigates this risk.</rationale>
-<check>To check if the system has the correct setting for blank DVDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep 'com.apple.digihub.blank.dvd.appeared' | grep 'action' | awk '{ print $3 }' | sed 's/;//'<p/><p/>The check should return a value of '1'. If this is not defined or not set to '1', this is a finding.</check>
-<checkyosemite></checkyosemite>
+<check>To check if the system has the correct setting for blank DVDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 3 blankdvd<p/><p/>If this is not defined or the 'eject' option is not present, this is a finding.</check>
+<checkyosemite>No change</checkyosemite>
 <fixtext>This setting is enforced using a configuration profile.</fixtext>
-<fixtextyosemite></fixtextyosemite>
+<fixtextyosemite>No change</fixtextyosemite>
 </Rule>
 
 <Rule severity="medium">
@@ -892,10 +892,10 @@
 <title>Disable Automatic Actions for Music CDs</title>
 <description>Automatic actions must be disabled for music CDs.</description>
 <rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for music CDs mitigates this risk.</rationale>
-<check>To check if the system has the correct setting for music CDs open up System Preferences, CDs &amp; DVDs. The setting for 'When you insert a music CD' should be set to 'Ignore', if it is not, this is a finding.</check>
-<checkyosemite></checkyosemite>
-<fixtext>Open up System Preferences, CDs &amp; DVDs.  Change the setting for 'When you insert a music CD'  to 'Ignore'.</fixtext>
-<fixtextyosemite></fixtextyosemite>
+<check>To check if the system has the correct setting for music CDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.cd.music.appeared'<p/><p/>If this is not defined or 'action' is not not set to '1', this is a finding.</check>
+<checkyosemite>Configuration Profile did not work in Yosemite as expected. System Preferences reflects the correct setting, but the setting is not enforced.</checkyosemite>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
+<fixtextyosemite>Configuration Profile did not work in Yosemite as expected. System Preferences reflects the correct setting, but the setting is not enforced.</fixtextyosemite>
 </Rule>
 
 <Rule severity="medium">
@@ -916,10 +916,10 @@
 <title>Disable Automatic Actions for Picture CDs</title>
 <description>Automatic actions must be disabled for picture CDs.</description>
 <rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for picture CDs mitigates this risk.</rationale>
-<check>To check if the system has the correct setting for picture CDs open up System Preferences, CDs &amp; DVDs. The setting for 'When you insert a picture CD' should be set to 'Ignore', if it is not, this is a finding.</check>
-<checkyosemite></checkyosemite>
-<fixtext>Open up System Preferences, CDs &amp; DVDs.  Change the setting for 'When you insert a picture CD'  to 'Ignore'.</fixtext>
-<fixtextyosemite></fixtextyosemite>
+<check>To check if the system has the correct setting for picture CDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.cd.picture.appeared'<p/><p/>If this is not defined or 'action' is not not set to '1', this is a finding.</check>
+<checkyosemite>Configuration Profile did not work in Yosemite as expected. System Preferences reflects the correct setting, but the setting is not enforced.</checkyosemite>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
+<fixtextyosemite>Configuration Profile did not work in Yosemite as expected. System Preferences reflects the correct setting, but the setting is not enforced.</fixtextyosemite>
 </Rule>
 
 <Rule severity="medium">
@@ -928,10 +928,10 @@
 <title>Disable Automatic Actions for Video DVDs</title>
 <description>Automatic actions must be disabled for video DVDs.</description>
 <rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for video DVDs mitigates this risk.</rationale>
-<check>To check if the system has the correct setting for picture CDs open up System Preferences, CDs &amp; DVDs. The setting for 'When you insert a video DVD' should be set to 'Ignore', if it is not, this is a finding.</check>
-<checkyosemite></checkyosemite>
-<fixtext>Open up System Preferences, CDs &amp; DVDs.  Change the setting for 'When you insert a video DVD'  to 'Ignore'.</fixtext>
-<fixtextyosemite></fixtextyosemite>
+<check>To check if the system has the correct setting for video DVDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.dvd.video.appeared'<p/><p/>If this is not defined or 'action' is not not set to '1', this is a finding.</check>
+<checkyosemite>Configuration Profile did not work in Yosemite as expected. System Preferences reflects the correct setting, but the setting is not enforced.</checkyosemite>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
+<fixtextyosemite>Configuration Profile did not work in Yosemite as expected. System Preferences reflects the correct setting, but the setting is not enforced.</fixtextyosemite>
 </Rule>
 
 <Rule severity="medium">
@@ -954,7 +954,7 @@
 <rationale>The Bluetooth kernel extension must be removed, as wireless access introduces unnecessary security risks. Removing Bluetooth support entirely mitigates this risk and ensures the operating system enforces this requirement.</rationale>
 <check>To check if there are any hardware components for Bluetooth loaded in the system, run the following command:<p/><p/>sudo kextstat | grep -i bluetooth<p/><p/>If there is a result, this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
-<fixtext>Removing the kernel extensions for Bluetooth will remove the system's ability to load Bluetooth devices, use the following commands to remove them:<p/><p/>sudo rm -rf /System/Library/Extensions/IOBluetoothFamily.kext /System/Library/Extensions/IOBluetoothHIDDDriver.kext; sudo touch /System/Library/Extensions</fixtext>
+<fixtext>Removing the kernel extensions for Bluetooth will remove the system's ability to load Bluetooth devices, use the following commands to remove them:<p/><p/>sudo rm -rf /System/Library/Extensions/IOBluetoothFamily.kext /System/Library/Extensions/IOBluetoothHIDDriver.kext; sudo touch /System/Library/Extensions</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
 </Rule>
 
@@ -965,9 +965,9 @@
 <description>Bluetooth Sharing must be disabled.</description>
 <rationale>Bluetooth sharing allows users to wirelessly transmit files between Mac OS X and Bluetooth-enabled devices, including personally owned cell phones and tablets. A malicious user might introduce viruses or malware onto the system or extract sensitive files. Disabling Bluetooth Sharing mitigates this risk.</rationale>
 <check>To check if Bluetooth Sharing is enabled, Open up System Preferences-&gt;Sharing and verify that 'Bluetooth Sharing' is not checked 'ON'. If it is 'ON', this is a finding.</check>
-<checkyosemite></checkyosemite>
+<checkyosemite>No change</checkyosemite>
 <fixtext>To disable Bluetooth Sharing, open System Preferences-&gt;Sharing and uncheck the box next to Bluetooth Sharing.</fixtext>
-<fixtextyosemite></fixtextyosemite>
+<fixtextyosemite>No change</fixtextyosemite>
 </Rule>
 
 <Rule severity="medium">
@@ -976,10 +976,10 @@
 <title>Disable Expired User Accounts</title>
 <description>The operating system must automatically remove or disable temporary user accounts after 72 hours.</description>
 <rationale>If temporary user accounts remain active when no longer needed or for an excessive period, these accounts may be targeted by attackers to gain unauthorized access. To mitigate this risk, automated termination of all temporary accounts must be set upon account creation. <p/><p/>Temporary accounts are established as part of normal account activation procedures when there is a need for short-term accounts without the demand for immediacy in account activation. <p/><p/>If temporary accounts are used, the operating system must be configured to automatically terminate these types of accounts after a DoD-defined time period of 72 hours.<p/><p/>To address access requirements, many operating systems may be integrated with enterprise level authentication/access mechanisms that meet or exceed access control policy requirements.</rationale>
-<check>If a temporary user has been created on the workstation, you can check the expiration settings using the following command:<p/><p/>sudo pwpolicy -u username get-effective-policy | tr ' ' '\n' | grep 'usingHardExpirationDate\|hardExpireDateGMT'<p/><p/>The value of 'usingHardExpirationDate' should be '1', and the value for the 'hardExpireDateGMT' should be a valid date.  If they are not set correctly, and password policy is not controlled by a directory server, this is a finding.</check>
-<checkyosemite>Password policy can be set with the pwpolicy utility. The variable names may vary depending on how the policy was set. To check if the password policy is configured to disable a temporary account after 72 hours, run the following command to output the password policy to the screen:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2<p/><p/>If there is no output, and password policy is not controlled by a directory server, this is a finding.<p/><p/>Otherwise, look for the line '&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;'. In the array that follows, there should be a &lt;dict&gt; section that contains a check &lt;string&gt; that allows users to log in if 'policyAttributeCurrentTime' is less than the result of adding 'policyAttributeCreationTime' to 72hours (259299 seconds). The check might use a variable defined in its policyParameters section. If the check does not exist or if the check adds too great an amount of time to 'policyAttributeCreationTime', this is a finding.</checkyosemite>
-<fixtext>To set an expiration date for a temporary account, use the following command:<p/><p/>sudo pwpolicy -u username setpolicy 'usingHardExpirationDate=1 hardExpireDateGMT=mm/dd/yy'</fixtext>
-<fixtextyosemite>This setting may be enforced using a configuration profile or by a directory server.<p/><p/>To set the password policy without a configuration profile, run the following command to save a copy of the current policy file for the specified username:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2 &gt; pwpolicy.plist<p/><p/>Open the resulting password policy file in a text editor. If other policy settings are present, and the line &lt;key&gt;policyCategoryAuthentication&lt;/key&gt; already exists, insert the following text after the &lt;array&gt; tag that immediately follows it:<p/><p/>        &lt;dict&gt;<p/>                &lt;key&gt;policyContent&lt;/key&gt;<p/>                &lt;string&gt;policyAttributeCurrentTime &amp;lt; policyAttributeCreationTime + 259299&lt;/string&gt;<p/>                &lt;key&gt;policyIdentifier&lt;/key&gt;<p/>                &lt;string&gt;Disable Temporary Account&lt;/string&gt;<p/>        &lt;/dict&gt;<p/><p/>At a minimum, edit the file to ensure that it contains the following text:<p/><p/>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<p/>&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;<p/>&lt;plist version="1.0"&gt;<p/>&lt;dict&gt;<p/>        &lt;key&gt;policyCategoryAuthentication&lt;/key&gt;<p/>        &lt;array&gt;<p/>                &lt;dict&gt;<p/>                        &lt;key&gt;policyContent&lt;/key&gt;<p/>                        &lt;string&gt;policyAttributeCurrentTime &amp;lt; policyAttributeCreationTime + 259299&lt;/string&gt;<p/>                        &lt;key&gt;policyIdentifier&lt;/key&gt;<p/>                        &lt;string&gt;Disable Temporary Account&lt;/string&gt;<p/>                &lt;/dict&gt;<p/>        &lt;/array&gt;<p/>&lt;/dict&gt;<p/>&lt;/plist&gt;<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file:<p/><p/>sudo pwpolicy -u username setaccountpolicies pwpolicy.plist</fixtextyosemite>
+<check>If a temporary user has been created on the workstation, you can check the expiration settings using the following command, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username get-effective-policy | tr ' ' '\n' | grep 'usingHardExpirationDate\|hardExpireDateGMT'<p/><p/>The value of 'usingHardExpirationDate' should be '1', and the value for the 'hardExpireDateGMT' should be a valid date.  If they are not set correctly, and password policy is not controlled by a directory server, this is a finding.</check>
+<checkyosemite>Password policy can be set with the pwpolicy utility. The variable names may vary depending on how the policy was set. To check if the password policy is configured to disable a temporary account after 72 hours, run the following command to output the password policy to the screen, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2<p/><p/>If there is no output, and password policy is not controlled by a directory server, this is a finding.<p/><p/>Otherwise, look for the line '&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;'. In the array that follows, there should be a &lt;dict&gt; section that contains a check &lt;string&gt; that allows users to log in if 'policyAttributeCurrentTime' is less than the result of adding 'policyAttributeCreationTime' to 72hours (259299 seconds). The check might use a variable defined in its policyParameters section. If the check does not exist or if the check adds too great an amount of time to 'policyAttributeCreationTime', this is a finding.</checkyosemite>
+<fixtext>To set an expiration date for a temporary account, use the following command, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username setpolicy 'usingHardExpirationDate=1 hardExpireDateGMT=mm/dd/yy'</fixtext>
+<fixtextyosemite>This setting may be enforced using a configuration profile or by a directory server.<p/><p/>To set the password policy without a configuration profile, run the following command to save a copy of the current policy file, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2 &gt; pwpolicy.plist<p/><p/>Open the resulting password policy file in a text editor. If other policy settings are present, and the line &lt;key&gt;policyCategoryAuthentication&lt;/key&gt; already exists, insert the following text after the &lt;array&gt; tag that immediately follows it:<p/><p/>        &lt;dict&gt;<p/>                &lt;key&gt;policyContent&lt;/key&gt;<p/>                &lt;string&gt;policyAttributeCurrentTime &amp;lt; policyAttributeCreationTime + 259299&lt;/string&gt;<p/>                &lt;key&gt;policyIdentifier&lt;/key&gt;<p/>                &lt;string&gt;Disable Temporary Account&lt;/string&gt;<p/>        &lt;/dict&gt;<p/><p/>At a minimum, edit the file to ensure that it contains the following text:<p/><p/>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<p/>&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;<p/>&lt;plist version="1.0"&gt;<p/>&lt;dict&gt;<p/>        &lt;key&gt;policyCategoryAuthentication&lt;/key&gt;<p/>        &lt;array&gt;<p/>                &lt;dict&gt;<p/>                        &lt;key&gt;policyContent&lt;/key&gt;<p/>                        &lt;string&gt;policyAttributeCurrentTime &amp;lt; policyAttributeCreationTime + 259299&lt;/string&gt;<p/>                        &lt;key&gt;policyIdentifier&lt;/key&gt;<p/>                        &lt;string&gt;Disable Temporary Account&lt;/string&gt;<p/>                &lt;/dict&gt;<p/>        &lt;/array&gt;<p/>&lt;/dict&gt;<p/>&lt;/plist&gt;<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username setaccountpolicies pwpolicy.plist</fixtextyosemite>
 </Rule>
 
 <Rule severity="medium">
@@ -2692,7 +2692,7 @@
 <title>Require Users to Unlock the Screensaver with their Password</title>
 <description>The operating system must retain the session lock until the user reestablishes access using established identification and authentication procedures.</description>
 <rationale>Users must be prompted to enter their passwords when unlocking the screensaver. The screensaver acts as a session lock and prevents unauthorized users from accessing the current user's account.</rationale>
-<check>To check if the system has the correct setting in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep askForPassword<p/><p/>If there is no result, or if askForPassword is not set to '1', this is a finding.</check>
+<check>To check if the system will prompt users to enter their passwords to unlock the screensaver, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep askForPassword<p/><p/>If there is no result, or if askForPassword is not set to '1', this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>This setting is enforced using a configuration profile.</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
