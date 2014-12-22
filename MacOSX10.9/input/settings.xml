@@ -1108,7 +1108,7 @@
 <title>Disable iTunes Music Sharing.</title>
 <description>iTunes Music Sharing must be disabled.</description>
 <rationale>When iTunes Music Sharing is enabled, the computer starts a network listening service that shares the contents of the user's music collection with other users in the same subnet. Unnecessary network services should always be disabled because they increase the attack surface of the system. Disabling iTunes Music Sharing mitigates this risk.</rationale>
-<check>To check if the iTunes music sharing is disabled, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep disableSharedMusic<p/><p/>If 'disableSharedMusic' is not set to '1', this is a finding.</check>
+<check>To check if the iTunes music sharing is disabled, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep disableSharedMusic<p/><p/>If there is no result or disableSharedMusic is not set to '1', this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>This setting is enforced using a configuration profile.</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
@@ -1672,7 +1672,7 @@
 <title>Disable Auto Submission of Diagnostic and Usage Data to Apple</title>
 <description>Sending diagnostic and usage data to Apple must be disabled.</description>
 <rationale>In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types), organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations. Additionally, it is sometimes convenient to provide multiple services from a single component (e.g., VPN and IPS); however, doing so increases risk over limiting the services provided by any one component. <p/><p/>To support the requirements and principles of least functionality, the operating system must support the organizational requirements providing only essential capabilities and limiting the use of ports, protocols, and/or services to only those required, authorized, and approved to conduct official business or to address authorized quality of life issues.<p/><p/>Sending diagnostic and usage data to Apple must be disabled.</rationale>
-<check>Sending diagnostic &amp; usage data to Apple must be disabled. The setting is found in System Preferences-&gt;Security &amp; Privacy under the Privacy tab. Select Diagnostics &amp; Usage from the list of options on the left hand side of the panel. If the box labeled 'Send diagnostic &amp; usage data to Apple' is checked, this is a finding. To check if a configuration profile is configured to enforce this setting, run the following command:<p/><p/>sudo system_profiler SPConfigurationProfileDataType | grep AutoSubmit<p/><p/>If AutoSubmit is not set to '0', this is a finding.</check>
+<check>Sending diagnostic &amp; usage data to Apple must be disabled. The setting is found in System Preferences-&gt;Security &amp; Privacy under the Privacy tab. Select Diagnostics &amp; Usage from the list of options on the left hand side of the panel. If the box labeled 'Send diagnostic &amp; usage data to Apple' is checked, this is a finding. To check if a configuration profile is configured to enforce this setting, run the following command:<p/><p/>sudo system_profiler SPConfigurationProfileDataType | grep AutoSubmit<p/><p/>If there is no result or AutoSubmit is not set to '0', this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>The setting "Send diagnostic &amp; usage data to Apple" is found in System Preferences-&gt;Security &amp; Privacy under the Privacy tab. Select Diagnostics &amp; Usage from the list of options on the left hand side of the panel. Uncheck the box that appears on the right hand side of the panel, labeled "Send diagnostic &amp; usage data to Apple". This setting can be enforced using a configuration profile.</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
@@ -1708,7 +1708,7 @@
 <title>Disable Location Services</title>
 <description>Location Services must be disabled.</description>
 <rationale>In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types), organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations. Additionally, it is sometimes convenient to provide multiple services from a single component (e.g., VPN and IPS); however, doing so increases risk over limiting the services provided by any one component. <p/><p/>To support the requirements and principles of least functionality, the operating system must support the organizational requirements providing only essential capabilities and limiting the use of ports, protocols, and/or services to only those required, authorized, and approved to conduct official business or to address authorized quality of life issues.<p/><p/>Location Services must be disabled.</rationale>
-<check>Location Services must be disabled. The setting is found in System Preferences-&gt;Security &amp; Privacy under the Privacy tab. Select Location Services from the list of options on the left hand side of the panel. If the box labeled 'Enable Location Services' is checked, this is a finding. To check if a configuration profile is configured to enforce this setting, run the following command:<p/><p/>sudo system_profiler SPConfigurationProfileDataType | grep DisableLocationServices<p/><p/>If DisableLocationServices is not set to '1', this is a finding.</check>
+<check>Location Services must be disabled. The setting is found in System Preferences-&gt;Security &amp; Privacy under the Privacy tab. Select Location Services from the list of options on the left hand side of the panel. If the box labeled 'Enable Location Services' is checked, this is a finding. To check if a configuration profile is configured to enforce this setting, run the following command:<p/><p/>sudo system_profiler SPConfigurationProfileDataType | grep DisableLocationServices<p/><p/>If there is no result or DisableLocationServices is not set to '1', this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>The setting "Enable Location Services" is found in System Preferences-&gt;Security &amp; Privacy under the Privacy tab. Select Location Services from the list of options on the left hand side of the panel. Uncheck the box that appears on the right hand side of the panel, labeled "Enable Location Services". This setting can be enforced using a configuration profile.</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
@@ -1744,7 +1744,7 @@
 <title>Disable Airdrop</title>
 <description>Airdrop must be disabled.</description>
 <rationale>In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types), organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations. Additionally, it is sometimes convenient to provide multiple services from a single component (e.g., VPN and IPS); however, doing so increases risk over limiting the services provided by any one component. <p/><p/>To support the requirements and principles of least functionality, the operating system must support the organizational requirements providing only essential capabilities and limiting the use of ports, protocols, and/or services to only those required, authorized, and approved to conduct official business or to address authorized quality of life issues.<p/><p/>Airdrop must be disabled.</rationale>
-<check>Airdrop must be disabled. To check if Airdrop has been disabled, run the following command:<p/><p/>sudo system_profiler SPConfigurationProfileDataType | grep DisableAirDrop<p/><p/>If DisableAirDrop is not set to '1', this is a finding.</check>
+<check>Airdrop must be disabled. To check if Airdrop has been disabled, run the following command:<p/><p/>sudo system_profiler SPConfigurationProfileDataType | grep DisableAirDrop<p/><p/>If there is no result or DisableAirDrop is not set to '1', this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>Disabling AirDrop is enforced using a configuration profile.</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
@@ -2524,7 +2524,7 @@
 <title>Enable Gatekeeper</title>
 <description>The system must allow only applications downloaded from the App Store to run.</description>
 <rationale>Gatekeeper settings must be configured correctly to only allow the system to run applications downloaded from the Mac App Store. Administrator users will still have the option to override these settings on a per app basis. Gatekeeper is a security feature that ensures that applications must be digitally signed by an Apple issued certificate in order to run. Digital signatures allow Mac OS X to verify that the application has not been modified by a malicious third party.</rationale>
-<check>To check to make sure only applications downloaded from the App Store are allowed to run, type the following code:<p/><p/>system_profiler SPConfigurationProfileDataType | grep AllowIdentifiedDevelopers<p/><p/>If 'AllowIdentifiedDevelopers' is not set to '0', this is a finding.</check>
+<check>To check to make sure only applications downloaded from the App Store are allowed to run, type the following code:<p/><p/>system_profiler SPConfigurationProfileDataType | grep AllowIdentifiedDevelopers<p/><p/>If there is no result or 'AllowIdentifiedDevelopers' is not set to '0', this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>This setting is enforced using a configuration profile.</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
@@ -2584,7 +2584,7 @@
 <title>Disable USB Mass Storage</title>
 <description>The USB mass storage driver must be disabled.</description>
 <rationale>Malicious code is known to propagate via removable media such as floppy disks, USB or flash drives, and removable hard drives. <p/><p/>In order to prevent propagation and potential infection due to malware contained on removable media the operating system must be able to restrict and/or limit the use of removable media.</rationale>
-<check>Run the following command to check if a configuration profile has been configured to disable external USB drives, all on one line:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 3 "harddisk-external" | sed 's/ //g' | tr "\n" " " | awk '{ print $2 $3 }'<p/><p/>If the result is not 'eject,alert', this is a finding.<p/><p/>Alternately, if the system is not controlled by a configuration profile, run the following command to check for the presence of the USB mass storage kext (driver). If this command returns any value other than "No such file or directory", this is a finding.<p/><p/>ls -ld /System/Library/Extensions/IOUSBMassStorageClass.kext</check>
+<check>Run the following command to check if a configuration profile has been configured to disable external USB drives, all on one line:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 3 "harddisk-external" | sed 's/ //g' | tr "\n" " " | awk '{ print $2 $3 }'<p/><p/>If there is no result or the result is not 'eject,alert', this is a finding.<p/><p/>Alternately, if the system is not controlled by a configuration profile, run the following command to check for the presence of the USB mass storage kext (driver). If this command returns any value other than "No such file or directory", this is a finding.<p/><p/>ls -ld /System/Library/Extensions/IOUSBMassStorageClass.kext</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>This setting is enforced using a configuration profile. If a configuration profile is not configured on the system, run the following command to remove the USB mass storage kext:<p/><p/>sudo rm -Rf /System/Library/Extensions/IOUSBMassStorageClass.kext</fixtext>
 <fixtextyosemite>No change</fixtextyosemite>
@@ -2740,7 +2740,7 @@
 <title>Prevent Users from Disabling Gatekeeper</title>
 <description>End users must not be able to override Gatekeeper settings.</description>
 <rationale>Gatekeeper must be configured with a configuration profile in order to prevent normal users from overriding its setting. If users are allowed to disable Gatekeeper or set it to a less restrictive setting, then it is possible that malware could be introduced into the system. Gatekeeper is a security feature that ensures that applications must be digitally signed by an Apple issued certificate in order to run. Digital signatures allow Mac OS X to verify that the application has not been modified by a malicious third party.</rationale>
-<check>To check to make sure the user cannot override Gatekeeper settings, type the following code:<p/><p/>system_profiler SPConfigurationProfileDataType | grep DisableOverride<p/><p/>If DisableOverride is not set to '1', this is a finding.</check>
+<check>To check to make sure the user cannot override Gatekeeper settings, type the following code:<p/><p/>system_profiler SPConfigurationProfileDataType | grep DisableOverride<p/><p/>If there is no result, or DisableOverride is not set to '1', this is a finding.</check>
 <checkyosemite>No change</checkyosemite>
 <fixtext>This setting is enforced using a configuration profile.</fixtext>
 <fixtextyosemite>No Change</fixtextyosemite>
@@ -3001,19 +3001,19 @@
 <Rule severity="">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
 <status>Applicable - Configurable</status>
-<title>All users must use PKI authentication for login and privileged access.</title>
+<title>Require PKI Authentication for Login and Privileged Access</title>
 <description>All users must use PKI authentication for login and privileged access.</description>
 <rationale>Password-based authentication has become a prime target <p/>for malicious actors. Multifactor authentication using PKI technologies <p/>mitigates most, if not all, risks associated with traditional password <p/>use. (Use of username and password for last-resort emergency access to a<p/> system for maintenance is acceptable, however.)</rationale>
 <check>Ask the SA or ISSO if an approved PKI authentication solution is implemented on the system for user logins and privileged access.<p/><p/>If a non-emergency account can log into the system or gain privileged access without a smart card, this is a finding.</check>
 <checkyosemite></checkyosemite>
-<fixtext>Implement PKI authentication using approved third-party <p/>PKI tools, to integrate with an existing directory services <p/>infrastructure or local password database, where no directory services <p/>infrastructure exists.<p/>                <p/>                <p/>    </fixtext>
+<fixtext>Implement PKI authentication using approved third-party PKI tools, to integrate with an existing directory services infrastructure or local password database, where no directory services infrastructure exists.<p/>                <p/>                <p/>    </fixtext>
 <fixtextyosemite></fixtextyosemite>
 </Rule>
 
 <Rule severity="">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
 <status>Applicable - Configurable</status>
-<title>The system must be integrated into a directory services infrastructure</title>
+<title>Require a Directory Service Infrastructure</title>
 <description>The system must be integrated into a directory services infrastructure</description>
 <rationale>Distinct user account databases on each separate system <p/>cause problems with username and password policy enforcement. Most <p/>approved directory services infrastructure solutions, such as Active <p/>Directory, allow centralized management of users and passwords.</rationale>
 <check>Ask the SA or ISSO if the system is integrated into a directory services infrastructure, such as Active Directory.<p/><p/>If the system is not integrated into a directory service infrastructure, this is a finding.</check>
@@ -3025,13 +3025,25 @@
 <Rule severity="">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 b" />
 <status>Applicable - Configurable</status>
-<title>The usbmuxd daemon must be disabled.</title>
+<title>Disable the usbmuxd Daemon</title>
 <description>The usbmuxd daemon must be disabled.</description>
 <rationale>Connections to unauthorized iOS devices (iPhones, iPods, <p/>and iPads) open the system to possible compromise via exfiltration of <p/>system data. Disabling the usbmuxd daemon blocks connections to iOS <p/>devices.</rationale>
 <check>To check the status of the usbmuxd daemon, run the following command:<p/><p/>sudo launchctl list | grep usbmuxd<p/><p/>If there is any output, this is a finding.</check>
 <checkyosemite></checkyosemite>
-<fixtext>To disable the usbmuxd daemon, run the following command:<p/><p/>sudo launchtctl unload -w /System/Library/LaunchDaemons/com.apple.usbmuxd.plist</fixtext>
+<fixtext>To disable the usbmuxd daemon, run the following command:<p/><p/>sudo defaults write /private/var/db/launchd.db/com.apple.launchd/overrides.plist 'com.apple.usbmuxd' -dict Disabled -bool true</fixtext>
 <fixtextyosemite></fixtextyosemite>
+</Rule>
+
+<Rule severity="medium">
+<ident cci="CCI-001749" srgid="SRG-OS-000366" nist="" />
+<status>Applicable - Configurable</status>
+<title>Enable the Security Assessment Policy Subsystem</title>
+<description>The Security assessment policy subsystem must be enabled.</description>
+<rationale>Any changes to the hardware, software, and/or firmware components of the information system and/or application can potentially have significant effects on the overall security of the system.</rationale>
+<check>To check the status of the Security assessment policy subsystem, run the following command:<p/><p/>sudo spctl --status | grep enabled<p/><p/>If nothing is returned, this is a finding.</check>
+<checkyosemite>No change</checkyosemite>
+<fixtext>To enable the Security assessment policy subsystem, run the following command:<p/><p/>sudo spctl --master-enable</fixtext>
+<fixtextyosemite>No change</fixtextyosemite>
 </Rule>
 
 </Benchmark>
