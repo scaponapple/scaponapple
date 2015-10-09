@@ -1,0 +1,1443 @@
+<Benchmark xmlns="http://checklists.nist.gov/xccdf/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" id="MacOSX10.11">
+<status date="2015-10-09">draft</status>
+  <title>DoD Consensus Settings for Mac OS X 10.11</title>
+  <description>These security settings for Mac OS X 10.11
+  were developed by the DoD Joint Consensus Working Group.
+  </description>
+  <!-- Many of the XCCDF elements used here 
+       are not used in the manner originally intended by
+       the XCCDF specification; 
+       this is a result of the SRG-based process,
+       which mixes requirements about security functionality
+       with requirements for security configuration. -->
+<Rule severity="">
+<ident cci="CCI-000057" srgid="SRG-OS-000029" nist="" />
+<status></status>
+<title>The operating system must initiate a session lock after a 15-minute period of inactivity.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000056" srgid="SRG-OS-000028" nist="" />
+<status></status>
+<title>The operating system must retain the session lock until the user reestablishes access using established identification and authentication procedures.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000068" srgid="SRG-OS-000033" nist="" />
+<status></status>
+<title>The operating system must implement DoD-approved encryption to protect the confidentiality of remote access sessions.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001453" srgid="SRG-OS-000250" nist="" />
+<status></status>
+<title>The operating system must implement cryptography to protect the integrity of remote access sessions.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The rshd service must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000067" srgid="SRG-OS-000032" nist="" />
+<status></status>
+<title>The operating system must monitor remote access methods.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The operating system must enforce requirements for remote connections to the information system.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The Bluetooth software driver must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Wi-Fi support software must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Infrared [IR] support must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Automatic actions must be disabled for blank CDs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Automatic actions must be disabled for blank DVDs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Automatic actions must be disabled for music CDs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Automatic actions must be disabled for picture CDs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Automatic actions must be disabled for video DVDs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000016" srgid="SRG-OS-000002" nist="" />
+<status></status>
+<title>The operating system must automatically remove or disable temporary user accounts after 72 hours.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001682" srgid="SRG-OS-000123" nist="" />
+<status></status>
+<title>The operating system must be configured such that emergency administrator accounts are never automatically disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000018" srgid="SRG-OS-000004" nist="" />
+<status></status>
+<title>The operating system must automatically audit account creation.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001403" srgid="SRG-OS-000239" nist="" />
+<status></status>
+<title>The operating system must automatically audit account modification.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001404" srgid="SRG-OS-000240" nist="" />
+<status></status>
+<title>The operating system must automatically audit account disabling actions.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001405" srgid="SRG-OS-000241" nist="" />
+<status></status>
+<title>The operating system must automatically audit account removal actions.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>SMB File Sharing must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Apple File (AFP) Sharing must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The NFS daemon must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The NFS lock daemon must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The NFS stat daemon must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system firewall must be configured with a default-deny policy.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000471" nist="" />
+<status></status>
+<title>The operating system must generate audit records for privileged activities or other system-level access.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000048" srgid="SRG-OS-000023" nist="" />
+<status></status>
+<title>The operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system via the GUI.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000048" srgid="SRG-OS-000023" nist="" />
+<status></status>
+<title>The SSH banner must contain the Standard Mandatory DoD Notice and Consent Banner.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000048" srgid="SRG-OS-000023" nist="" />
+<status></status>
+<title>The operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system via SSH.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001384, CCI-001385, CCI-001386, CCI-001387, CCI-001388" srgid="SRG-OS-000228" nist="" />
+<status></status>
+<title>Any publically accessible connection to the operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000470" nist="" />
+<status></status>
+<title>The operating system must generate audit records when successful/unsuccessful logon attempts occur.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001464" srgid="SRG-OS-000254" nist="" />
+<status></status>
+<title>The operating system must initiate session audits at system startup.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000169" srgid="SRG-OS-000062" nist="" />
+<status></status>
+<title>The operating system must provide audit record generation capability for DoD-defined auditable events for all operating system components.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000476" nist="" />
+<status></status>
+<title>The operating system must generate audit records for all account creations, modifications, disabling, and termination events.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001849" srgid="SRG-OS-000341" nist="" />
+<status></status>
+<title>The operating system must allocate audit record storage capacity to store at least one weeks worth of audit records, when audit records are not immediately sent to a central audit record storage facility.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001855" srgid="SRG-OS-000343" nist="" />
+<status></status>
+<title>The operating system must provide an immediate warning to the SA and ISSO (at a minimum) when allocated audit record storage volume reaches 75% of repository maximum audit record storage capacity.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001858" srgid="SRG-OS-000344" nist="" />
+<status></status>
+<title>The operating system must provide an immediate real-time alert to the SA and ISSO, at a minimum, of all audit failure events requiring real-time alerts.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001891" srgid="SRG-OS-000355" nist="" />
+<status></status>
+<title>The operating system must, for networked systems, compare internal information system clocks at least every 24 hours with a server which is synchronized to one of the redundant United States Naval Observatory (USNO) time servers or a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Audit log files must be owned by root.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Audit log files must be group-owned by wheel.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Audit log folders must be group-owned by wheel.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Audit log files must be mode 440 or less permissive.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Audit log folders must have mode 700 or less permissive.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Log files must not contain ACLs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Log folders must not contain ACLs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001749" srgid="SRG-OS-000366" nist="" />
+<status></status>
+<title>The Security assessment policy subsystem must be enabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001499" srgid="SRG-OS-000259" nist="" />
+<status></status>
+<title>The operating system must limit privileges to change software resident within software libraries.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="medium">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="CM-6 (1)" />
+<status></status>
+<title>A configuration profile must be installed.</title>
+<description></description>
+<rationale>Configuration settings must be verified by a centrally managed system such as an MDM to ensure that they have not been changed. Configuration settings are the configurable security-related parameters of information technology products that are part of the information system. Security-related parameters are those parameters impacting the security state of the system including parameters related to meeting other security control requirements. Rather than visiting each and every system when verifying configuration changes, organizations will employ automated tools that can make changes across all systems. This greatly increases efficiency and manageability of applications in a large scale environment.</rationale>
+<check>To check if the computer has a configuration profile applied to the workstation, run the following command:<p/><p/>sudo profiles -H<p/><p/>If there are no profiles installed, this is a finding.</check>
+<fixtext>Obtain a configuration profile from an MDM or trusted provider containing the configuration settings required to be applied.</fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001774" srgid="SRG-OS-000370" nist="" />
+<status></status>
+<title>The operating system must employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The application FaceTime must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The application Game Center must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The application Messages must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The application Calendar must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The application Reminders must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The application Contacts must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The application Mail must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
+<status></status>
+<title>Audit log folders must be owned by root.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The system preference panel iCloud must be removed.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000382" srgid="SRG-OS-000096" nist="" />
+<status></status>
+<title>Sending diagnostic and usage data to Apple must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Find My Mac must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Find My Mac messenger must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Location Services must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Bonjour multicast advertising must be disabled on the system.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>The UUCP service must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000770" srgid="SRG-OS-000109" nist="" />
+<status></status>
+<title>The operating system must require individuals to be authenticated with an individual authenticator prior to using a group authenticator.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001941" srgid="SRG-OS-000112" nist="" />
+<status></status>
+<title>The operating system must implement replay-resistant authentication mechanisms for network access to privileged accounts.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001942" srgid="SRG-OS-000113" nist="" />
+<status></status>
+<title>The operating system must implement replay-resistant authentication mechanisms for network access to non-privileged accounts.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000194" srgid="SRG-OS-000071" nist="" />
+<status></status>
+<title>Operating systems must enforce password complexity by requiring that at least one numeric character be used.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000205" srgid="SRG-OS-000078" nist="" />
+<status></status>
+<title>The operating system must enforce a minimum 15-character password length.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000197" srgid="SRG-OS-000074" nist="" />
+<status></status>
+<title>The operating system must transmit only cryptographically-protected passwords.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002890" srgid="SRG-OS-000393" nist="" />
+<status></status>
+<title>Operating systems used for non-local maintenance sessions must implement cryptographic mechanisms to protect the integrity of non-local maintenance and diagnostic communications.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-003123" srgid="SRG-OS-000394" nist="" />
+<status></status>
+<title>Operating systems used for non-local maintenance sessions must implement cryptographic mechanisms to protect the confidentiality of non-local maintenance and diagnostic communications.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000877" srgid="SRG-OS-000125" nist="" />
+<status></status>
+<title>The operating system must employ strong authenticators in the establishment of non-local maintenance and diagnostic sessions.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001749" srgid="SRG-OS-000366" nist="" />
+<status></status>
+<title>The system must allow only applications downloaded from the App Store to run.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>End users must not be able to override Gatekeeper settings.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001133" srgid="SRG-OS-000163" nist="" />
+<status></status>
+<title>The SSH daemon ClientAliveInterval option must be set correctly.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001133" srgid="SRG-OS-000163" nist="" />
+<status></status>
+<title>The SSH daemon ClientAliveCountMax option must be set correctly.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001133" srgid="SRG-OS-000163" nist="" />
+<status></status>
+<title>The SSH daemon LoginGraceTime must be set correctly.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002450" srgid="SRG-OS-000478" nist="" />
+<status></status>
+<title>The operating system must issue or obtain public key certificates under an appropriate certificate policy from an approved service provider.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001199" srgid="SRG-OS-000185" nist="" />
+<status></status>
+<title>The operating system must protect the confidentiality and integrity of all information at rest.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002475" srgid="SRG-OS-000404" nist="" />
+<status></status>
+<title>The operating system must implement cryptographic mechanisms to prevent unauthorized modification of all information at rest on organization-defined information system components.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002476" srgid="SRG-OS-000405" nist="" />
+<status></status>
+<title>The operating system must implement cryptographic mechanisms to prevent unauthorized disclosure of all information at rest on organization-defined information system components.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001233" srgid="SRG-OS-000191" nist="" />
+<status></status>
+<title>The operating system must employ automated mechanisms to determine the state of system components with regard to flaw remediation using the following frequency: continuously, where HBSS is used; 30 days, for any additional internal network scans not covered by HBSS; and annually, for external scans by Computer Network Defense Service Provider (CNDSP).</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The operating system must restrict the ability of individuals to use USB storage devices.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The usbmuxd daemon must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The operating system must not allow an unattended or automatic logon to the system.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The login window must be configured to prompt for username and password, rather than show a list of users.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The OS X firewall must have logging enabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Bluetooth devices must not be allowed to wake the computer.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Bluetooth Sharing must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000382" srgid="SRG-OS-000096" nist="" />
+<status></status>
+<title>Remote Apple Events must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The sudoers file must be configured to authenticate users on a per-tty basis.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The default global umask setting must be changed for user applications.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The default global umask setting must be changed for system processes.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The root account must be the only account having a UID of 0.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Finder must be set to always empty Trash securely.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The application firewall must be enabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>All public directories must be owned by root or an application account.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The finger service must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The sticky bit must be set on all public directories.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The prompt for Apple ID and iCloud must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Users must not have Apple IDs signed into iCloud.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>iTunes Music Sharing must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>All setuid executables on the system must be vendor-supplied.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system must not accept source-routed IPv4 packets.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system must ignore IPv4 ICMP redirect messages.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>IP forwarding for IPv4 must not be enabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>IP forwarding for IPv6 must not be enabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system must not send IPv4 ICMP redirects by default.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system must not send IPv6 ICMP redirects by default.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system must prevent local applications from generating source-routed packets.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system must not process Internet Control Message Protocol [ICMP] timestamp requests.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Unused network devices must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>System Preferences must be securely configured so IPv6 is turned off if not being used.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>Secure virtual memory must be used.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Internet Sharing must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000044" srgid="SRG-OS-000021" nist="" />
+<status></status>
+<title>The operating system must enforce account lockout after the limit of three consecutive invalid logon attempts by a user during a 15 minute time period.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002238" srgid="SRG-OS-000329" nist="" />
+<status></status>
+<title>The operating system must automatically lock the account until the locked account is released by an administrator when three unsuccessful logon attempts in 15 minutes are exceeded.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000140" srgid="SRG-OS-000047" nist="" />
+<status></status>
+<title>The operating system must shut down by default upon audit failure (unless availability is an overriding concern).</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The operating system must employ automated mechanisms to detect the presence of unauthorized software on organizational information systems and notify designated organizational officials in accordance with the organization-defined frequency.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Airdrop must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>All users must use PKI authentication for login and privileged access.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
+<status></status>
+<title>The system must be integrated into a directory services infrastructure.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000477" nist="" />
+<status></status>
+<title>The operating system must generate audit records for all kernel module load, unload, and restart actions, and also for all program initiations.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000463" nist="" />
+<status></status>
+<title>The operating system must generate audit records when successful/unsuccessful attempts to modify security objects occur.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000464" nist="" />
+<status></status>
+<title>The operating system must generate audit records when successful/unsuccessful attempts to modify security levels occur.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000465" nist="" />
+<status></status>
+<title>The operating system must generate audit records when successful/unsuccessful attempts to modify categories of information (e.g., classification levels) occur.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000199" srgid="SRG-OS-000076" nist="" />
+<status></status>
+<title>Operating systems must enforce a 60-day maximum password lifetime restriction.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000200" srgid="SRG-OS-000077" nist="" />
+<status></status>
+<title>The operating system must prohibit password reuse for a minimum of five generations.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000466" nist="" />
+<status></status>
+<title>The operating system must generate audit records when successful/unsuccessful attempts to delete privileges occur.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000064" nist="" />
+<status></status>
+<title>The operating system must generate audit records when successful/unsuccessful attempts to access privileges occur.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001314" srgid="SRG-OS-000206" nist="" />
+<status></status>
+<title>System log files must be owned by root and group-owned by wheel or admin.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001314" srgid="SRG-OS-000206" nist="" />
+<status></status>
+<title>System log files must be mode 640 or less permissive.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001314" srgid="SRG-OS-000206" nist="" />
+<status></status>
+<title>ACLs for system log files must be set correctly.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-001814" srgid="SRG-OS-000365" nist="" />
+<status></status>
+<title>The operating system must audit the enforcement actions used to restrict access associated with changes to the system.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002884" srgid="SRG-OS-000392" nist="" />
+<status></status>
+<title>Operating systems sessions must audit non-local maintenance and diagnostic sessions organization-defined audit events.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002234" srgid="SRG-OS-000327" nist="" />
+<status></status>
+<title>The operating system must audit the execution of privileged functions.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000172" srgid="SRG-OS-000462" nist="" />
+<status></status>
+<title>The operating system must generate audit records when successful/unsuccessful attempts to modify privileges occur.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-002238" srgid="SRG-OS-000021" nist="" />
+<status></status>
+<title>The operating system must enforce an account lockout time period of 15 minutes in which three consecutive invalid logon attempts by a user are made.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
+<status></status>
+<title>Web Sharing must be disabled.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+<Rule severity="">
+<ident cci="CCI-000060" srgid="SRG-OS-000031" nist="" />
+<status></status>
+<title>The operating system must conceal, via the session lock, information previously visible on the display with a publicly viewable image.</title>
+<description></description>
+<rationale></rationale>
+<check></check>
+<fixtext></fixtext>
+</Rule>
+
+</Benchmark>
