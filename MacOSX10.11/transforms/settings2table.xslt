@@ -75,8 +75,8 @@
 			<td> <xsl:value-of select="cdf:ident/@nist" /></td>
 			<td> <xsl:value-of select="cdf:ident/@cci" /></td>
 			<td> <xsl:value-of select="cdf:ident/@srgid" /></td>
+			<td> <xsl:value-of select="cdf:title"/> </td>
 			<td> <xsl:apply-templates select="cdf:description"/> </td>
-			<td> <xsl:apply-templates select="cdf:rationale"/> </td>
 			<td> <xsl:apply-templates select="cdf:status"/> </td>
 			<td> <xsl:apply-templates select="cdf:check"/> </td>
 			<td> <xsl:apply-templates select="cdf:fixtext"/> </td>
@@ -84,7 +84,7 @@
 		</xsl:when>
 		<xsl:when test="cdf:status='Applicable - Configurable' and $printonly='configurable'">
 			<td> <xsl:value-of select="cdf:title" /></td>
-			<td> <xsl:apply-templates select="cdf:rationale"/> </td>
+			<td> <xsl:apply-templates select="cdf:description"/> </td>
 			<td> <xsl:apply-templates select="cdf:check"/> </td>
 			<td> <xsl:apply-templates select="cdf:fixtext"/> </td>
 			<td> <xsl:value-of select="@severity" /></td>
@@ -109,10 +109,6 @@
 	</xsl:template>
 
 	<xsl:template match="cdf:description">
-		<xsl:apply-templates select="@*|node()" />
-	</xsl:template>
-
-	<xsl:template match="cdf:rationale">
 		<xsl:apply-templates select="@*|node()" />
 	</xsl:template>
 
