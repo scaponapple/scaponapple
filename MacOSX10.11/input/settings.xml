@@ -10,204 +10,204 @@
        this is a result of the SRG-based process,
        which mixes requirements about security functionality
        with requirements for security configuration. -->
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000057" srgid="SRG-OS-000029" nist="" />
 <status></status>
 <title>The operating system must initiate a session lock after a 15-minute period of inactivity.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>A screensaver must be enabled and set to require a password to unlock. The timeout should be set to fifteen minutes of inactivity. This mitigates the risk that a user might forget to manually lock the screen before stepping away from the computer.<p/><p/>A session time-out lock is a temporary action taken when a user stops work and moves away from the immediate physical vicinity of the information system, but does not log out because of the temporary nature of the absence. Rather than relying on the user to manually lock their operating system session prior to vacating the vicinity, operating systems need to be able to identify when a user's session has idled and take action to initiate the session lock.</rationale>
+<check>To check if the system has a configuration profile configured to enable the screen saver after a time-out period, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep idleTime<p/><p/>The check should return a value of '900' or less for idleTime. If not, this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000056" srgid="SRG-OS-000028" nist="" />
 <status></status>
 <title>The operating system must retain the session lock until the user reestablishes access using established identification and authentication procedures.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Users must be prompted to enter their passwords when unlocking the screensaver. The screensaver acts as a session lock and prevents unauthorized users from accessing the current user's account.</rationale>
+<check>To check if the system will prompt users to enter their passwords to unlock the screensaver, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep askForPassword<p/><p/>If there is no result, or if askForPassword is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="high">
 <ident cci="CCI-000068" srgid="SRG-OS-000033" nist="" />
 <status></status>
 <title>The operating system must implement DoD-approved encryption to protect the confidentiality of remote access sessions.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The 'rexec' service must be disabled. The 'rexec' service does not implement crypto and has had several security vulnerabilities in the past. It is disabled by default; enabling it would increase the attack surface of the system.<p/><p/>Without confidentiality protection mechanisms, unauthorized individuals may gain access to sensitive information via a remote access session.<p/><p/>Remote access is access to DoD non-public information systems by an authorized user (or an information system) communicating through an external, non-organization-controlled network. Remote access methods include, for example, dial-up, broadband, and wireless.<p/><p/>Encryption provides a means to secure the remote connection to prevent unauthorized access to the data traversing the remote access connection (e.g., RDP) thereby providing a degree of confidentiality. The encryption strength of mechanism is selected based on the security categorization of the information.</rationale>
+<check>To check if the 'rexec' service is disabled, use the following command:<p/><p/>sudo launchctl print-disabled system | grep com.apple.rexecd<p/><p/>If the results do not show the following:<p/><p/>"com.apple.rexecd" =&gt; true<p/><p/>this is a finding.<p/></check>
+<fixtext>To disable the 'rexec' service, run the following command:<p/><p/>sudo launchctl disable system/com.apple.rexecd<p/><p/>The system may need to be restarted for the update to take effect.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="high">
 <ident cci="CCI-001453" srgid="SRG-OS-000250" nist="" />
 <status></status>
 <title>The operating system must implement cryptography to protect the integrity of remote access sessions.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The telnet service must be disabled, as it sends all data, including the user's password, in a clear text form that can be easily intercepted and read. Passwords need to be protected at all times and encryption is the standard method for protecting passwords. If passwords are not encrypted, they can be plainly read (i.e., clear text) and easily compromised. Disabling telnet is one way to mitigate this risk. Authorized users should be instructed to use an alternate service that implements cryptography for remote access sessions, such as SSH.</rationale>
+<check>To check if the 'telnet' service is disabled, use the following command:<p/><p/>sudo launchctl print-disabled system | grep com.apple.telnetd<p/><p/>If the results do not show the following:<p/><p/>"com.apple.telnetd" =&gt; true<p/><p/>this is a finding.</check>
+<fixtext>To disable the 'telnet' service, run the following command:<p/><p/>sudo launchctl disable system/com.apple.telnetd<p/><p/>The system may need to be restarted for the update to take effect.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="high">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The rshd service must be disabled.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The 'rshd' service must be disabled.</rationale>
+<check>To check if the 'rshd' service is disabled, use the following command:<p/><p/>sudo launchctl print-disabled system | grep com.apple.rshd<p/><p/>If the results do not show the following:<p/><p/>"com.apple.rshd" =&gt; true<p/><p/>this is a finding.</check>
+<fixtext>To disable the 'rshd' service, run the following command:<p/><p/>sudo launchctl disable system/com.apple.rshd<p/><p/>The system may need to be restarted for the update to take effect.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000067" srgid="SRG-OS-000032" nist="" />
 <status></status>
 <title>The operating system must monitor remote access methods.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Remote access services, such as those providing remote access to network devices and information systems, increase risk and expose those systems to possible cyber attacks, so all remote access should be closely monitored and audited. Only authorized users should be permitted to remotely access DoD non-public information systems. An attacker might attempt to log in as an authorized user, through stolen credentials, unpatched exploits of the remote access service, or brute force attempts to guess a valid username and password. If a user is attempting to log in to a system from an unusual location or at an unusual time, or if there are many failed attempts, there is a possibility that the system is the target of a cyber attack. Auditing logon events mitigates this risk by recording all logon attempts, successful and unsuccessful, to the system.</rationale>
+<check>To check to make sure the audit daemon is configured to log all login events, both local and remote, run the following command:<p/><p/>sudo grep ^flags /etc/security/audit_control<p/><p/>The flag 'lo' should be included in the list of flags set. If it is not, this is a finding.</check>
+<fixtext>To make sure the appropriate flags are enabled for auditing, run the following command:<p/><p/>sudo sed -i.bak '/^flags/ s/$/,lo/' /etc/security/audit_control; sudo audit -s<p/><p/>A text editor may also be used to implement the required updates to the /etc/security/audit_control file.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The operating system must enforce requirements for remote connections to the information system.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The Screen Sharing feature allows remote users to view or control the desktop of the current user. A malicious user can take advantage of Screen Sharing to gain full access to the system remotely, either with stolen credentials or by guessing the username and password. Disabling Screen Sharing mitigates this risk.</rationale>
+<check>To check if the 'screen sharing' service is disabled, use the following command:<p/><p/>sudo launchctl print-disabled system | grep com.apple.screensharing<p/><p/>If the results do not show the following:<p/><p/>"com.apple.screensharing" =&gt; true<p/><p/>this is a finding.</check>
+<fixtext>To disable the 'screen sharing' service, run the following command:<p/><p/>sudo launchctl disable system/com.apple.screensharing<p/><p/>The system may need to be restarted for the update to take effect.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The Bluetooth software driver must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The Bluetooth kernel extension must be removed, as wireless access introduces unnecessary security risks. Removing Bluetooth support entirely mitigates this risk.</rationale>
+<check>If Bluetooth connectivity is required to facilitate use of approved external devices, this is not applicable.<p/><p/>To check if there are any hardware components for Bluetooth loaded in the system, run the following command:<p/><p/>sudo kextstat | grep -i bluetooth<p/><p/>If there is a result, this is a finding.</check>
+<fixtext>Removing the kernel extensions for Bluetooth will remove the system's ability to load Bluetooth devices, use the following commands to remove them:<p/><p/>sudo rm -rf /System/Library/Extensions/IOBluetoothFamily.kext /System/Library/Extensions/IOBluetoothHIDDriver.kext; sudo touch /System/Library/Extensions</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Wi-Fi support software must be disabled.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Use of Wi-Fi to connect to unauthorized networks may facilitate the exfiltration of mission data.</rationale>
+<check>If the system requires Wi-Fi to connect to an authorized network, this is not applicable.<p/><p/>To check if the Wi-Fi network device is disabled, run the following command:<p/><p/>sudo networksetup -listallnetworkservices<p/><p/>A disabled device will have an asterisk in front of its name. If the Wi-Fi device is missing this asterisk, this is a finding.</check>
+<fixtext>To disable the Wi-Fi network device, run the following command:<p/><p/>sudo networksetup -setnetworkserviceenabled 'Wi-Fi' off</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Infrared [IR] support must be disabled.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Infrared [IR] kernel support must be disabled to prevent users from controlling the system with IR devices. By default, if IR is enabled, the system will accept IR control from any remote.</rationale>
+<check>To check if IR support is disabled, run the following command:<p/><p/>sudo defaults read /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled<p/><p/>If the result is not '0', this is a finding.</check>
+<fixtext>To disable IR, run the following command:<p/><p/>sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -bool FALSE</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Automatic actions must be disabled for blank CDs.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti-virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for blank CDs mitigates this risk.</rationale>
+<check>If an approved HBSS DCM/DLP solution is installed, this is not applicable.<p/><p/>To check if the system has the correct setting for blank CDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.blank.cd.appeared'<p/><p/>If this is not defined or 'action' is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Automatic actions must be disabled for blank DVDs.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti-virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for blank DVDs mitigates this risk.</rationale>
+<check>If an approved HBSS DCM/DLP solution is installed, this is not applicable.<p/><p/>To check if the system has the correct setting for blank DVDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.blank.dvd.appeared'<p/><p/>If this is not defined or 'action' is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Automatic actions must be disabled for music CDs.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti-virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for music CDs mitigates this risk.</rationale>
+<check>If an approved HBSS DCM/DLP solution is installed, this is not applicable.<p/><p/>To check if the system has the correct setting for music CDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.cd.music.appeared'<p/><p/>If this is not defined or 'action' is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Automatic actions must be disabled for picture CDs.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti-virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for picture CDs mitigates this risk.</rationale>
+<check>If an approved HBSS DCM/DLP solution is installed, this is not applicable.<p/><p/>To check if the system has the correct setting for picture CDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.cd.picture.appeared'<p/><p/>If this is not defined or 'action' is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Automatic actions must be disabled for video DVDs.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Applications should not be configured to launch automatically when a disk is inserted. This potentially circumvents anti-virus software and allows malicious users to craft disks that can exploit user applications. Disabling Automatic Actions for video DVDs mitigates this risk.</rationale>
+<check>If an approved HBSS DCM/DLP solution is installed, this is not applicable.<p/><p/>To check if the system has the correct setting for video DVDs in the configuration profile, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep -A 2 'com.apple.digihub.dvd.video.appeared'<p/><p/>If this is not defined or 'action' is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000016" srgid="SRG-OS-000002" nist="" />
 <status></status>
 <title>The operating system must automatically remove or disable temporary user accounts after 72 hours.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>If temporary user accounts remain active when no longer needed or for an excessive period, these accounts may be targeted by attackers to gain unauthorized access. To mitigate this risk, automated termination of all temporary accounts must be set upon account creation.<p/><p/>Temporary accounts are established as part of normal account activation procedures when there is a need for short-term accounts without the demand for immediacy in account activation.<p/><p/>If temporary accounts are used, the operating system must be configured to automatically terminate these types of accounts after a DoD-defined time period of 72 hours.<p/><p/>To address access requirements, many operating systems may be integrated with enterprise level authentication/access mechanisms that meet or exceed access control policy requirements.</rationale>
+<check>Password policy can be set with the pwpolicy utility. The variable names may vary depending on how the policy was set. To check if the password policy is configured to disable a temporary account after 72 hours, run the following command to output the password policy to the screen, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2<p/><p/>If there is no output, and password policy is not controlled by a directory server, this is a finding.<p/><p/>Otherwise, look for the line '&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;'.<p/><p/>In the array that follows, there should be a &lt;dict&gt; section that contains a check &lt;string&gt; that allows users to log in if 'policyAttributeCurrentTime' is less than the result of adding 'policyAttributeCreationTime' to 72hours (259299 seconds). The check might use a variable defined in its policyParameters section.<p/><p/>If the check does not exist or if the check adds too great an amount of time to 'policyAttributeCreationTime', this is a finding.</check>
+<fixtext>This setting may be enforced using a configuration profile or by a directory server.<p/><p/>To set the password policy without a configuration profile, run the following command to save a copy of the current policy file, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2 &gt; pwpolicy.plist<p/><p/>Open the resulting password policy file in a text editor.<p/><p/>If other policy settings are present, and the line &lt;key&gt;policyCategoryAuthentication&lt;/key&gt; already exists, insert the following text after the &lt;array&gt; tag that immediately follows it:<p/><p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;policyAttributeCurrentTime &lt; policyAttributeCreationTime + 259299&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Disable Temporary Account&lt;/string&gt;<p/>&lt;/dict&gt;<p/><p/>At a minimum, edit the file to ensure that it contains the following text:<p/><p/>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<p/>&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;<p/>&lt;plist version="1.0"&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;<p/>&lt;array&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;policyAttributeCurrentTime &lt; policyAttributeCreationTime + 259299&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Disable Temporary Account&lt;/string&gt;<p/>&lt;/dict&gt;<p/>&lt;/array&gt;<p/>&lt;/dict&gt;<p/>&lt;/plist&gt;<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file, substituting the correct user name in place of username:<p/><p/>sudo pwpolicy -u username setaccountpolicies pwpolicy.plist</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001682" srgid="SRG-OS-000123" nist="" />
 <status></status>
 <title>The operating system must be configured such that emergency administrator accounts are never automatically disabled.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Emergency administrator accounts are privileged accounts which are established in response to crisis situations where the need for rapid account activation is required. Therefore, emergency account activation may bypass normal account authorization processes. If these accounts are automatically disabled, system maintenance during emergencies may not be possible, thus adversely affecting system availability.<p/><p/>Emergency administrator accounts are different from infrequently used accounts (i.e., local logon accounts used by system administrators when network or normal logon/access is not available). Infrequently used accounts also remain available and are not subject to automatic termination dates. However, an emergency administrator account is normally a different account which is created for use by vendors or system maintainers.<p/><p/>To address access requirements, many operating systems can be integrated with enterprise-level authentication/access mechanisms that meet or exceed access control policy requirements.</rationale>
+<check>If an emergency account has been created on the workstation, check the expiration settings of a local account using the following command, replacing username with the correct value:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2<p/><p/>If there is output, ensure that the account policies do not restrict the ability to log on after a certain date or amount of time. If they do, this is a finding.</check>
+<fixtext>To remove all pwpolicy settings for an emergency account, run the following command, replacing username with the correct value:<p/><p/>sudo pwpolicy -u username clearaccountpolicies<p/><p/>Otherwise, to change the password policy for an emergency account and only remove some policy sections, run the following command to save a copy of the current policy file for the specified username:<p/><p/>sudo pwpolicy -u username getaccountpolicies | tail -n +2 &gt; pwpolicy.plist<p/><p/>Open the resulting password policy file in a text editor and remove any policyContent sections that would restrict the ability to log on after a certain date or amount of time.<p/><p/>To remove the section cleanly, remove the entire text that begins with &lt;dict&gt;, contains the like &lt;key&gt;policyContent&lt;'/key&gt;, and ends with &lt;/dict&gt;.<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file:<p/><p/>sudo pwpolicy -u username setaccountpolicies pwpolicy.plist</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000018" srgid="SRG-OS-000004" nist="" />
 <status></status>
 <title>The operating system must automatically audit account creation.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Once an attacker establishes initial access to a system, the attacker often attempts to create a persistent method of re-establishing access. One way to accomplish this is for the attacker to create a new account. Auditing of account creation mitigates this risk.<p/><p/>To address access requirements, many operating systems may be integrated with enterprise level authentication/access/auditing mechanisms that meet or exceed access control policy requirements.</rationale>
+<check>In order to view the currently configured flags for the audit daemon, run the following command:<p/><p/>sudo grep ^flags /etc/security/audit_control<p/><p/>The account creation events are logged by way of the 'ad' flag. If 'ad' is not listed in the result of the check, this is a finding.</check>
+<fixtext>To make sure the appropriate flags are enabled for auditing, run the following command:<p/><p/>sudo sed -i.bak '/^flags/ s/$/,ad/' /etc/security/audit_control; sudo audit -s<p/><p/>A text editor may also be used to implement the required updates to the /etc/security/audit_control file.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001403" srgid="SRG-OS-000239" nist="" />
 <status></status>
 <title>The operating system must automatically audit account modification.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Once an attacker establishes initial access to a system, the attacker often attempts to create a persistent method of re-establishing access. One way to accomplish this is for the attacker to create a new account or modify an existing one. Auditing of account creation and modification is one method for mitigating this risk.<p/><p/>To address access requirements, many operating systems can be integrated with enterprise-level authentication/access/auditing mechanisms that meet or exceed access control policy requirements.</rationale>
+<check>In order to view the currently configured flags for the audit daemon, run the following command:<p/><p/>sudo grep ^flags /etc/security/audit_control<p/><p/>The account creation events are logged by way of the 'ad' flag. If 'ad' is not listed in the result of the check, this is a finding.</check>
+<fixtext>To make sure the appropriate flags are enabled for auditing, run the following command:<p/><p/>sudo sed -i.bak '/^flags/ s/$/,ad/' /etc/security/audit_control; sudo audit -s<p/><p/>A text editor may also be used to implement the required updates to the /etc/security/audit_control file.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001404" srgid="SRG-OS-000240" nist="" />
 <status></status>
 <title>The operating system must automatically audit account disabling actions.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>When operating system accounts are disabled, user accessibility is affected. The system must audit account disablement actions so that administrator users can detect and respond to such events. Such a capability greatly reduces the risk that operating system accessibility will be negatively affected for extended periods of time and provides logging that can be used for forensic purposes.<p/><p/>To address access requirements, many operating systems can be integrated with enterprise-level authentication/access/auditing mechanisms that meet or exceed access control policy requirements.</rationale>
+<check>In order to view the currently configured flags for the audit daemon, run the following command:<p/><p/>sudo grep ^flags /etc/security/audit_control<p/><p/>The account modification events are logged by way of the 'ad' flag. If 'ad' is not listed in the result of the check, this is a finding.</check>
+<fixtext>To make sure the appropriate flags are enabled for auditing, run the following command:<p/><p/>sudo sed -i.bak '/^flags/ s/$/,ad/' /etc/security/audit_control; sudo audit -s<p/><p/>A text editor may also be used to implement the required updates to the /etc/security/audit_control file.</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -310,14 +310,14 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000048" srgid="SRG-OS-000023" nist="" />
 <status></status>
 <title>The operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting access to the system via SSH.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Display of a standardized and approved use notification before granting access to the operating system ensures privacy and security notification verbiage used is consistent with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance.<p/><p/>System use notifications are required only for access via logon interfaces with human users and are not required when such human interfaces do not exist.<p/><p/>The banner must be formatted in accordance with DTM-08-060.</rationale>
+<check>For systems that allow remote access through SSH, run the following command to ensure that /etc/banner is displayed before granting access:<p/><p/># grep Banner /etc/ssh/sshd_config<p/><p/>If the sshd Banner configuration option does not point to "/etc/banner", this is a finding.</check>
+<fixtext>For systems that allow remote access through SSH, modify the /etc/ssh/sshd_config file to add or update the following line:<p/><p/>Banner /etc/banner</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -490,14 +490,14 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001499" srgid="SRG-OS-000259" nist="" />
 <status></status>
 <title>The operating system must limit privileges to change software resident within software libraries.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>File permissions should be compared against the default set of permissions that were set at the time of the initial install. Changes to default file permissions can make the system less secure and disrupt the functionality of installed applications. Unless changes are required to harden a system, the default permissions should be kept. If the operating system were to allow any user to make changes to software libraries, then those changes might be implemented without undergoing the appropriate testing and approvals that are part of a robust change management process. Verifying that permissions remain unchanged mitigates this risk.<p/><p/>This requirement applies to operating systems with software libraries that are accessible and configurable, as in the case of interpreted languages. Software libraries also include privileged programs which execute with escalated privileges. Only qualified and authorized individuals shall be allowed to obtain access to information system components for purposes of initiating changes, including upgrades and modifications.</rationale>
+<check>To check the permissions and ownership of the system files and make sure they haven't changed from the original installation, run the following command:<p/><p/>sudo diskutil verifyPermissions /<p/><p/>Any results indicating User/Group/Permissions differ, this is a finding.</check>
+<fixtext>To correct ownership and permissions of files found in the check, run the following command:<p/><p/>sudo diskutil repairPermissions /</fixtext>
 </Rule>
 
 <Rule severity="medium">
@@ -520,94 +520,94 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The application FaceTime must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The application FaceTime must be removed.</rationale>
+<check>To check for the existence of FaceTime, run the following command:<p/><p/>ls -ald /Applications/FaceTime.app<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>To remove FaceTime, run the following command:<p/><p/>sudo rm -Rf /Applications/FaceTime.app</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The application Game Center must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.</rationale>
+<check>To check for the existence of Game Center, run the following command:<p/><p/>ls -ald /Applications/Game\ Center.app<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>To remove Game Center, run the following command:<p/><p/>sudo rm -Rf /Applications/Game\ Center.app</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The application Messages must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The application Messages must be removed.</rationale>
+<check>To check for the existence of Messages, run the following command:<p/><p/>ls -ald /Applications/Messages.app<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>To remove Messages, run the following command:<p/><p/>sudo rm -Rf /Applications/Messages.app</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The application Calendar must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The application Calendar must be removed.</rationale>
+<check>To check for the existence of the Calendar application run the following command:<p/><p/>ls -ald /Applications/Calendar.app<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>To remove Calendar, run the following command:<p/><p/>sudo rm -Rf /Applications/Calendar.app</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The application Reminders must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The application Reminders must be removed.</rationale>
+<check>To check for the existence of the Reminders application run the following command:<p/><p/>ls -ald /Applications/Reminders.app<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>To remove Reminders, run the following command:<p/><p/>sudo rm -Rf /Applications/Reminders.app</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The application Contacts must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The application Contacts must be removed.</rationale>
+<check>To check for the existence of Contacts, run the following command:<p/><p/>ls -ald /Applications/Contacts.app<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>To remove Contacts run the following command:<p/><p/>sudo rm -Rf /Applications/Contacts.app</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="low">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The application Mail must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The application Mail must be removed.</rationale>
+<check>To check for the existence of Mail, run the following command:<p/><p/>ls -ald /Applications/Mail.app<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>To remove Mail run the following command:<p/><p/>sudo rm -Rf /Applications/Mail.app</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000162" srgid="SRG-OS-000057" nist="" />
 <status></status>
 <title>Audit log folders must be owned by root.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The audit service must be configured to create log files with the correct ownership to prevent normal users from reading audit logs. Audit logs contain sensitive data about the system and about users. If log files are set to only be readable and writable by root or administrative users with sudo, the risk is mitigated.</rationale>
+<check>To check the ownership of the audit log folder, run the following command:<p/><p/>sudo ls -lde $(sudo grep '^dir' /etc/security/audit_control | awk -F: '{print $2}')<p/><p/>The results should show the owner (third column) to be root. If not, this is a finding.</check>
+<fixtext>For any log folder that has an incorrect owner, run the following command:<p/><p/>sudo chown root [audit log folder]</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The system preference panel iCloud must be removed.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The system preference panel iCloud must be removed.</rationale>
+<check>The system preference panel iCloud must be removed or disabled along with the Internet Accounts preference pane in a configuration profile. To check for the existence of the iCloud preference panel, run the following command:<p/><p/>ls -ld /System/Library/PreferencePanes/iCloudPref.prefPane<p/><p/>If anything is returned, and access to the iCloud and Internet Accounts preference panes have not been disabled with a configuration profile, this is a finding.</check>
+<fixtext>Either disable access to the iCloud and Internet Accounts preference panes through a configuration profile or run the following command to remove the iCloud panel:<p/><p/>sudo rm -rf /System/Library/PreferencePanes/iCloudPref.prefPane</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -650,64 +650,64 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>Bonjour multicast advertising must be disabled on the system.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types), organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations. Additionally, it is sometimes convenient to provide multiple services from a single component (e.g., VPN and IPS); however, doing so increases risk over limiting the services provided by any one component.<p/><p/>To support the requirements and principles of least functionality, the operating system must support the organizational requirements providing only essential capabilities and limiting the use of ports, protocols, and/or services to only those required, authorized, and approved to conduct official business or to address authorized quality of life issues.<p/><p/>Bonjour multicast advertising must be disabled on the system.</rationale>
+<check>Bonjour multicast advertising must be disabled on the system. To check if multicast advertisements have been disabled, run the following command:<p/><p/>sudo defaults read /System/Library/LaunchDaemons/com.apple.discoveryd | grep no-multicast<p/><p/>If nothing is returned, this is a finding.</check>
+<fixtext>To configure Bonjour to disable multicast advertising, run the following command:<p/><p/>sudo /usr/libexec/PlistBuddy -c 'Add :ProgramArguments:1 string '--no-multicast /System/Library/LaunchDaemons/com.apple.discoveryd.plist</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000381" srgid="SRG-OS-000095" nist="" />
 <status></status>
 <title>The UUCP service must be disabled.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.<p/><p/>Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).<p/><p/>Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software, not related to requirements or providing a wide array of functionality not required for every mission, but cannot be disabled.<p/><p/>The system must not have the UUCP service active.</rationale>
+<check>To check if the 'UUCP' service is disabled, use the following command:<p/><p/>sudo launchctl print-disabled system | grep com.apple.uucp<p/><p/>If the results do not show the following:<p/><p/>"com.apple.uucp" =&gt; true<p/><p/>this is a finding.</check>
+<fixtext>To disable the 'UUCP' service, run the following command:<p/><p/>sudo launchctl disable system/com.apple.uucp<p/><p/>The system may need to be restarted for the update to take effect.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000770" srgid="SRG-OS-000109" nist="" />
 <status></status>
 <title>The operating system must require individuals to be authenticated with an individual authenticator prior to using a group authenticator.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Administrator users must never log in directly as root. To assure individual accountability and prevent unauthorized access, logging in as root over a remote connection must be disabled. Administrators should only run commands as root after first authenticating with their individual user names and passwords.</rationale>
+<check>To check if SSH has root logins enabled, run the following command:<p/><p/>sudo grep ^PermitRootLogin /etc/ssh/sshd_config<p/><p/>If there is no result, or the result is set to 'yes', this is a finding.</check>
+<fixtext>In order to make sure that PermitRootLogin is disabled by sshd, run the following command:<p/><p/>sudo sed -i.bak 's/^[\#]*PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001941" srgid="SRG-OS-000112" nist="" />
 <status></status>
 <title>The operating system must implement replay-resistant authentication mechanisms for network access to privileged accounts.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The SSH Version should be explicitly set to Version 2. Version 2 supports strong crypto and was rewritten from scratch to resolve several weaknesses in Version 1 that make it extremely vulnerable to attackers. The weaker crypto in Version 1 is potentially susceptible to certain forms of replay attacks. The system default is to only enable Version 2.<p/><p/>A replay attack may enable an unauthorized user to gain access to the operating system. Authentication sessions between the authenticator and the operating system validating the user credentials must not be vulnerable to a replay attack. An authentication process resists replay attacks if it is impractical to achieve a successful authentication by recording and replaying a previous authentication message.</rationale>
+<check>To check which protocol is configured for sshd, run the following:<p/><p/>sudo grep ^Protocol /etc/ssh/sshd_config<p/><p/>If there is no result or the result is not '2', this is a finding.</check>
+<fixtext>In order to make sure that 'Protocol 2' is used by sshd, run the following command:<p/><p/>sudo sed -i.bak 's/.*Protocol.*/Protocol 2/' /etc/ssh/sshd_config</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001942" srgid="SRG-OS-000113" nist="" />
 <status></status>
 <title>The operating system must implement replay-resistant authentication mechanisms for network access to non-privileged accounts.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The SSH Version should be explicitly set to Version 2. Version 2 supports strong crypto and was rewritten from scratch to resolve several weaknesses in Version 1 that make it extremely vulnerable to attackers. The weaker crypto in Version 1 is potentially susceptible to certain forms of replay attacks. The system default is to only enable Version 2.<p/><p/>A replay attack may enable an unauthorized user to gain access to the operating system. Authentication sessions between the authenticator and the operating system validating the user credentials must not be vulnerable to a replay attack. An authentication process resists replay attacks if it is impractical to achieve a successful authentication by recording and replaying a previous authentication message.</rationale>
+<check>To check which protocol is configured for sshd, run the following:<p/><p/>sudo grep ^Protocol /etc/ssh/sshd_config<p/><p/>If there is no result or the result is not '2', this is a finding.</check>
+<fixtext>In order to make sure that 'Protocol 2' is used by sshd, run the following command:<p/><p/>sudo sed -i.bak 's/.*Protocol.*/Protocol 2/' /etc/ssh/sshd_config</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000194" srgid="SRG-OS-000071" nist="" />
 <status></status>
 <title>Operating systems must enforce password complexity by requiring that at least one numeric character be used.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks.<p/><p/>Password complexity is one factor of several that determine how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised.</rationale>
+<check>Password policy can be set with a configuration profile or the pwpolicy utility. If password policy is set with a configuration profile, run the following command to check if the system is configured to require that passwords contain at least one numeric character:<p/><p/>system_profiler SPConfigurationProfileDataType | grep requireAlphanumeric<p/><p/>If 'requireAlphanumeric' is not set to '1' or is undefined, this is a finding.<p/><p/>If password policy is set with the pwpolicy utility, run the following command instead:<p/><p/>sudo pwpolicy getaccountpolicies<p/><p/>Look for the line &lt;key&gt;policyCategoryPasswordContent&lt;/key&gt;. If it does not exist, and password policy is not controlled by a directory server, this is a finding.<p/><p/>Otherwise, in the array section that follows it, there should be a &lt;dict&gt; section that contains a check &lt;string&gt; that 'matches' the variable 'policyAttributePassword' to the regular expression '(.*[0-9].*){1,}+' or to a similar expression that will ensure the password contains a character in the range 0-9 one or more times. If this check allows users to create passwords without at least one numeric character, or if no such check exists, this is a finding.</check>
+<fixtext>This setting may be enforced using a configuration profile or by a directory server.<p/><p/>To set the password policy without a configuration profile, run the following command to save a copy of the current pwpolicy account policy file:<p/><p/>sudo pwpolicy getaccountpolicies | tail -n +2 &gt; pwpolicy.plist<p/><p/>Open the generated file in a text editor.<p/><p/>If the file does not yet contain any policy settings, replace &lt;dict/&gt; with &lt;dict&gt;&lt;/dict&gt;. Then, insert the following text after the opening &lt;dict&gt; tag and before the closing &lt;/dict&gt; tag.<p/><p/>The same text can also be used if the line &lt;key&gt;policyCategoryPasswordContent&lt;/key&gt; is not present.<p/><p/>&lt;key&gt;policyCategoryPasswordContent&lt;/key&gt;<p/>&lt;array&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;policyAttributePassword matches '(.*[0-9].*){1,}+'&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;com.apple.policy.legacy.requiresNumeric&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;minimumNumericCharacters&lt;/key&gt;<p/>&lt;integer&gt;1&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/>&lt;/array&gt;<p/><p/>If the file does contain policy settings, and the line &lt;key&gt;policyCategoryPasswordContent&lt;/key&gt; does exist, insert the following text after the opening &lt;array&gt; tag that comes right after it:<p/><p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;policyAttributePassword matches '(.*[0-9].*){1,}+'&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;com.apple.policy.legacy.requiresNumeric&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;minimumNumericCharacters&lt;/key&gt;<p/>&lt;integer&gt;1&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file:<p/><p/>sudo pwpolicy setaccountpolicies pwpolicy.plist<p/><p/>NOTE: Updates to password restrictions must be thoroughly evaluated in a test environment. Mistakes in configuration may block password change and local user creation operations, as well as, lock out all local users, including administrators.</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -715,9 +715,9 @@
 <status></status>
 <title>The operating system must enforce a minimum 15-character password length.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The minimum password length must be set to 15 characters. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password length is one factor of several that helps to determine strength and how long it takes to crack a password. The use of more characters in a password helps to exponentially increase the time and/or resources required to compromise the password.</rationale>
+<check>To check the currently applied policies for password and accounts, use the following command:<p/><p/>sudo system_profiler SPConfigurationProfileDataType | grep minLength<p/><p/>The parameter minLength should be '15'. If it is less than '15', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -780,34 +780,34 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001133" srgid="SRG-OS-000163" nist="" />
 <status></status>
 <title>The SSH daemon ClientAliveInterval option must be set correctly.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>SSH should be configured to log users out after a 15 minute interval of inactivity and to only wait 30 seconds before timing out login attempts. Terminating an idle session within a short time period reduces the window of opportunity for unauthorized personnel to take control of a management session enabled on the console or console port that has been left unattended. In addition, quickly terminating an idle session or an incomplete login attempt will also free up resources committed by the managed network element.</rationale>
+<check>The SSH daemon ClientAliveInterval option must be set correctly. To check the idle timeout setting for SSH sessions, run the following:<p/><p/>sudo grep ^ClientAliveInterval /etc/ssh/sshd_config<p/><p/>If the setting is not '600', this is a finding.</check>
+<fixtext>In order to make sure that ClientAliveInterval is set correctly, run the following command:<p/><p/>sudo sed -i.bak 's/.*ClientAliveInterval.*/ClientAliveInterval 600/' /etc/ssh/sshd_config</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001133" srgid="SRG-OS-000163" nist="" />
 <status></status>
 <title>The SSH daemon ClientAliveCountMax option must be set correctly.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>SSH should be configured to log users out after a 15 minute interval of inactivity and to only wait 30 seconds before timing out login attempts. Terminating an idle session within a short time period reduces the window of opportunity for unauthorized personnel to take control of a management session enabled on the console or console port that has been left unattended. In addition, quickly terminating an idle session or an incomplete login attempt will also free up resources committed by the managed network element.</rationale>
+<check>The SSH daemon ClientAliveCountMax option must be set correctly. To ensure the SSH idle timeout will occur when the 'ClientAliveCountMax' is set, run the following command:<p/><p/>sudo grep ^ClientAliveCountMax /etc/ssh/sshd_config<p/><p/>If the setting is not 'ClientAliveCountMax 0', this is a finding.</check>
+<fixtext>In order to make sure that the SSH idle timeout occurs precisely when the 'ClientAliveCountMax' is set, run the following command:<p/><p/>sudo sed -i.bak 's/.*ClientAliveCountMax.*/ClientAliveCountMax 0/' /etc/ssh/sshd_config</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-001133" srgid="SRG-OS-000163" nist="" />
 <status></status>
 <title>The SSH daemon LoginGraceTime must be set correctly.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>SSH should be configured to log users out after a 15 minute interval of inactivity and to only wait 30 seconds before timing out login attempts. Terminating an idle session within a short time period reduces the window of opportunity for unauthorized personnel to take control of a management session enabled on the console or console port that has been left unattended. In addition, quickly terminating an idle session or an incomplete login attempt will also free up resources committed by the managed network element.</rationale>
+<check>The SSH daemon LoginGraceTime must be set correctly. To check the amount of time that a user can login through SSH, run the following command:<p/><p/>sudo grep ^LoginGraceTime /etc/ssh/sshd_config<p/><p/>If the value is not set to '30' or less, this is a finding.</check>
+<fixtext>In order to make sure that LoginGraceTime is configured correctly, run the following command:<p/><p/>sudo sed -i.bak 's/.*LoginGraceTime.*/LoginGraceTime 30/' /etc/ssh/sshd_config</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -870,34 +870,34 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The usbmuxd daemon must be disabled.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Connections to unauthorized iOS devices (iPhones, iPods, and iPads) open the system to possible compromise via exfiltration of system data. Disabling the usbmuxd daemon blocks connections to iOS devices.</rationale>
+<check>To check if the usbmuxd daemon is disabled, use the following command:<p/><p/>sudo launchctl print-disabled system | grep com.apple.usbmuxd<p/><p/>If the results do not show the following:<p/><p/>"com.apple.usbmuxd" =&gt; true<p/><p/>this is a finding.</check>
+<fixtext>To disable the usbmuxd daemon, run the following command:<p/><p/>sudo launchctl disable system/com.apple.usbmuxd<p/><p/>The system may need to be restarted for the update to take effect.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The operating system must not allow an unattended or automatic logon to the system.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>When automatic logins are enabled, the default user account is automatically logged in at boot time without prompting the user for a password. Even if the screen is later locked, a malicious user would be able to reboot the computer in order to log in. Disabling automatic logins mitigates this risk.</rationale>
+<check>To check if the system if configured to automatically log in, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep DisableAutoLoginClient<p/><p/>If 'com.apple.login.mcx.DisableAutoLoginClient' is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The login window must be configured to prompt for username and password, rather than show a list of users.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The login window must be configured to prompt all users for both a username and a password. By default, the system displays a list of known users at the login screen. This gives an advantage to an attacker with physical access to the system, as the attacker would only have to guess the password for one of the listed accounts.</rationale>
+<check>To check if the login window is configured to prompt for user name and password, run the following command:<p/><p/>system_profiler SPConfigurationProfileDataType | grep SHOWFULLNAME<p/><p/>If there is no result, or SHOWFULLNAME is not set to '1', this is a finding.</check>
+<fixtext>This setting is enforced using a configuration profile.</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -910,14 +910,14 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>Bluetooth devices must not be allowed to wake the computer.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Bluetooth devices must not be allowed to wake the computer. If Bluetooth is not required, turn it off. If Bluetooth is necessary, disable allowing Bluetooth devices to wake the computer.</rationale>
+<check>To check if this setting is disabled run the following command as the primary user:<p/><p/>defaults -currentHost read com.apple.Bluetooth RemoteWakeEnabled<p/><p/>If the return value is '1', this is a finding.</check>
+<fixtext>This control needs to be manually changed on the computer by opening System Preferences-&gt;Bluetooth, Click Advanced, and make sure the 'Allow Bluetooth devices to wake this computer' is not checked.</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -950,24 +950,24 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The default global umask setting must be changed for user applications.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The default global umask setting must be set to '022' for user applications. The setting '022' ensures that user created files and directories will be readable, but not writable, by users that share the same group id. Users with a different group id will not be able to read or write those files. This mitigates the risk that unauthorized users might be able to read and write files saved to the system by user applications.</rationale>
+<check>To view the umask setting, run the following command:<p/><p/>/usr/libexec/PlistBuddy -c "Print :Umask" /private/var/db/com.apple.xpc.launchd/config/user.plist<p/><p/>If the command produces an error, or the result is not '18', this is a finding.</check>
+<fixtext>To set the umask setting for user applications, run the following command:<p/><p/>sudo launchctl config user umask 022</fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The default global umask setting must be changed for system processes.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The default global umask setting must be set to '022' for system processes. The setting '022' ensures that system process created files and directories will only be readable by other users and processes, not writable. This mitigates the risk that unauthorized users might be able to write to files and directories created by system processes. A more restrictive setting could potentially break the normal functionality of the system.</rationale>
+<check>To view the umask setting, run the following command:<p/><p/>/usr/libexec/PlistBuddy -c "Print :Umask" /private/var/db/com.apple.xpc.launchd/config/system.plist<p/><p/>If the command produces an error, or the result is not '18', this is a finding.</check>
+<fixtext>To set the umask setting for applications, run the following command:<p/><p/>sudo launchctl config system umask 022</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -1020,14 +1020,14 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000366" srgid="SRG-OS-000480" nist="" />
 <status></status>
 <title>The sticky bit must be set on all public directories.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The sticky bit must be set on all public directories, as it prevents users with write access to the directory from deleting or renaming files that belong to other users inside it.</rationale>
+<check>Run the following command to view all world-writable directories that do not have the sticky bit set:<p/><p/>sudo find / -type d \( -perm -0002 -a ! -perm -1000 \)<p/><p/>If anything is returned, this is a finding.</check>
+<fixtext>Run the following command to set the sticky bit on all world-writable directories:<p/><p/>sudo find / -type d \( -perm -0002 -a ! -perm -1000 \) -exec chmod +t {} \;</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -1035,9 +1035,9 @@
 <status></status>
 <title>The prompt for Apple ID and iCloud must be disabled.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>The prompt for Apple ID and iCloud must be disabled, as it might mislead new users into creating unwanted Apple IDs and iCloud storage accounts upon their first log on.</rationale>
+<check>To check if the prompt for Apple ID and iCloud are disabled for new users, run the following command:<p/><p/>sudo defaults read /System/Library/User\ Template/English.lproj/Library/Preferences/com.apple.SetupAssistant<p/><p/>If there is no result, if it prints out that the domain "does not exist", or the results do not include 'DidSeeCloudSetup = 1 AND LastSeenCloudProductVersion = 10.11', this is a finding.</check>
+<fixtext>To ensure that the prompt for Apple ID and iCloud is disabled, run the following commands:<p/><p/>sudo defaults write /System/Library/User\ Template/English.lproj/Library/Preferences/com.apple.SetupAssistant DidSeeCloudSetup -bool TRUE; sudo defaults write /System/Library/User\ Template/English.lproj/Library/Preferences/com.apple.SetupAssistant LastSeenCloudProductVersion '10.11'</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -1190,14 +1190,14 @@
 <fixtext></fixtext>
 </Rule>
 
-<Rule severity="">
+<Rule severity="medium">
 <ident cci="CCI-000044" srgid="SRG-OS-000021" nist="" />
 <status></status>
 <title>The operating system must enforce account lockout after the limit of three consecutive invalid logon attempts by a user during a 15 minute time period.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>By limiting the number of failed logon attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute forcing, is reduced. Limits are imposed by locking the account.</rationale>
+<check>Password policy can be set with a configuration profile or the pwpolicy utility. If password policy is set with a configuration profile, run the following command to check if the system has the correct setting for the number of permitted failed logon attempts:<p/><p/>system_profiler SPConfigurationProfileDataType | grep 'maxFailedAttempts'<p/><p/>If 'maxFailedAttempts' is not set to '3', this is a finding.<p/><p/>If password policy is set with the pwpolicy utility, the variable names may vary depending on how the policy was set. To check if the password policy is configured to disable an account for 15 minutes after 3 unsuccessful logon attempts, run the following command to output the password policy to the screen:<p/><p/>sudo pwpolicy getaccountpolicies<p/><p/>Look for the line '&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;'. If this does not exist, and password policy is not controlled by a directory server, this is a finding.<p/><p/>In the array that follows, there should one or more &lt;dict&gt; sections that describe policy checks. One should contain a &lt;string&gt; that allows users to log on if 'policyAttributeFailedAuthentications' is less than 'policyAttributeMaximumFailedAuthentications'. Under policyParameters, policyAttributeMaximumFailedAuthentications should be set to 3. If 'policyAttributeMaximumFailedAuthentications' is not set to 3, this is a finding.<p/><p/>In the same check or in another &lt;dict&gt; section, there should be a &lt;string&gt; that allows users to log on if the 'policyAttributeCurrentTime' is greater than the result of adding 15 minutes (900 seconds) to 'policyAttributeLastFailedAuthenticationTime'. The check might use a variable defined in its policyParameters section. If the check does not exist or if the check adds too great an amount of time, this is a finding.</check>
+<fixtext>This setting may be enforced using a configuration profile or by a directory server.<p/><p/>The following two lines within the configuration enforce user account lockout after 3 attempts:<p/><p/>&lt;key&gt;policyAttributeMaximumFailedAuthentications&lt;/key&gt;<p/>&lt;integer&gt;3&lt;/integer&gt;<p/><p/>To set the password policy without a configuration profile, run the following command to save a copy of the current pwpolicy account policy file:<p/><p/>sudo pwpolicy getaccountpolicies | tail -n +2 &gt; pwpolicy.plist<p/><p/>Open the generated file in a text editor and ensure it contains the following text after the opening &lt;dict&gt; tag and before the closing &lt;/dict&gt; tag. Replace &lt;dict/&gt; first with &lt;dict&gt;&lt;/dict&gt; if necessary.<p/><p/>&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;<p/>&lt;array&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;(policyAttributeFailedAuthentications &lt; policyAttributeMaximumFailedAuthentications) OR (policyAttributeCurrentTime &gt; (policyAttributeLastFailedAuthenticationTime + autoEnableInSeconds))&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Authentication Lockout&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;autoEnableInSeconds&lt;/key&gt;<p/>&lt;integer&gt;900&lt;/integer&gt;<p/>&lt;key&gt;policyAttributeMaximumFailedAuthentications&lt;/key&gt;<p/>&lt;integer&gt;3&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/>&lt;/array&gt;<p/><p/>If the line &lt;key&gt;policyCategoryAuthentication&lt;/key&gt; already exists, the following text should be used instead and inserted after the first &lt;array&gt; tag that follows it:<p/><p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;(policyAttributeFailedAuthentications &lt; policyAttributeMaximumFailedAuthentications) OR (policyAttributeCurrentTime &gt; (policyAttributeLastFailedAuthenticationTime + autoEnableInSeconds))&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Authentication Lockout&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;autoEnableInSeconds&lt;/key&gt;<p/>&lt;integer&gt;900&lt;/integer&gt;<p/>&lt;key&gt;policyAttributeMaximumFailedAuthentications&lt;/key&gt;<p/>&lt;integer&gt;3&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file:<p/><p/>sudo pwpolicy setaccountpolicies pwpolicy.plist<p/><p/>&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;<p/>&lt;array&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;(policyAttributeFailedAuthentications &lt; policyAttributeMaximumFailedAuthentications) OR (policyAttributeCurrentTime &gt; (policyAttributeLastFailedAuthenticationTime + autoEnableInSeconds))&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Authentication Lockout&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;autoEnableInSeconds&lt;/key&gt;<p/>&lt;integer&gt;900&lt;/integer&gt;<p/>&lt;key&gt;policyAttributeMaximumFailedAuthentications&lt;/key&gt;<p/>&lt;integer&gt;3&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/>&lt;/array&gt;<p/><p/>If the line &lt;key&gt;policyCategoryAuthentication&lt;/key&gt; already exists, the following text should be used instead and inserted after the first &lt;array&gt; tag that follows it:<p/><p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;(policyAttributeFailedAuthentications &lt; policyAttributeMaximumFailedAuthentications) OR (policyAttributeCurrentTime &gt; (policyAttributeLastFailedAuthenticationTime + autoEnableInSeconds))&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Authentication Lockout&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;autoEnableInSeconds&lt;/key&gt;<p/>&lt;integer&gt;900&lt;/integer&gt;<p/>&lt;key&gt;policyAttributeMaximumFailedAuthentications&lt;/key&gt;<p/>&lt;integer&gt;3&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file:<p/><p/>sudo pwpolicy setaccountpolicies pwpolicy.plist<p/><p/>NOTE: Updates to password restrictions must be thoroughly evaluated in a test environment. Mistakes in configuration may block password change and local user creation operations, as well as, lock out all local users, including administrators.</fixtext>
 </Rule>
 
 <Rule severity="">
@@ -1415,9 +1415,9 @@
 <status></status>
 <title>The operating system must enforce an account lockout time period of 15 minutes in which three consecutive invalid logon attempts by a user are made.</title>
 <description></description>
-<rationale></rationale>
-<check></check>
-<fixtext></fixtext>
+<rationale>Setting a lockout time period of 15 minutes is an effective deterrent against brute forcing that also makes allowances for legitimate mistakes by users. When three invalid logon attempts are made, the account will be locked.</rationale>
+<check>Password policy can be set with a configuration profile or the pwpolicy utility. If password policy is set with a configuration profile, run the following command to check if the system has the correct setting for the logon reset timer:<p/><p/>system_profiler SPConfigurationProfileDataType | grep 'minutesUntilFailedLoginReset'<p/><p/>If 'minutesUntilFailedLoginReset is not set to '15', this is a finding.<p/><p/>If password policy is set with the pwpolicy utility, the variable names may vary depending on how the policy was set. To check if the password policy is configured to disable an account for 15 minutes after 3 unsuccessful logon attempts, run the following command to output the password policy to the screen:<p/><p/>sudo pwpolicy getaccountpolicies<p/><p/>Look for the line '&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;'. If this does not exist, and password policy is not controlled by a directory server, this is a finding.<p/><p/>In the array that follows, there should one or more &lt;dict&gt; sections that describe policy checks. One should contain a &lt;string&gt; that allows users to log on if 'policyAttributeFailedAuthentications' is less than 'policyAttributeMaximumFailedAuthentications'. Under policyParameters, policyAttributeMaximumFailedAuthentications should be set to 3. If 'policyAttributeMaximumFailedAuthentications' is not set to 3, this is a finding.<p/><p/>In the same check or in another &lt;dict&gt; section, there should be a &lt;string&gt; that allows users to log on if the 'policyAttributeCurrentTime' is greater than the result of adding 15 minutes (900 seconds) to 'policyAttributeLastFailedAuthenticationTime'. The check might use a variable defined in its policyParameters section. If the check does not exist or if the check adds too great an amount of time, this is a finding.</check>
+<fixtext>This setting may be enforced using a configuration profile or by a directory server.<p/><p/>The following two lines within the configuration enforce lockout expiration to 15 minutes:<p/><p/>&lt;key&gt;autoEnableInSeconds&lt;/key&gt;<p/>&lt;integer&gt;900&lt;/integer&gt;<p/><p/>To set the password policy without a configuration profile, run the following command to save a copy of the current pwpolicy account policy file:<p/><p/>sudo pwpolicy getaccountpolicies | tail -n +2 &gt; pwpolicy.plist<p/><p/>Open the generated file in a text editor and ensure it contains the following text after the opening &lt;dict&gt; tag and before the closing &lt;/dict&gt; tag.<p/><p/>Replace &lt;dict/&gt; first with &lt;dict&gt;&lt;/dict&gt; if necessary.<p/><p/>&lt;key&gt;policyCategoryAuthentication&lt;/key&gt;<p/>&lt;array&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;(policyAttributeFailedAuthentications &lt; policyAttributeMaximumFailedAuthentications) OR (policyAttributeCurrentTime &gt; (policyAttributeLastFailedAuthenticationTime + autoEnableInSeconds))&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Authentication Lockout&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;autoEnableInSeconds&lt;/key&gt;<p/>&lt;integer&gt;900&lt;/integer&gt;<p/>&lt;key&gt;policyAttributeMaximumFailedAuthentications&lt;/key&gt;<p/>&lt;integer&gt;3&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/>&lt;/array&gt;<p/><p/>If the line &lt;key&gt;policyCategoryAuthentication&lt;/key&gt; already exists, the following text should be used instead and inserted after the first &lt;array&gt; tag that follows it:<p/><p/>&lt;dict&gt;<p/>&lt;key&gt;policyContent&lt;/key&gt;<p/>&lt;string&gt;(policyAttributeFailedAuthentications &lt; policyAttributeMaximumFailedAuthentications) OR (policyAttributeCurrentTime &gt; (policyAttributeLastFailedAuthenticationTime + autoEnableInSeconds))&lt;/string&gt;<p/>&lt;key&gt;policyIdentifier&lt;/key&gt;<p/>&lt;string&gt;Authentication Lockout&lt;/string&gt;<p/>&lt;key&gt;policyParameters&lt;/key&gt;<p/>&lt;dict&gt;<p/>&lt;key&gt;autoEnableInSeconds&lt;/key&gt;<p/>&lt;integer&gt;900&lt;/integer&gt;<p/>&lt;key&gt;policyAttributeMaximumFailedAuthentications&lt;/key&gt;<p/>&lt;integer&gt;3&lt;/integer&gt;<p/>&lt;/dict&gt;<p/>&lt;/dict&gt;<p/><p/>After saving the file and exiting to the command prompt, run the following command to load the new policy file:<p/><p/>sudo pwpolicy setaccountpolicies pwpolicy.plist<p/><p/>NOTE: Updates to password restrictions must be thoroughly evaluated in a test environment. Mistakes in configuration may block password change and local user creation operations, as well as, lock out all local users, including administrators.</fixtext>
 </Rule>
 
 <Rule severity="">
