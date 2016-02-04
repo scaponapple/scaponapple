@@ -3,12 +3,13 @@ OUT = output
 TRANS = transforms
 
 
-all: tables
+all: tables xccdf
 
 
-#xccdf:
+xccdf:
 #	xsltproc -o $(OUT)/macosx10.11-xccdf.xml $(TRANS)/settings2xccdf.xslt $(OUT)/settings.xml
 #	xmllint --format --output $(OUT)/macosx10.11-xccdf.xml $(OUT)/macosx10.11-xccdf.xml
+	xsltproc -o $(OUT)/prettyprint.html transforms/xccdf2html.xslt input/settings.xml
 
 tables: 
 	xsltproc -o $(OUT)/macosx10.11-table.html $(TRANS)/settings2table.xslt $(IN)/settings.xml
