@@ -58,7 +58,7 @@ for row in csvData:
 	print '<ident srgid="' + row[1] + '" />'
 	print '<status>' + 'Applicable - Configurable' + '</status>'
 	print '<check system="ocil-transitional"><check-content>' + xml_encode(row[7]) + '</check-content></check>'
-	print '<rationale>' + xml_encode(row[3]) + '</rationale>'
+	print '<rationale>' + xml_encode(row[6]) + '</rationale>'
 	print '</Rule>\n'
 
 sys.stdout.write('</Benchmark>')
