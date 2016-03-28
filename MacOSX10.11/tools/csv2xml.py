@@ -10,7 +10,7 @@ def xml_encode(input):
 	output = str.replace(input, '&', '&amp;')
 	output = str.replace(output, '>', '&gt;')
 	output = str.replace(output, '<', '&lt;')
-	output = str.replace(output, '\n', '<p/>')
+	output = str.replace(output, '\n', '<xhtml:p/>')
 	return output
 
 
@@ -25,6 +25,7 @@ header = '''<?xml version="1.0"?>
   <description>These security settings for Mac OS X 10.11
   were developed by the DoD Joint Consensus Working Group.
   </description>
+  <version>1.0</version>
   <!-- Many of the XCCDF elements used here 
        are not used in the manner originally intended by
        the XCCDF specification; 
@@ -50,15 +51,15 @@ for row in csvData:
 		continue
 	#Begin writing each row of content
 	# NIST (0), SRGID (1), STIGID (2), Requirement(3), Title(4), Severity(5), Discussion(6), Check(7), Fix(8), CCI ID(9)
-	print '<Rule severity="' + str(severity_from_cat[row[5]])+ '" id="' + row[4] + '">'
+	print '<Rule severity="' + str(severity_from_cat[row[5]])+ '" id="' + row[4].replace('%','').replace(',','').replace('\'','').replace('(','').replace(')','').replace(' ','') + '">'
 	print '<title>' + row[4] + '</title>'
 	print '<description>' + xml_encode(row[8]) + '</description>'
 	print '<reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">' + row[0] + '</reference>'
 	print '<reference href="http://iase.disa.mil/cci/index.html">' + row[9][4:] + '</reference>'
-	print '<ident srgid="' + row[1] + '" />'
-	print '<status>' + 'Applicable - Configurable' + '</status>'
-	print '<check system="ocil-transitional"><check-content>' + xml_encode(row[7]) + '</check-content></check>'
 	print '<rationale>' + xml_encode(row[6]) + '</rationale>'
+	print '<ident system="http://iase.disa.mil/stigs/srgs/Pages/index.aspx">' + row[1] + '</ident>'
+	#print '<status>' + 'Applicable - Configurable' + '</status>'
+	print '<check system="ocil-transitional"><check-content>' + xml_encode(row[7]) + '</check-content></check>'
 	print '</Rule>\n'
 
 sys.stdout.write('</Benchmark>')

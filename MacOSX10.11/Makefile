@@ -5,11 +5,12 @@ TRANS = transforms
 
 all: tables xccdf
 
+resolve:
+	oscap xccdf resolve -o $(IN)/settings-resolved.xml $(IN)/settings.xml
 
 xccdf:
-#	xsltproc -o $(OUT)/macosx10.11-xccdf.xml $(TRANS)/settings2xccdf.xslt $(OUT)/settings.xml
 #	xmllint --format --output $(OUT)/macosx10.11-xccdf.xml $(OUT)/macosx10.11-xccdf.xml
-	xsltproc -o $(OUT)/prettyprint.html transforms/xccdf2html.xslt input/settings.xml
+	xsltproc -o $(OUT)/prettyprint.html transforms/xccdf2html.xslt input/settings-resolved.xml
 
 tables: 
 	xsltproc -o $(OUT)/macosx10.11-table.html $(TRANS)/settings2table.xslt $(IN)/settings.xml
